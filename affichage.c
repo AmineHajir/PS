@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include "affichage.h"
 
+/**
+ * \file affichage.c
+ * \brief ce fichier source contient les définitions des fonctions d'affichage du titre et de la grille du jeu.
+ * \brief il contient également la fonction d'initialisation de la grille du jeu.
+ * */
+
+
 void afficher_titre_jeu()
 {
 	printf("\n");
@@ -21,6 +28,11 @@ void afficher_titre_jeu()
 	printf("\n");
 }
 
+/**
+ * \fn void initialiser_jeu(pion T[N][M])
+ * \brief procédure qui initialise les cases de la grille à vide (des espaces).
+ * \param T[N][M] matrcie de taille N(lignes)*M(colonnes) qui représente la grille du jeu.
+*/
 void initialiser_jeu(pion T[N][M])
 {
 	int i,j;
@@ -29,13 +41,18 @@ void initialiser_jeu(pion T[N][M])
 	{
 		for(j=0;j<M;j++)
 		{
-			T[i][j].bloc=BLOCANTE;
+			T[i][j].bloc=BLOCANTE; // on initialise chaque champ d'une case de la matrice par vide (des espaces)
 			T[i][j].creux=CREUSE;
 			T[i][j].plein=PLEINE;
 		}
 	}
 }
 
+/**
+ * \fn void afficher_numColonne_jeu(int nbre_colonne)
+ * \brief procédure qui affiche les numéros des colonnes de la grille du jeu. 
+ * \param nbre_colonne nombre de colonnes de la grille du jeu.
+*/
 void afficher_numColonne_jeu(int nbre_colonne)
 {
 	int i;
@@ -44,14 +61,20 @@ void afficher_numColonne_jeu(int nbre_colonne)
 	{
 		if(i==0)
 		{
-			printf("     	             	     %i",i+1);
-		}
+			printf("     	             	     %i",i+1); // on affiche le numéro de la première colonne (1)
+		}						       // on traite ce cas à part pour bien centrer l'affichage au dessus de la colonne
 		else
 		{
 			printf("       %i",i+1);
 		}
 	}
 }
+
+/**
+ * \fn void afficher_bordure_grille(int nbre_colonne)
+ * \brief procédure qui affiche les bordures de la grille du jeu. 
+ * \param nbre_colonne nombre de colonnes de la grille du jeu.
+*/
 
 void afficher_bordure_grille(int nbre_colonne)
 {
@@ -66,37 +89,42 @@ void afficher_bordure_grille(int nbre_colonne)
 }
 	
 
+/**
+ * \fn void afficher_jeu(pion T[N][M])
+ * \brief procédure qui affiche la grille du jeu. 
+ * \param T[N][M] matrice de type pion de taille N*M à afficher.
+*/
 void afficher_jeu(pion T[N][M])
 {
 	int i,j,k;
 	
-	afficher_numColonne_jeu(M);
+	afficher_numColonne_jeu(M); // on commence par afficher les numéro des colonnes.
 	
 	printf("\n");
 	
-	afficher_bordure_grille(M);
+	afficher_bordure_grille(M); // on affiche ensuite la bordure supérieure de la grille.
 	
 	for(i=0;i<N;i++)
 	{
-		printf("			||");
+		printf("			||"); // affiche la bordure gauche de chaque ligne.
 		for(j=0;j<M;j++)
 		{
-			printf(" %c %c %c |",T[i][j].bloc,T[i][j].creux,T[i][j].plein);
+			printf(" %c %c %c |",T[i][j].bloc,T[i][j].creux,T[i][j].plein); // affiche une ligne.
 		}
-		printf("|");
-		if(i<N-1)
+		printf("|"); // affiche la bordure droite chaque ligne
+		if(i<N-1) // tant qu'on a pas afficher la dernière ligne, on affiche des séparateur de lignes.
 		{	
-			printf("\n			||");
+			printf("\n			||"); // bordure gauche.
 			for(k=0;k<M;k++)
 			{
-				printf("-------|");
+				printf("-------|"); // séparateur de ligne.
 			}
-			printf("|\n");
+			printf("|\n"); // bordure driote.
 		}
 	}
 	
 	printf("\n");
-	afficher_bordure_grille(M);
+	afficher_bordure_grille(M); // on affiche la bordure inférieure après avoir afficher la dernière ligne.
 	
 }
 
