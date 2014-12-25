@@ -4,7 +4,6 @@
 
 int main()
 {
-	pion grille[N][M];
 	
 	afficher_titre_jeu();
 	printf("\n");
