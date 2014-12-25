@@ -4,6 +4,7 @@
 
 void afficher_titre_jeu()
 {
+	printf("\n");
 	printf("                           68b                                                                       \n");
 	printf("                           Y89                                                                       \n");
 	printf("       __ ____   ___   ___ ___   ____     ____      ___    ___  __     ____     ____                 \n");
@@ -17,7 +18,7 @@ void afficher_titre_jeu()
 	printf("        MM                                                                                        MM       MM        MM\n");
 	printf("        MM                                                                                        MM       MM        MM\n");
 	printf("       _MM_                                                                                       MM \n");
-	printf("\n\n\n");
+	printf("\n");
 }
 
 void initialiser_jeu(pion T[N][M])
@@ -28,9 +29,9 @@ void initialiser_jeu(pion T[N][M])
 	{
 		for(j=0;j<M;j++)
 		{
-			T[i][j].bloc=VIDE;
-			T[i][j].creux=VIDE;
-			T[i][j].plein=VIDE;
+			T[i][j].bloc=BLOCANTE;
+			T[i][j].creux=CREUSE;
+			T[i][j].plein=PLEINE;
 		}
 	}
 }

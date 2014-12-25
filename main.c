@@ -6,7 +6,8 @@ int main()
 {
 	pion grille[N][M];
 	
-	printf("\n\n");
+	afficher_titre_jeu();
+	printf("\n");
 	initialiser_jeu(grille);
 	afficher_jeu(grille);
 	printf("\n\n");
