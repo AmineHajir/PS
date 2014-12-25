@@ -35,11 +35,11 @@ void initialiser_jeu(pion T[N][M])
 	}
 }
 
-void afficher_jeu(pion T[N][M])
+void afficher_numColonne_jeu(int nbre_colonne)
 {
-	int i,j,k;
+	int i;
 	
-	for(i=0;i<M;i++)
+	for(i=0;i<nbre_colonne;i++)
 	{
 		if(i==0)
 		{
@@ -50,14 +50,30 @@ void afficher_jeu(pion T[N][M])
 			printf("       %i",i+1);
 		}
 	}
-	printf("\n");
+}
+
+void afficher_bordure_grille(int nbre_colonne)
+{
+	int i;
 	
 	printf("			||");
-	for(k=0;k<M;k++)
+	for(i=0;i<nbre_colonne;i++)
 	{
 		printf("=======|");
 	}
 	printf("|\n");
+}
+	
+
+void afficher_jeu(pion T[N][M])
+{
+	int i,j,k;
+	
+	afficher_numColonne_jeu(M);
+	
+	printf("\n");
+	
+	afficher_bordure_grille(M);
 	
 	for(i=0;i<N;i++)
 	{
@@ -77,10 +93,9 @@ void afficher_jeu(pion T[N][M])
 			printf("|\n");
 		}
 	}
-	printf("\n			||");
-	for(k=0;k<M;k++)
-	{
-		printf("=======|");
-	}
-	printf("|\n");
+	
+	printf("\n");
+	afficher_bordure_grille(M);
+	
 }
+
