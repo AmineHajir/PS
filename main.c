@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "affichage.h"
+#include "affichageJeu.h"
+#include "affichageMenus.h"
 
 	
 int main()

@@ -1,5 +1,5 @@
 CC = gcc
-OBJ = affichage.o main.o
+OBJ = affichageJeu.o affichageMenus.o main.o
 OPT = -g -W -Wall
 
 all: exe
@@ -7,12 +7,16 @@ all: exe
 exe : $(OBJ)
 	$(CC) $(OBJ) -o exe
 
-main.o : main.c affichage.h 
+main.o : main.c affichageJeu.h 
 	$(CC) -c main.c $(OPT)
 	
-affichage.o : affichage.c affichage.h
-	$(CC) -c affichage.c $(OPT)
+affichageJeu.o : affichageJeu.c affichageJeu.h
+	$(CC) -c affichageJeu.c $(OPT)
 	
-	
+affichageMenus.o : affichageMenus.c affichageMenus.h	
+	$(CC) -c affichageMenus.c $(OPT)
+
+
+
 clean:
 	rm -f *.o *~ exe

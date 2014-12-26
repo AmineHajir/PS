@@ -1,6 +1,6 @@
 /**
- * \file affichage.h
- * \brief ce fichier contient les en-tete des fonctions définies dans le fichier source affichage.c
+ * \file affichageJeu.h
+ * \brief ce fichier contient les en-tete des fonctions définies dans le fichier source affichageJeu.c
  * \brief ce fichier contient aussi la déclaration, des variables globales et des structures de données utilisées (matrcie,typedef)
  * */
 
@@ -41,7 +41,7 @@
 #define VIDE      ' '
 
 /**
- * \struct pion affichage.h
+ * \struct pion affichageJeu.h
  * \brief Définition du type pion contenant les différents types de pièces nécessaire pour jouer au puissance4++.
  */
 typedef struct
