@@ -64,3 +64,4 @@ void afficher_titre_jeu();
 void initialiser_jeu(pion T[N][M]);
 void afficher_jeu(pion T[N][M]);
 void afficher_numColonne_jeu(int nbre_colonne);
+char menuJouerPion();
