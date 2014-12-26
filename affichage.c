@@ -41,9 +41,9 @@ void initialiser_jeu(pion T[N][M])
 	{
 		for(j=0;j<M;j++)
 		{
-			T[i][j].bloc=BLOCANTE; // on initialise chaque champ d'une case de la matrice par vide (des espaces)
-			T[i][j].creux=CREUSE;
-			T[i][j].plein=PLEINE;
+			T[i][j].bloc=VIDE; // on initialise chaque champ d'une case de la matrice par vide (des espaces)
+			T[i][j].creux=VIDE;
+			T[i][j].plein=VIDE;
 		}
 	}
 }
@@ -98,6 +98,13 @@ void afficher_jeu(pion T[N][M])
 {
 	int i,j,k;
 	
+	printf("			 	        _      _  _  _  _  _       \n");
+	printf("				       |_|| |||_ |_ |_|| ||_  |_|   \n");
+	printf("				       |  |_|| _| _|| || ||_    | ++\n\n");  
+				          
+						
+	
+	
 	afficher_numColonne_jeu(M); // on commence par afficher les numéro des colonnes.
 	
 	printf("\n");
@@ -128,3 +135,5 @@ void afficher_jeu(pion T[N][M])
 	
 }
 
+
+	
