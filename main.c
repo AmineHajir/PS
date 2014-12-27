@@ -11,11 +11,33 @@ int main()
 	//afficher_titre_jeu();
 	printf("\n");
 	initialiser_jeu(grille);
-	piece=menuChoixPion();
-	colonne=menuChoixColonne();
+	initialiser_hauteurColonne(hauteurColonne);
 	
-	if(piece=='b')
-		grille[5][colonne].bloc=BLOCANTE;
+	do
+	{	piece=menuChoixPion();
+		colonne=menuChoixColonne();
+		
+		switch(piece)
+		{
+			case 'b' : 
+			{
+				grille[hauteurColonne[colonne-1]][colonne-1].bloc=BLOCANTE;
+			}break;
+			
+			case 'c' :
+			{
+				grille[hauteurColonne[colonne-1]][colonne-1].creux=CREUSE;
+			}break;
+			
+			case 'p' : 
+			{
+				grille[hauteurColonne[colonne-1]][colonne-1].plein=PLEINE;
+			}break;
+		}
+	}while(colonne!=8);
+			
+	
+	
 	
 	
 	afficher_jeu(grille);

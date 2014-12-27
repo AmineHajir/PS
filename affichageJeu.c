@@ -5,7 +5,8 @@
 /**
  * \file affichageJeu.c
  * \brief ce fichier source contient les définitions des fonctions d'affichage du titre et de la grille du jeu.
- * \brief il contient également la fonction d'initialisation de la grille du jeu.
+ * \brief ce fichier contient aussi la définition fonction d'initialisations de la grille du jeu.
+ * \brief il contient également la définition de la fonction d'initialisation du tableau qui stocke la hauteur de chaque colonne.
  * */
 
 /**
@@ -48,6 +49,21 @@ void initialiser_jeu(pion T[N][M])
 			T[i][j].creux=VIDE;
 			T[i][j].plein=VIDE;
 		}
+	}
+}
+
+/**
+ * \fn initialiser_hauteurColonne(int V[M])
+ * \brief procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille.
+ * \param int V[M] tableau dont la taille est égale au nombre de colonnes de la grille.
+*/
+void initialiser_hauteurColonne(int V[M])
+{
+	int i;
+	
+	for(i=0;i<M;i++)
+	{
+		V[i]=N-1; // au début du jeu toute les colonnes sont vides --> hauteur = indice de la dernière ligne de la grille.
 	}
 }
 

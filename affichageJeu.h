@@ -46,9 +46,9 @@
  */
 typedef struct
 {
-	char bloc; // pièce bloquante
-	char creux; // pièce creuse
-	char plein; // pièce pleine
+	char bloc;  // champ de la structure qui représente une pièce bloquante
+	char creux; // champ de la structure qui représente une pièce creuse
+	char plein; // champ de la structure qui représente une pièce pleine
 }pion;
 
 /**
@@ -60,8 +60,18 @@ typedef struct
 */
 pion grille[N][M];
 
+/**
+ * \var hauteurColonne[M];
+ * \brief structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu.
+ * \brief la taille de ce tableau est égale au nombres de colonnes de colonnes de la grille (M)
+ * \brief ce tableau permet de stocker dans chacune de ses cases l'indice de la première case vide de la colonne correspondante  
+ * \brief au début du jeu toutes les cases du tableau sont initialisées à N-1(5) car l'indice de la premiere case vide de chaque colonne 
+ * \brief est égale à l'indice de la dernière ligne de la grille.  
+*/
+int hauteurColonne[M];
+
 void afficher_titre_jeu();
 void initialiser_jeu(pion T[N][M]);
+void initialiser_hauteurColonne(int V[M]);
 void afficher_jeu(pion T[N][M]);
 void afficher_numColonne_jeu(int nbre_colonne);
-char menuJouerPion();

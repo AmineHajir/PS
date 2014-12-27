@@ -36,9 +36,9 @@ char menuChoixPion()
 	{	
 		afficher_jeu(grille);
 		printf("\n\n                        ---------------------- Choix du pion ----------------------\n");
-		printf(" Tapez b pour jouer la pièce bloquante \n");
-		printf(" Tapez c pour jouer la pièce creuse \n");
-		printf(" Tapez p pour jouer la pièce pleine \n");
+		printf(" Tapez b pour jouer la piece bloquante \n");
+		printf(" Tapez c pour jouer la piece creuse \n");
+		printf(" Tapez p pour jouer la piece pleine \n");
 		printf(" votre choix : ");
 		//scanf(" %c",&piece);
 		piece=fgetc(stdin); // fgetc au lieu de scanf pour sécuriser la saisie et éviter un dépassement du tampon (buffer overflow)
