@@ -98,9 +98,9 @@ void afficher_jeu(pion T[N][M])
 {
 	int i,j,k;
 	
-	printf("			 	        _      _  _  _  _  _       \n");
-	printf("				       |_|| |||_ |_ |_|| ||_  |_|   \n");
-	printf("				       |  |_|| _| _|| || ||_    | ++\n\n");  
+	printf("			 	       _      _  _  _  _  _  _       \n");
+	printf("				      |_|| |||_ |_ |_|| ||  |_  |_|   \n");
+	printf("				      |  |_|| _| _|| || ||_ |_    | ++\n\n");  
 				          
 						
 	

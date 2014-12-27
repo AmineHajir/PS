@@ -10,6 +10,19 @@
 */
 
 /**
+ * \fn void viderBuffer()
+ * \brief fonction qui vide le buffer (stdin) grace à la fonction getchar() si le joueur saisis plus qu'un seul caractère.
+*/
+void viderBuffer()
+{
+    int c = 0;
+    while (c != '\n' && c != EOF) // tant que le buffer n'est pas vide on boucle 
+    {
+        c = getchar(); // fonction qui permet de lire dans le buffer caractère par caractère
+    }
+}
+
+/**
  * \fn char menuJouerPion()
  * \brief fonction qui affiche le menu pour un joueur afin de choisir le pion à jouer. 
  * \brief cette fonction retourne le pion (caractère) choisis par le joueur.
@@ -27,7 +40,9 @@ char menuChoixPion()
 		printf(" Tapez c pour jouer la pièce creuse \n");
 		printf(" Tapez p pour jouer la pièce pleine \n");
 		printf(" votre choix : ");
-		scanf(" %c",&piece);
+		//scanf(" %c",&piece);
+		piece=fgetc(stdin); // fgetc au lieu de scanf pour sécuriser la saisie et éviter un dépassement du tampon (buffer overflow)
+		viderBuffer(); // vider le buffer (fichier standart stdin) si plusieurs caractères on été saisis
 		system("clear");
 		
 		if( piece!='b' && piece!='c' && piece!='p' ) 
@@ -58,6 +73,7 @@ int menuChoixColonne()
 		printf(" Tapez un chiffre entre 1 et 7 \n");
 		printf(" votre choix : ");
 		scanf(" %i",&colonne);
+		viderBuffer(); // Non nécessaire dans le cas de saisie d'entier !!!
 		system("clear");
 		
 		if( colonne<1 || colonne>7 ) 
