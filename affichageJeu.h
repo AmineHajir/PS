@@ -26,13 +26,13 @@
  * \def CREUSE 
  * \brief une pièce creuse du jeu est représentée par le caractère ASCII dont le code décimal est 169.
  */
-#define CREUSE    169
+#define CREUSE   'C'
 
 /**
  * \def PLEINE 
  * \brief une pièce pleine du jeu est représentée par le caractère ASCII dont le code décimal est 216.
  */
-#define PLEINE    216
+#define PLEINE   'P'
 
 /**
  * \def VIDE 
