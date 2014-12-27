@@ -11,16 +11,13 @@ int main()
 	//afficher_titre_jeu();
 	printf("\n");
 	initialiser_jeu(grille);
-	piece=menuJouerPion();
-	
-	
- 	printf("\n Dans quelle colonne vous jouez ? ");
-	scanf("%i",&colonne);
+	piece=menuChoixPion();
+	colonne=menuChoixColonne();
 	
 	if(piece=='b')
-		grille[0][colonne].bloc=BLOCANTE;
+		grille[5][colonne].bloc=BLOCANTE;
 	
-	//printf(" Dans quelle
+	
 	afficher_jeu(grille);
 	
 	
