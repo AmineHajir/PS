@@ -8,7 +8,10 @@
  * \brief il contient également la fonction d'initialisation de la grille du jeu.
  * */
 
-
+/**
+ * \fn void afficher_titre_jeu()
+ * \brief affiche le titre du jeu (ASCII art).
+*/
 void afficher_titre_jeu()
 {
 	printf("\n");

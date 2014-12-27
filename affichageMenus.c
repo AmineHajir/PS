@@ -51,7 +51,7 @@ char menuChoixPion()
 		}
 		
 	}while( piece!='b' && piece!='c' && piece!='p'); // controle de la saisie du joueur
-	system("clear");
+	system("clear"); // effacer l'ecran
 	return piece;
 }
 
@@ -72,9 +72,9 @@ int menuChoixColonne()
 		printf("\n\n                        ------------------- Choix de la colonne -------------------\n");
 		printf(" Tapez un chiffre entre 1 et 7 \n");
 		printf(" votre choix : ");
-		scanf(" %i",&colonne);
-		viderBuffer(); // Non nécessaire dans le cas de saisie d'entier !!!
-		system("clear");
+		scanf("%i",&colonne);
+		viderBuffer(); // nécessaire pour éviter un bug si le joueur saisis un caractère au lieu d'un entier
+		system("clear"); // pour ne pas encombrer l'écran
 		
 		if( colonne<1 || colonne>7 ) 
 		{
