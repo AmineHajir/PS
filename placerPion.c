@@ -12,7 +12,14 @@ void placerPleine(pion T[N][M], int V[M], int colonne)
 	
 	if( (indice == 0) && (caseCreuse(T,indice,colonne-1) == FAUX) && (caseVide(T,indice,colonne-1) == FAUX) )
 	{
-		printf( "\n ATTENTION : la colonne %i est pleine, choisissez une autre colonne \n\n",colonne);
+		if( casePleine(T,indice,colonne-1) )
+		{
+			printf("\n ATTENTION : Vous ne pouvez jouer que la pièce creuse dans la colonne %i \n\n",colonne);
+		}
+		else
+		{
+			printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+		}
 	}
 	else
 	{
@@ -47,9 +54,15 @@ void placerCreuse(pion T[N][M], int V[M], int colonne)
 	
 	if( (indice == 0) && (casePleine(T,indice,colonne-1) == FAUX) && (caseVide(T,indice,colonne-1) == FAUX) )
 	{
-		printf( "\n ATTENTION : la colonne %i est pleine, choisissez une autre colonne \n\n",colonne);
+		if( caseCreuse(T,indice,colonne-1) )
+		{
+			printf("\n ATTENTION : Vous ne pouvez jouer que la pièce pleine dans la colonne %i \n\n",colonne);
+		}
+		else
+		{
+			printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+		}
 	}
-	
 	else
 	{
 	
@@ -78,11 +91,32 @@ void placerBlocante(pion T[N][M], int V[M], int colonne)
 {
 	int indice=V[colonne-1];
 	
-	T[indice][colonne-1].bloc = BLOCANTE;
-	
-	if( indice > 0 )
+	if( (indice == 0) && (caseVide(T,indice,colonne-1) == FAUX) )
 	{
-		V[colonne-1]--;
+		if( casePleine(T,indice,colonne-1) )
+		{
+			printf("\n ATTENTION : Vous ne pouvez jouer que la pièce creuse dans la colonne %i \n\n",colonne);
+		}
+		else
+		{
+			if( caseCreuse(T,indice,colonne-1) )
+			{
+				printf("\n ATTENTION : Vous ne pouvez jouer que la pièce pleine dans la colonne %i \n\n",colonne);
+			}
+			else
+			{
+				printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+			}
+		}
+	}
+	else
+	{
+		T[indice][colonne-1].bloc = BLOCANTE;
+	
+		if(indice > 0)
+		{
+			V[colonne-1]--;
+		}
 	}
 }
 	

@@ -5,8 +5,8 @@
 /**
  * \file affichageJeu.c
  * \brief ce fichier source contient les définitions des fonctions d'affichage du titre et de la grille du jeu.
- * \brief ce fichier contient aussi la définition fonction d'initialisations de la grille du jeu.
- * \brief il contient également la définition de la fonction d'initialisation du tableau qui stocke la hauteur de chaque colonne.
+ * \details ce fichier contient aussi la définition fonction d'initialisations de la grille du jeu.
+ *          il contient également la définition de la fonction d'initialisation du tableau qui stocke la hauteur de chaque colonne.
  * */
 
 /**

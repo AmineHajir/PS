@@ -6,14 +6,11 @@
 #include "placerPion.h"
 
 	
-	
 int main()
 {
 	char piece;
 	int colonne;
-	/*int indice,i;
-	booleen caseTrouve;*/
-	//afficher_titre_jeu();
+	
 	printf("\n");
 	initialiser_jeu(grille);
 	initialiser_hauteurColonne(hauteurColonne);
@@ -21,7 +18,6 @@ int main()
 	do
 	{	piece=menuChoixPion();
 		colonne=menuChoixColonne();
-		//indice=hauteurColonne[colonne-1];
 		
 		switch(piece)
 		{
@@ -44,13 +40,8 @@ int main()
 	}while(colonne!=8);
 			
 	
-	
-	
-	
 	afficher_jeu(grille);
 	
-	
-		
 	printf("\n\n");
 	return 0;
 }
