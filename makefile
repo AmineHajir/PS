@@ -1,5 +1,5 @@
 CC = gcc
-OBJ = affichageJeu.o affichageMenus.o contenuCase.o main.o
+OBJ = affichageJeu.o affichageMenus.o contenuCase.o placerPion.o main.o
 OPT = -g -W -Wall
 
 all: exe
@@ -18,6 +18,9 @@ affichageMenus.o : affichageMenus.c affichageMenus.h
 
 contenuCase.o : contenuCase.c contenuCase.h
 	$(CC) -c contenuCase.c $(OPT)
+
+placerPion.o : placerPion.c placerPion.h
+	$(CC) -c placerPion.c $(OPT)
 
 
 

@@ -64,7 +64,8 @@ pion grille[N][M];
  * \var hauteurColonne[M];
  * \brief structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu.
  * \brief la taille de ce tableau est égale au nombres de colonnes de colonnes de la grille (M)
- * \brief ce tableau permet de stocker dans chacune de ses cases l'indice de la première case vide de la colonne correspondante  
+ * \brief ce tableau permet de stocker dans chacune de ses cases l'indice de la première case vide de la colonne correspondante 
+ * \brief dans le cas ou la colonne est pleine, la valeur de la case correspondante à cette colonne dans le tableau est égale à 0. 
  * \brief au début du jeu toutes les cases du tableau sont initialisées à N-1(5) car l'indice de la premiere case vide de chaque colonne 
  * \brief est égale à l'indice de la dernière ligne de la grille.  
 */
