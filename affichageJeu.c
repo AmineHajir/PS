@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "affichageJeu.h"
 #include "couleurs.h"
-whakhaaaa 3liik
+
 /**
  * \file affichageJeu.c
  * \author Hajir Mohammed Amine
@@ -138,7 +138,46 @@ void afficher_jeu(pion T[N][M])
 		printf("			||"); // affiche la bordure gauche de chaque ligne.
 		for(j=0;j<M;j++)
 		{
-			//printf(" %c %c %c |",T[i][j].bloc,T[i][j].creux,T[i][j].plein); // affiche une ligne.
+			switch(T[i][j].bloc)
+			{
+				case VIDE :
+				{
+					printf("  ");
+				}break;
+				case 1 :
+				{
+					couleur("31");
+					printf(" X");
+					couleur("0");
+				}break;
+			}
+			switch(T[i][j].creux)
+			{
+				case VIDE :
+				{
+					printf("  ");
+				}break;
+				case 1 :
+				{
+					couleur("31");
+					printf(" C");
+					couleur("0");
+				}break;
+			}
+			switch(T[i][j].plein)
+			{
+				case VIDE :
+				{
+					printf("   |");
+				}break;
+				case 1 :
+				{
+					couleur("31");
+					printf(" P");
+					couleur("0");
+					printf(" |");
+				}break;
+			}
 		}
 		printf("|"); // affiche la bordure droite de chaque ligne
 		if(i<N-1) // tant qu'on a pas afficher le contenu de la dernière ligne, on affiche des séparateur de lignes.
@@ -149,8 +188,7 @@ void afficher_jeu(pion T[N][M])
 				printf("-------|"); // séparateur de ligne.
 			}
 			printf("|\n"); // bordure driote.
-		}
-	}
+		}	}
 	
 	printf("\n");
 	afficher_bordure_grille(M); // on affiche la bordure inférieure après avoir afficher la dernière ligne.
