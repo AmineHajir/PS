@@ -60,7 +60,7 @@ char menuChoixPion()
 /**
  * \fn int menuChoixPion()
  * \brief fonction qui affiche le menu pour un joueur afin de choisir la colonne ou il souhaite jouer le pion.
- * \brief cette fonction retourne le numéro de la colonne (entier compris entre 1 et 7) choisis par le joueur.
+ * \brief cette fonction retourne le numéro de la colonne (entier compris entre 1 et M) choisis par le joueur.
  * \return le numéro de la colonne choisis 
 */	
 int menuChoixColonne()	

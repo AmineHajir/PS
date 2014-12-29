@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "affichageJeu.h"
+#include "couleurs.h"
 
 /**
  * \file affichageJeu.c
@@ -137,10 +138,10 @@ void afficher_jeu(pion T[N][M])
 		printf("			||"); // affiche la bordure gauche de chaque ligne.
 		for(j=0;j<M;j++)
 		{
-			printf(" %c %c %c |",T[i][j].bloc,T[i][j].creux,T[i][j].plein); // affiche une ligne.
+			//printf(" %c %c %c |",T[i][j].bloc,T[i][j].creux,T[i][j].plein); // affiche une ligne.
 		}
-		printf("|"); // affiche la bordure droite chaque ligne
-		if(i<N-1) // tant qu'on a pas afficher la dernière ligne, on affiche des séparateur de lignes.
+		printf("|"); // affiche la bordure droite de chaque ligne
+		if(i<N-1) // tant qu'on a pas afficher le contenu de la dernière ligne, on affiche des séparateur de lignes.
 		{	
 			printf("\n			||"); // bordure gauche.
 			for(k=0;k<M;k++)

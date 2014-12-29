@@ -40,7 +40,7 @@ booleen caseVide(pion T[N][M], int ligne, int colonne)
 */
 booleen casePleine(pion T[N][M], int ligne, int colonne)
 {
-	if( (T[ligne][colonne].bloc == VIDE) && (T[ligne][colonne].creux == VIDE) && (T[ligne][colonne].plein == PLEINE) )
+	if( (T[ligne][colonne].bloc == VIDE) && (T[ligne][colonne].creux == VIDE) && (T[ligne][colonne].plein != VIDE) )
 	{
 		return VRAI;
 	}
@@ -58,7 +58,7 @@ booleen casePleine(pion T[N][M], int ligne, int colonne)
 */
 booleen caseBlocante(pion T[N][M], int ligne, int colonne)
 {
-	if( (T[ligne][colonne].bloc == BLOCANTE) && (T[ligne][colonne].creux == VIDE) && (T[ligne][colonne].plein == VIDE) )
+	if( (T[ligne][colonne].bloc != VIDE) && (T[ligne][colonne].creux == VIDE) && (T[ligne][colonne].plein == VIDE) )
 	{
 		return VRAI;
 	}
@@ -76,7 +76,7 @@ booleen caseBlocante(pion T[N][M], int ligne, int colonne)
 */
 booleen caseCreuse(pion T[N][M], int ligne, int colonne)
 {
-	if( (T[ligne][colonne].bloc == VIDE) && (T[ligne][colonne].creux == CREUSE) && (T[ligne][colonne].plein == VIDE) )
+	if( (T[ligne][colonne].bloc == VIDE) && (T[ligne][colonne].creux != VIDE) && (T[ligne][colonne].plein == VIDE) )
 	{
 		return VRAI;
 	}
@@ -94,7 +94,7 @@ booleen caseCreuse(pion T[N][M], int ligne, int colonne)
 */
 booleen casePleineCreuse(pion T[N][M], int ligne, int colonne)
 {
-	if( (T[ligne][colonne].bloc == VIDE) && (T[ligne][colonne].creux == CREUSE) && (T[ligne][colonne].plein == PLEINE) )
+	if( (T[ligne][colonne].bloc == VIDE) && (T[ligne][colonne].creux != VIDE) && (T[ligne][colonne].plein != VIDE) )
 	{
 		return VRAI;
 	}
