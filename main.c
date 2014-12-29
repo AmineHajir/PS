@@ -23,6 +23,7 @@ int main()
 {
 	char piece;
 	int colonne;
+	int joueur=1;
 	
 	printf("\n");
 	initialiser_jeu(grille);
@@ -36,17 +37,17 @@ int main()
 		{
 			case 'b' : 
 			{
-				placerBlocante(grille, hauteurColonne, colonne);
+				placerBlocante(grille, hauteurColonne, colonne, joueur);
 			}break;
 			
 			case 'c' :
 			{
-				placerCreuse(grille, hauteurColonne, colonne);
+				placerCreuse(grille, hauteurColonne, colonne, joueur);
 			}break;
 			
 			case 'p' : 
 			{
-				placerPleine(grille, hauteurColonne, colonne);
+				placerPleine(grille, hauteurColonne, colonne, joueur);
 				
 			}break;
 		}

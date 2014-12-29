@@ -21,7 +21,7 @@
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
 */
-void placerPleine(pion T[N][M], int V[M], int colonne)
+void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 {
 	int indice=V[colonne-1]; // on récupère la valeur de la première case vide et on la stocke dans la variable indice. 
 	int i=indice+1; // variable qui parcourt les case inférieure à la case vide
@@ -76,7 +76,7 @@ void placerPleine(pion T[N][M], int V[M], int colonne)
  * \param colonne numéro de la colonne saisis par le joueur.
 */
 // meme principe que pour la pièce pleine
-void placerCreuse(pion T[N][M], int V[M], int colonne)
+void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
 {
 	int indice=V[colonne-1];
 	int i=indice+1;
@@ -124,7 +124,7 @@ void placerCreuse(pion T[N][M], int V[M], int colonne)
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
 */
-void placerBlocante(pion T[N][M], int V[M], int colonne)
+void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
 {
 	int indice=V[colonne-1];
 	
