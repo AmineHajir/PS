@@ -33,7 +33,7 @@ void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 		if( casePleine(T,indice,colonne-1) )
 		{
 			// le joueur ne peut pas jouer une pleine si la prmière case contient une pleine
-			printf("\n ATTENTION : Vous ne pouvez jouer que la pièce creuse dans la colonne %i \n\n",colonne);
+			printf("\n ATTENTION : Vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",colonne);
 		}
 		else
 		{	
@@ -86,7 +86,7 @@ void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
 	{
 		if( caseCreuse(T,indice,colonne-1) )
 		{
-			printf("\n ATTENTION : Vous ne pouvez jouer que la pièce pleine dans la colonne %i \n\n",colonne);
+			printf("\n ATTENTION : Vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",colonne);
 		}
 		else
 		{
@@ -133,13 +133,13 @@ void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
 	{
 		if( casePleine(T,indice,colonne-1) ) // soit cette dernière case contient une pleine dans quel cas on ne peut jouer qu'une creuse
 		{
-			printf("\n ATTENTION : Vous ne pouvez jouer que la pièce creuse dans la colonne %i \n\n",colonne);
+			printf("\n ATTENTION : Vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",colonne);
 		}
 		else
 		{
 			if( caseCreuse(T,indice,colonne-1) ) // soit cette dernière case contient une creuse dans quel cas on ne peut jouer
 			{				     // qu'une pleine	
-				printf("\n ATTENTION : Vous ne pouvez jouer que la pièce pleine dans la colonne %i \n\n",colonne);
+				printf("\n ATTENTION : Vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",colonne);
 			}
 			else
 			{	// cas ou cette case une blocante ou deux pièce(creuse et pleine)

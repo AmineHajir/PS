@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "affichageJeu.h"
+#include "contenuCase.h"
 #include "couleurs.h"
 
 /**
@@ -138,7 +139,40 @@ void afficher_jeu(pion T[N][M])
 		printf("			||"); // affiche la bordure gauche de chaque ligne.
 		for(j=0;j<M;j++)
 		{
-			switch(T[i][j].bloc)
+			if( caseVide(T,i,j) )
+			{
+				printf("       |");
+			}
+			if( caseBlocante(T,i,j) )
+			{
+				couleur(ROUGE);
+				printf("   %c   ",BLOCANTE);
+				couleur("0");
+				printf("|");
+			}
+			if( caseCreuse(T,i,j) )
+			{
+				couleur(ROUGE);
+				printf("   %c   ",CREUSE);
+				couleur("0");
+				printf("|");
+			}
+			if( casePleine(T,i,j) )
+			{
+				couleur(ROUGE);
+				printf("   %c   ",PLEINE);
+				couleur("0");
+				printf("|");
+			}
+			if( casePleineCreuse(T,i,j) )
+			{
+				couleur(ROUGE);
+				printf("  %c %c  ",CREUSE,PLEINE);
+				couleur("0");
+				printf("|");
+			}
+				
+			/*switch(T[i][j].bloc)
 			{
 				case VIDE :
 				{
@@ -177,7 +211,7 @@ void afficher_jeu(pion T[N][M])
 					couleur("0");
 					printf(" |");
 				}break;
-			}
+			}*/
 		}
 		printf("|"); // affiche la bordure droite de chaque ligne
 		if(i<N-1) // tant qu'on a pas afficher le contenu de la dernière ligne, on affiche des séparateur de lignes.

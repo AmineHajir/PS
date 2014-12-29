@@ -29,14 +29,14 @@
  * \brief une pièce creuse du jeu est représentée par le caractère 'C'.
  * \details on avait utiliser le caractère ASCII dont le code décimal est 169 mais ça ne marche pas lors des tests.
  */
-#define CREUSE   'C'
+#define CREUSE   169
 
 /**
  * \def PLEINE 
  * \brief une pièce pleine du jeu est représentée par le caractère 'P'. 
  * \details on avait utiliser le caractère ASCII dont le code décimal est 216 mais ça ne marche pas lors des tests.
  */
-#define PLEINE   'P'
+#define PLEINE   216
 
 /**
  * \def VIDE 
