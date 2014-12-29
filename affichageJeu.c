@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "affichageJeu.h"
 #include "couleurs.h"
-hell
+
 /**
  * \file affichageJeu.c
  * \author Hajir Mohammed Amine

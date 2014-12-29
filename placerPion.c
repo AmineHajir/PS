@@ -57,7 +57,7 @@ void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 				caseTrouve = VRAI; // si une case contient une pleine ou une bloquante on sort de la boucle
 			}
 		}
-		T[indice][colonne-1].plein = PLEINE; // on place la pièce pleine dans la bonne case
+		T[indice][colonne-1].plein = joueur; // on place la pièce pleine dans la bonne case
 								
 		if( (V[colonne-1] > 0) && (caseVide(T,V[colonne-1],colonne-1) == FAUX) ) 
 		{
@@ -108,7 +108,7 @@ void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
 				caseTrouve = VRAI;
 			}
 		}
-		T[indice][colonne-1].creux = CREUSE;
+		T[indice][colonne-1].creux = joueur;
 								
 		if( (V[colonne-1] > 0) && (caseVide(T,V[colonne-1],colonne-1) == FAUX) )
 		{
@@ -149,7 +149,7 @@ void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
 	}
 	else
 	{
-		T[indice][colonne-1].bloc = BLOCANTE;
+		T[indice][colonne-1].bloc = joueur;
 	
 		if(indice > 0) // pour éviter que la hauteur d'une colonne soit négative
 		{
