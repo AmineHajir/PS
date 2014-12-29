@@ -5,6 +5,8 @@
 
 /**
  * \file affichageMenus.c
+ * \author Hajir Mohammed Amine
+ * \date 20 Décembre 2014
  * \brief ce fichier source contient les définitions des fonctions d'affichage des menus du jeu.
  * 
 */

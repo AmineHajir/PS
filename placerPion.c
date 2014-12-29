@@ -7,6 +7,8 @@
 /**
  * \file placerPion.c
  * \brief ce fichier source contient les définitions des fonctions qui permettent de placer un pion dans la bonne case de la grille du jeu.
+ * \author Hajir Mohammed Amine
+ * \date 23 Décembre 2014
  * \details On définit trois fonctions puisqu'il y trois types de pions différents : une procèdure pour placer la pièce pleine,
  * 	    une deuxième pour placer la pièce creuse et une troisième pour placer la bloquante.
  *	    N.B: ces procédures affichent des messages si la colonne choisis est pleine....     

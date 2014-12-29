@@ -1,7 +1,9 @@
 /**
  * \file affichageJeu.h
+ * \author Hajir Mohammed Amine
+ * \date 19 Décembre 2014
  * \brief ce fichier contient les en-tete des fonctions définies dans le fichier source affichageJeu.c
- * \details ce fichier contient aussi la déclaration, des variables globales et des structures de données utilisées (matrcie,typedef)
+ * \details ce fichier contient aussi la déclaration, des variables globales et des structures de données utilisées (matrcie,typedef,tableau...)
  * */
 
 /**
@@ -11,7 +13,7 @@
 #define N 6
 
 /**
- * \def M nombre de colonens de la grille qui représente le jeu puissance 4++.
+ * \def M nombre de colonnes de la grille qui représente le jeu puissance 4++.
  * \brief représente le nombre de colonnes de la grille qui représente le jeu puissance 4++.
  */
 #define M 7
@@ -24,13 +26,15 @@
 
 /**
  * \def CREUSE 
- * \brief une pièce creuse du jeu est représentée par le caractère ASCII dont le code décimal est 169.
+ * \brief une pièce creuse du jeu est représentée par le caractère 'C'.
+ * \details on avait utiliser le caractère ASCII dont le code décimal est 169 mais ça ne marche pas lors des tests.
  */
 #define CREUSE   'C'
 
 /**
  * \def PLEINE 
- * \brief une pièce pleine du jeu est représentée par le caractère ASCII dont le code décimal est 216.
+ * \brief une pièce pleine du jeu est représentée par le caractère 'P'. 
+ * \details on avait utiliser le caractère ASCII dont le code décimal est 216 mais ça ne marche pas lors des tests.
  */
 #define PLEINE   'P'
 

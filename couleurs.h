@@ -1,3 +1,11 @@
+
+/**
+ * \file 
+ * \author Hajir Mohammed Amine
+ * \date 25 Décembre 2014
+ * \brief header d'affichage des couleurs et nettoyage d'ecran.
+**/
+
 #ifndef COULEURS
 #define COULEURS
 

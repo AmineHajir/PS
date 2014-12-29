@@ -1,7 +1,9 @@
 
 /**
  * \file 
- * \brief ce fichier contient les en-tete des fonctions définies dans le fichier source affichageJeu.c
+ * \author Hajir Mohammed Amine
+ * \date 21 Décembre 2014
+ * \brief ce fichier contient les en-tete des fonctions définies dans le fichier source contenuCase.c
 **/
 
 /**
