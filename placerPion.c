@@ -32,13 +32,17 @@ void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 	{
 		if( casePleine(T,indice,colonne-1) )
 		{
+			couleur(ROUGE);// on affiche les messages en rouge pour le joueur
 			// le joueur ne peut pas jouer une pleine si la prmière case contient une pleine
 			printf("\n ATTENTION : Vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",colonne);
+			couleur(DEFAULT);// pour remettre la couleur par default du systeme
 		}
 		else
 		{	
+			couleur(ROUGE);// on affiche les messages en rouge pour le joueur
 			//le joueur ne peut plus jouer dans la colonne si la première case contient une bloquante
 			printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+			couleur(DEFAULT);
 		}
 	}
 	// dans tous les autres cas
@@ -86,11 +90,16 @@ void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
 	{
 		if( caseCreuse(T,indice,colonne-1) )
 		{
+			couleur(ROUGE);
 			printf("\n ATTENTION : Vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",colonne);
+			couleur(DEFAULT);
+			
 		}
 		else
 		{
+			couleur(ROUGE);
 			printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+			couleur(DEFAULT);
 		}
 	}
 	else
@@ -133,17 +142,23 @@ void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
 	{
 		if( casePleine(T,indice,colonne-1) ) // soit cette dernière case contient une pleine dans quel cas on ne peut jouer qu'une creuse
 		{
+			couleur(ROUGE);
 			printf("\n ATTENTION : Vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",colonne);
+			couleur(DEFAULT);
 		}
 		else
 		{
 			if( caseCreuse(T,indice,colonne-1) ) // soit cette dernière case contient une creuse dans quel cas on ne peut jouer
 			{				     // qu'une pleine	
+				couleur(ROUGE);
 				printf("\n ATTENTION : Vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",colonne);
+				couleur(DEFAULT);
 			}
 			else
 			{	// cas ou cette case une blocante ou deux pièce(creuse et pleine)
+				couleur(ROUGE);
 				printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+				couleur(DEFAULT);
 			}
 		}
 	}
