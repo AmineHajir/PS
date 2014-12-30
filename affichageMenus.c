@@ -3,6 +3,7 @@
 #include "affichageJeu.h"
 #include "affichageMenus.h"
 #include "couleurs.h"
+#include <string.h>
 
 /**
  * \file affichageMenus.c
@@ -31,15 +32,41 @@ void viderBuffer()
  * \brief cette fonction retourne le pion (caractère) choisis par le joueur.
  * \return le type de pion choisis par le joueur ('b' ou 'c' ou 'p')
 */
-char menuChoixPion()
+char menuChoixPion(char nom[30])
 {
 	char piece; // variable qui reçoit le choix du pion à jouer ('b' ou 'c' ou 'p')
+	int i;
+	int lg=strlen(nom);
 	
 	do
 	{	
 		afficher_jeu(grille);
 		couleur(GRAS);
-		printf("\n\n                        ---------------------- Choix du pion ----------------------\n");
+		printf("\n\n                        ");
+		for(i=1;i<=(42-lg)/2;i++)
+		{
+			printf("-");
+		}
+		printf(" %s a vous de jouer ",nom);
+		if(lg%2!=0)
+		{
+			for(i=1;i<=(42-lg)/2;i++)
+			{
+				printf("-");
+			}
+		}
+		else
+		{
+			if(lg%2==0)
+			{
+				for(i=1;i<=(41-lg)/2;i++)
+				{
+					printf("-");
+				}
+			}
+		}
+		printf("\n");
+		//printf("\n\n                        --------------------- a vous de jouer ---------------------\n",nom);
 		printf(" Tapez b pour jouer la piece bloquante \n");
 		printf(" Tapez c pour jouer la piece creuse \n");
 		printf(" Tapez p pour jouer la piece pleine \n");
@@ -70,7 +97,7 @@ char menuChoixPion()
  * \brief cette fonction retourne le numéro de la colonne (entier compris entre 1 et M) choisis par le joueur.
  * \return le numéro de la colonne choisis 
 */	
-int menuChoixColonne()	
+int menuChoixColonne(char nom[30])	
 {
 	
 	int colonne; // variable qui reçoit le choix de la colonne (entier compris entre 1 et 7)
@@ -79,7 +106,7 @@ int menuChoixColonne()
 	{	
 		afficher_jeu(grille);
 		couleur(GRAS);
-		printf("\n\n                        ------------------- Choix de la colonne -------------------\n");
+		printf("\n\n                        ------------------- %s a vous de jouer -------------------\n",nom);
 		printf(" Tapez un chiffre entre 1 et 7 \n");
 		printf(" votre choix : ");
 		couleur(DEFAULT);
