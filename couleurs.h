@@ -20,6 +20,16 @@
 #define CYAN    "36" 
 #define BLANC   "37" 
 
+//definition des couleurs en gras
+#define NOIRGRAS    "30;1" 
+#define ROUGEGRAS   "31;1" 
+#define VERTGRAS    "32;1" 
+#define JAUNEGRAS   "33;1" 
+#define BLEUGRAS    "34;1" 
+#define VIOLETGRAS  "35;1" 
+#define CYANGRAS    "36;1" 
+#define BLANCGRAS   "37;1" 
+
 //definition de l'arrière plan (facultatif)
 #define BLACK   "40" 
 #define RED     "41" 
@@ -32,9 +42,9 @@
 
 // autre deifnitions
 #define FLASH  "5" // permet de faire clignoter le texte.
-#define GRAS   "1" // active la haute intensité des caractères.
-#define INVERT "7" // inverse la sélection de couleurs.
-#define STRESS "4" // souligne le texte.
+#define GRAS    1 // active la haute intensité des caractères.
+#define INVERT "7" // inverse la sélection de couleurs.(facultatif)
+#define STRESS  4 // souligne le texte.(facultatif)
 
 // efface l'ecran (clrscr = clearScrean)
 #define clrscr() printf("\033[H\033[2J") 

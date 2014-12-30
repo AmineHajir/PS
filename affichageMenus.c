@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "affichageJeu.h"
 #include "affichageMenus.h"
+#include "couleurs.h"
 
 /**
  * \file affichageMenus.c
@@ -49,7 +50,9 @@ char menuChoixPion()
 		
 		if( piece!='b' && piece!='c' && piece!='p' ) 
 		{
+			couleur("ROUGE"); // les message d'erreurs sont affichés en rouge pour le joueur (ALERTE!!!)
 			printf("\n MESSAGE D'ERREUR: saisie incorrecte!! \n");
+			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
 	}while( piece!='b' && piece!='c' && piece!='p'); // controle de la saisie du joueur
@@ -80,7 +83,9 @@ int menuChoixColonne()
 		
 		if( colonne<1 || colonne>7 ) 
 		{
+			couleur("ROUGE"); // les message d'erreurs sont affichés en rouge pour le joueur (ALERTE!!!)
 			printf("\n MESSAGE D'ERREUR: saisie incorrecte!! \n");
+			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
 	}while( colonne<1 || colonne>7 ); // controle de la saisie du joueur
