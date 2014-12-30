@@ -19,6 +19,7 @@
 */
 void afficher_titre_jeu()
 {
+	couleur(GRAS);
 	printf("\n");
 	printf("                           68b                                                                       \n");
 	printf("                           Y89                                                                       \n");
@@ -34,6 +35,7 @@ void afficher_titre_jeu()
 	printf("        MM                                                                                        MM       MM        MM\n");
 	printf("       _MM_                                                                                       MM \n");
 	printf("\n");
+	couleur(DEFAULT);
 }
 
 /**
@@ -80,6 +82,7 @@ void afficher_numColonne_jeu(int nbre_colonne)
 {
 	int i;
 	
+	couleur(GRAS);
 	for(i=0;i<nbre_colonne;i++)
 	{
 		if(i==0)
@@ -91,6 +94,7 @@ void afficher_numColonne_jeu(int nbre_colonne)
 			printf("       %i",i+1); // on affiche le numéro des autres colonnes
 		}
 	}
+	couleur(DEFAULT);
 }
 
 /**
@@ -103,12 +107,14 @@ void afficher_bordure_grille(int nbre_colonne)
 {
 	int i;
 	
+	couleur(GRAS); // des bordures en gras
 	printf("			||");
 	for(i=0;i<nbre_colonne;i++)
 	{
 		printf("=======|");
 	}
 	printf("|\n");
+	couleur(DEFAULT);
 }
 	
 
@@ -121,9 +127,11 @@ void afficher_jeu(pion T[N][M])
 {
 	int i,j,k;
 	
+	couleur(GRAS); // titre du jeu en gras (c plus joli!!)
 	printf("			 	       _      _  _  _  _  _  _       \n");
 	printf("				      |_|| |||_ |_ |_|| ||  |_  |_|   \n");
-	printf("				      |  |_|| _| _|| || ||_ |_    | ++\n\n");  
+	printf("				      |  |_|| _| _|| || ||_ |_    | ++\n\n");
+	couleur(DEFAULT);
 				          
 						
 	
@@ -136,40 +144,53 @@ void afficher_jeu(pion T[N][M])
 	
 	for(i=0;i<N;i++)
 	{
+		couleur(GRAS);
 		printf("			||"); // affiche la bordure gauche de chaque ligne.
+		couleur(DEFAULT);
 		for(j=0;j<M;j++)
 		{
 			if( caseVide(T,i,j) )
 			{
+				couleur(GRAS);
 				printf("       |");
+				couleur(DEFAULT);
 			}
 			if( caseBlocante(T,i,j) )
 			{
 				couleur(ROUGE);
 				printf("   %c   ",BLOCANTE);
-				couleur("0");
-				printf("|");
+				couleur(DEFAULT);
+				couleur(GRAS);
+				printf("|"); // séparateur de cases
+				couleur(DEFAULT);
 			}
 			if( caseCreuse(T,i,j) )
 			{
 				couleur(ROUGE);
 				printf("   %c   ",CREUSE);
-				couleur("0");
+				couleur(DEFAULT);
+				couleur(GRAS);
 				printf("|");
+				couleur(DEFAULT);
 			}
 			if( casePleine(T,i,j) )
 			{
 				couleur(ROUGE);
 				printf("   %c   ",PLEINE);
-				couleur("0");
+				couleur(DEFAULT);
+				couleur(GRAS);
 				printf("|");
+				couleur(DEFAULT);
 			}
 			if( casePleineCreuse(T,i,j) )
 			{
 				couleur(ROUGE);
 				printf("  %c %c  ",CREUSE,PLEINE);
-				couleur("0");
+				//printf("   %c   ",PLEINE);
+				couleur(DEFAULT);
+				couleur(GRAS);
 				printf("|");
+				couleur(DEFAULT);
 			}
 				
 			/*switch(T[i][j].bloc)
@@ -213,16 +234,23 @@ void afficher_jeu(pion T[N][M])
 				}break;
 			}*/
 		}
-		printf("|"); // affiche la bordure droite de chaque ligne
+		couleur(GRAS);
+		printf("|"); // affiche la bordure droite de chaque ligne 
+		couleur(DEFAULT);
+		
 		if(i<N-1) // tant qu'on a pas afficher le contenu de la dernière ligne, on affiche des séparateur de lignes.
 		{	
+			couleur(GRAS);
 			printf("\n			||"); // bordure gauche.
 			for(k=0;k<M;k++)
 			{
 				printf("-------|"); // séparateur de ligne.
 			}
 			printf("|\n"); // bordure driote.
-		}	}
+			couleur(DEFAULT);
+		}	
+		
+	}
 	
 	printf("\n");
 	afficher_bordure_grille(M); // on affiche la bordure inférieure après avoir afficher la dernière ligne.

@@ -38,25 +38,29 @@ char menuChoixPion()
 	do
 	{	
 		afficher_jeu(grille);
+		couleur(GRAS);
 		printf("\n\n                        ---------------------- Choix du pion ----------------------\n");
 		printf(" Tapez b pour jouer la piece bloquante \n");
 		printf(" Tapez c pour jouer la piece creuse \n");
 		printf(" Tapez p pour jouer la piece pleine \n");
 		printf(" votre choix : ");
+		couleur(DEFAULT);
 		//scanf(" %c",&piece);
 		piece=fgetc(stdin); // fgetc au lieu de scanf pour sécuriser la saisie et éviter un dépassement du tampon (buffer overflow)
 		viderBuffer(); // vider le buffer (fichier standart stdin) si plusieurs caractères on été saisis
-		system("clear");
+		//system("clear");
+		clrscr(); // pour effacer le menu
 		
 		if( piece!='b' && piece!='c' && piece!='p' ) 
 		{
-			couleur("ROUGE"); // les message d'erreurs sont affichés en rouge pour le joueur (ALERTE!!!)
+			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge en gras (ALERTE!!!)
 			printf("\n MESSAGE D'ERREUR: saisie incorrecte!! \n");
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
 	}while( piece!='b' && piece!='c' && piece!='p'); // controle de la saisie du joueur
-	system("clear"); // effacer l'ecran
+	//system("clear"); 
+	clrscr(); // effacer l'ecran
 	return piece;
 }
 
@@ -74,21 +78,26 @@ int menuChoixColonne()
 	do
 	{	
 		afficher_jeu(grille);
+		couleur(GRAS);
 		printf("\n\n                        ------------------- Choix de la colonne -------------------\n");
 		printf(" Tapez un chiffre entre 1 et 7 \n");
 		printf(" votre choix : ");
+		couleur(DEFAULT);
 		scanf("%i",&colonne);
 		viderBuffer(); // nécessaire pour éviter un bug si le joueur saisis un caractère au lieu d'un entier
-		system("clear"); // pour ne pas encombrer l'écran
+		//system("clear"); 
+		clrscr(); // pour ne pas encombrer l'écran
 		
 		if( colonne<1 || colonne>7 ) 
 		{
-			couleur("ROUGE"); // les message d'erreurs sont affichés en rouge pour le joueur (ALERTE!!!)
+			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge et en gras (ALERTE!!!)
 			printf("\n MESSAGE D'ERREUR: saisie incorrecte!! \n");
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
 	}while( colonne<1 || colonne>7 ); // controle de la saisie du joueur
-	system("clear");
+	//system("clear");
+	clrscr(); // clearScreen
+	
 	return colonne;
 }

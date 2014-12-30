@@ -20,23 +20,24 @@
 
 /**
  * \def BLOCANTE 
- * \brief une pièce blocante du jeu est représentée par le caractère 'X'.
+ * \brief une pièce blocante du jeu est représentée par le caractère 'B'.
+ * \details on peut aussi représenter ce pion par une croix X. 
  */
-#define BLOCANTE 'X'
+#define BLOCANTE 'B'
 
 /**
  * \def CREUSE 
  * \brief une pièce creuse du jeu est représentée par le caractère 'C'.
- * \details on avait utiliser le caractère ASCII dont le code décimal est 169 mais ça ne marche pas lors des tests.
+ * \details on peut aussi représenter ce pion par le caractère dont le code ASCII est 169. (logo droit d'auteur)
  */
-#define CREUSE   169
+#define CREUSE   'C'
 
 /**
  * \def PLEINE 
  * \brief une pièce pleine du jeu est représentée par le caractère 'P'. 
- * \details on avait utiliser le caractère ASCII dont le code décimal est 216 mais ça ne marche pas lors des tests.
+ * \details on peut aussi représenter ce pion par le caractère dont le code ASCII est 216(ou248). (logo ensemble vide)
  */
-#define PLEINE   216
+#define PLEINE   'P'
 
 /**
  * \def VIDE 
