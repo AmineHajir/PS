@@ -41,10 +41,10 @@
 #define WHITE   "47" 
 
 // autre deifnitions
-#define FLASH  "5" // permet de faire clignoter le texte.
-#define GRAS    1 // active la haute intensité des caractères.
+#define BLINK  "5" // faire clignoter le texte.
+#define GRAS   "1" // active la haute intensité des caractères.
 #define INVERT "7" // inverse la sélection de couleurs.(facultatif)
-#define STRESS  4 // souligne le texte.(facultatif)
+#define STRESS "4" // souligne le texte.(facultatif)
 
 // efface l'ecran (clrscr = clearScrean)
 #define clrscr() printf("\033[H\033[2J") 
