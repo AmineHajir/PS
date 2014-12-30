@@ -5,7 +5,6 @@
 #include "placerPion.h"
 #include "couleurs.h"
 
-
 /**
  * \file placerPion.c
  * \brief ce fichier source contient les définitions des fonctions qui permettent de placer un pion dans la bonne case de la grille du jeu.
@@ -18,13 +17,15 @@
 
 /**
  * \fn void placerPleine(pion T[N][M], int V[M], int colonne)
- * \brief procédure qui positionne la pièce pleine au bon emplacement (case) de la grille.
+ * \brief procédure qui positionne la pièce pleine au bon emplacement (case) de la grille.(ou pas!! si colonne pleine).
  * \param T la grille du jeu puissance4++.
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
- * \param joueur le numéro du player qui a choisis de joueur la piece pleine.
+ * \param player le numéro du joueur(1 ou 2 si 2joueurs dans la partie) qui a choisis de jouer la piece pleine.
+ * \param nom tableau de 11 caractère ou est stocké le nom du joueur.
+ * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
-booleen placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
+booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[11])
 {
 	int indice=V[colonne-1]; // on récupère la valeur de la première case vide et on la stocke dans la variable indice. 
 	int i=indice+1; // variable qui parcourt les case inférieure à la case vide
@@ -37,7 +38,7 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 		{
 			couleur(ROUGEGRAS);// on affiche les messages en rouge et en gras pour alerter le joueur
 			// le joueur ne peut pas jouer une pleine si la prmière case contient une pleine
-			printf("\n ATTENTION : Vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",colonne);
+			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",nom,colonne);
 			couleur(DEFAULT);// pour remettre la couleur par default du systeme
 			
 		}
@@ -45,7 +46,7 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 		{	
 			couleur(ROUGEGRAS);// on affiche les messages en rouge et en gras pour alerter le joueur
 			//le joueur ne peut plus jouer dans la colonne si la première case contient une bloquante
-			printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+			printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre \n\n",nom,colonne);
 			couleur(DEFAULT);
 			
 		}
@@ -69,7 +70,9 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 				caseTrouve = VRAI; // si une case contient une pleine ou une bloquante on sort de la boucle
 			}
 		}
-		T[indice][colonne-1].plein = joueur; // on place la pièce pleine dans la bonne case
+		/* on place la pièce pleine dans la bonne case (en fait c'est le numéro du joueur qui est stocké en mémoire
+		   et non pas le type de pièce)*/
+		T[indice][colonne-1].plein = player; 
 								
 		if( (V[colonne-1] > 0) && (caseVide(T,V[colonne-1],colonne-1) == FAUX) ) 
 		{
@@ -83,14 +86,16 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 
 /**
  * \fn void placerCreuse(pion T[N][M], int V[M], int colonne)
- * \brief procédure qui positionne la pièce creuse au bon emplacement (case) de la grille.
+ * \brief procédure qui positionne la pièce creuse au bon emplacement (case) de la grille.(ou pas!! si colonne pleine).
  * \param T la grille du jeu puissance4++.
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
- * \param joueur le numéro du player qui a choisis de joueur la piece creuse.
+ * \param player le numéro du joueur qui a choisis de jouer la piece creuse.
+ * \param nom tableau de 11 caractère ou est stocké le nom du joueur.
+ * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
 // meme principe que pour la pièce pleine
-void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
+booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[11])
 {
 	int indice=V[colonne-1];
 	int i=indice+1;
@@ -101,16 +106,17 @@ void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
 		if( caseCreuse(T,indice,colonne-1) )
 		{
 			couleur(ROUGEGRAS);
-			printf("\n ATTENTION : Vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",colonne);
+			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",nom,colonne);
 			couleur(DEFAULT);
 			
 		}
 		else
 		{
 			couleur(ROUGEGRAS);
-			printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+			printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre \n\n",nom,colonne);
 			couleur(DEFAULT);
 		}
+		return FAUX;
 	}
 	else
 	{
@@ -127,24 +133,27 @@ void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
 				caseTrouve = VRAI;
 			}
 		}
-		T[indice][colonne-1].creux = joueur;
+		T[indice][colonne-1].creux = player; // voir première fonction
 								
 		if( (V[colonne-1] > 0) && (caseVide(T,V[colonne-1],colonne-1) == FAUX) )
 		{
 			V[colonne-1]--;
 		}
+		return VRAI;
 	}
 }
 
 /**
  * \fn void placerBlocante(pion T[N][M], int V[M], int colonne)
- * \brief procédure qui positionne la pièce bloquante au bon emplacement (case) de la grille.
+ * \brief procédure qui positionne la pièce bloquante au bon emplacement (case) de la grille.(ou pas!! si colonne pleine).
  * \param T la grille du jeu puissance4++.
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
- * \param joueur le numéro du player qui a choisis de joueur la piece bloquante.
+ * \param player le numéro du joueur qui a choisis de jouer la piece bloquante.
+ * \param nom tableau de 11 caractère ou est stocké le nom du joueur.
+ * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
-void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
+booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom[11])
 {
 	int indice=V[colonne-1];
 	
@@ -154,7 +163,7 @@ void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
 		if( casePleine(T,indice,colonne-1) ) // soit cette dernière case contient une pleine dans quel cas on ne peut jouer qu'une creuse
 		{
 			couleur(ROUGEGRAS);
-			printf("\n ATTENTION : Vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",colonne);
+			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",nom,colonne);
 			couleur(DEFAULT);
 		}
 		else
@@ -162,25 +171,27 @@ void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
 			if( caseCreuse(T,indice,colonne-1) ) // soit cette dernière case contient une creuse dans quel cas on ne peut jouer
 			{				     // qu'une pleine	
 				couleur(ROUGEGRAS);
-				printf("\n ATTENTION : Vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",colonne);
+				printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",nom,colonne);
 				couleur(DEFAULT);
 			}
 			else
 			{	// cas ou cette case une blocante ou deux pièce(creuse et pleine)
 				couleur(ROUGEGRAS);
-				printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
+				printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre \n\n",nom,colonne);
 				couleur(DEFAULT);
 			}
 		}
+		return FAUX;
 	}
 	else
 	{
-		T[indice][colonne-1].bloc = joueur;
+		T[indice][colonne-1].bloc = player;
 	
 		if(indice > 0) // pour éviter que la hauteur d'une colonne soit négative
 		{
 			V[colonne-1]--;
 		}
+		return VRAI;
 	}
 }
 	

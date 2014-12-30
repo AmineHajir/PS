@@ -41,7 +41,7 @@ void afficher_titre_jeu()
 /**
  * \fn void initialiser_jeu(pion T[N][M])
  * \brief procédure qui initialise les cases de la grille à vide (des espaces).
- * \param T[N][M] matrcie de taille N(lignes)*M(colonnes) qui représente la grille du jeu.
+ * \param T matrcie de taille N(lignes)*M(colonnes) qui représente la grille du jeu.
 */
 void initialiser_jeu(pion T[N][M])
 {
@@ -61,7 +61,7 @@ void initialiser_jeu(pion T[N][M])
 /**
  * \fn initialiser_hauteurColonne(int V[M])
  * \brief procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille.
- * \param int V[M] tableau dont la taille est égale au nombre de colonnes de la grille.
+ * \param V tableau dont la taille est égale au nombre de colonnes de la grille.
 */
 void initialiser_hauteurColonne(int V[M])
 {
@@ -121,7 +121,7 @@ void afficher_bordure_grille(int nbre_colonne)
 /**
  * \fn void afficher_jeu(pion T[N][M])
  * \brief procédure qui affiche la grille du jeu. 
- * \param T[N][M] matrice de type pion de taille N*M à afficher.
+ * \param T matrice de type pion de taille N*M à afficher.
 */
 void afficher_jeu(pion T[N][M])
 {

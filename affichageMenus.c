@@ -1,9 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "affichageJeu.h"
 #include "affichageMenus.h"
 #include "couleurs.h"
-#include <string.h>
+
 
 /**
  * \file affichageMenus.c
@@ -30,24 +31,25 @@ void viderBuffer()
  * \fn char menuJouerPion()
  * \brief fonction qui affiche le menu pour un joueur afin de choisir le pion à jouer. 
  * \brief cette fonction retourne le pion (caractère) choisis par le joueur.
+ * \param nom le nom du joueur à afficher dans le message d'erreur en cas de mauvaise saisie
  * \return le type de pion choisis par le joueur ('b' ou 'c' ou 'p')
 */
-char menuChoixPion(char nom[30])
+char menuChoixPion(char nom[10])
 {
 	char piece; // variable qui reçoit le choix du pion à jouer ('b' ou 'c' ou 'p')
 	int i;
-	int lg=strlen(nom);
+	int lg=strlen(nom); // on récupère la longueur du nom du joueur dans la variable lg
 	
 	do
 	{	
 		afficher_jeu(grille);
 		couleur(GRAS);
 		printf("\n\n                        ");
-		for(i=1;i<=(42-lg)/2;i++)
+		for(i=1;i<=(42-lg)/2;i++) // pour que le titre du menu ne dépasse pas la largeur de la grille
 		{
 			printf("-");
 		}
-		printf(" %s a vous de jouer ",nom);
+		printf(" %s a vous de jouer ",nom); // on affiche le nom du joueur qui a le tour
 		if(lg%2!=0)
 		{
 			for(i=1;i<=(42-lg)/2;i++)
@@ -59,14 +61,13 @@ char menuChoixPion(char nom[30])
 		{
 			if(lg%2==0)
 			{
-				for(i=1;i<=(41-lg)/2;i++)
+				for(i=1;i<=(41-lg)/2;i++) // de meme, on boucle pour afficher des "-" sans dépasser la largeur de la grille
 				{
 					printf("-");
 				}
 			}
 		}
 		printf("\n");
-		//printf("\n\n                        --------------------- a vous de jouer ---------------------\n",nom);
 		printf(" Tapez b pour jouer la piece bloquante \n");
 		printf(" Tapez c pour jouer la piece creuse \n");
 		printf(" Tapez p pour jouer la piece pleine \n");
@@ -81,7 +82,7 @@ char menuChoixPion(char nom[30])
 		if( piece!='b' && piece!='c' && piece!='p' ) 
 		{
 			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge en gras (ALERTE!!!)
-			printf("\n MESSAGE D'ERREUR: saisie incorrecte!! \n");
+			printf("\n MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
@@ -97,7 +98,7 @@ char menuChoixPion(char nom[30])
  * \brief cette fonction retourne le numéro de la colonne (entier compris entre 1 et M) choisis par le joueur.
  * \return le numéro de la colonne choisis 
 */	
-int menuChoixColonne(char nom[30])	
+int menuChoixColonne(char nom[10])	
 {
 	
 	int colonne; // variable qui reçoit le choix de la colonne (entier compris entre 1 et 7)
@@ -109,7 +110,7 @@ int menuChoixColonne(char nom[30])
 		afficher_jeu(grille);
 		couleur(GRAS);
 		printf("\n\n                        ");
-		for(i=1;i<=(42-lg)/2;i++)
+		for(i=1;i<=(42-lg)/2;i++) // meme commentaire que pour le menu du choix du pion
 		{
 			printf("-");
 		}
@@ -133,7 +134,7 @@ int menuChoixColonne(char nom[30])
 		}
 		printf("\n");
 		//printf("\n\n                        ------------------- %s a vous de jouer -------------------\n",nom);
-		printf(" Tapez un chiffre entre 1 et 7 \n");
+		printf(" Tapez un chiffre entre 1 et 7 pour choisir la colonne \n");
 		printf(" votre choix : ");
 		couleur(DEFAULT);
 		scanf("%i",&colonne);
@@ -144,7 +145,7 @@ int menuChoixColonne(char nom[30])
 		if( colonne<1 || colonne>7 ) 
 		{
 			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge et en gras (ALERTE!!!)
-			printf("\n MESSAGE D'ERREUR: saisie incorrecte!! \n");
+			printf("\n MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		

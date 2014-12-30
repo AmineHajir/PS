@@ -18,7 +18,7 @@
 /**
  * \fn booleen caseVide(pion T[N][M], int ligne, int colonne)
  * \brief fonction qui indique si une case de la grille est vide "ne contient aucun pion" (ou pas!!).
- * \return 1 si la case est vide 0 sinon
+ * \return VRAI si la case est vide FAUX sinon
 */
 booleen caseVide(pion T[N][M], int ligne, int colonne)
 {
@@ -36,7 +36,7 @@ booleen caseVide(pion T[N][M], int ligne, int colonne)
 /**
  * \fn booleen casePleine(pion T[N][M], int ligne, int colonne)
  * \brief fonction qui indique si une case de la grille comporte uniquement la piece pleine.
- * \return 1 si la case contient uniquement une pièce pleine 0 sinon
+ * \return VRAI si la case contient uniquement une pièce pleine FAUX sinon
 */
 booleen casePleine(pion T[N][M], int ligne, int colonne)
 {
@@ -54,7 +54,7 @@ booleen casePleine(pion T[N][M], int ligne, int colonne)
 /**
  * \fn booleen caseBlocante(pion T[N][M], int ligne, int colonne)
  * \brief fonction qui indique si une case de la grille comporte uniquement la piece bloquante.
- * \return 1 si la case contient uniquement une pièce bloquante 0 sinon
+ * \return VRAI si la case contient uniquement une pièce bloquante FAUX sinon
 */
 booleen caseBlocante(pion T[N][M], int ligne, int colonne)
 {
@@ -72,7 +72,7 @@ booleen caseBlocante(pion T[N][M], int ligne, int colonne)
 /**
  * \fn booleen caseCreuse(pion T[N][M], int ligne, int colonne)
  * \brief fonction qui indique si une case de la grille comporte uniquement la piece creuse.
- * \return 1 si la case contient uniquement une pièce creuse 0 sinon
+ * \return VRAI si la case contient uniquement une pièce creuse FAUX sinon
 */
 booleen caseCreuse(pion T[N][M], int ligne, int colonne)
 {
@@ -90,7 +90,7 @@ booleen caseCreuse(pion T[N][M], int ligne, int colonne)
 /**
  * \fn booleen casePleineCreuse(pion T[N][M], int ligne, int colonne)
  * \brief fonction qui indique si une case de la grille comporte exactement les deux pièces pleine et creuse. (non nécessaire) 
- * \return 1 si la case contient uniquement une pièce pleine 0 sinon
+ * \return VRAI si la case contient uniquement une pièce pleine FAUX sinon
 */
 booleen casePleineCreuse(pion T[N][M], int ligne, int colonne)
 {
