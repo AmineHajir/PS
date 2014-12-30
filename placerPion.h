@@ -6,6 +6,6 @@
  * \brief ce fichier contient les en-tete des fonctions définies dans le fichier source placerPion.c
 * */
 
-void placerPleine(pion T[N][M], int V[M], int colonne, int joueur);
+booleen placerPleine(pion T[N][M], int V[M], int colonne, int joueur);
 void placerCreuse(pion T[N][M], int V[M], int colonne, int joueur);
 void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur);

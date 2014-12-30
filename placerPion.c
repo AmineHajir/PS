@@ -5,6 +5,7 @@
 #include "placerPion.h"
 #include "couleurs.h"
 
+
 /**
  * \file placerPion.c
  * \brief ce fichier source contient les définitions des fonctions qui permettent de placer un pion dans la bonne case de la grille du jeu.
@@ -23,7 +24,7 @@
  * \param colonne numéro de la colonne saisis par le joueur.
  * \param joueur le numéro du player qui a choisis de joueur la piece pleine.
 */
-void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
+booleen placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 {
 	int indice=V[colonne-1]; // on récupère la valeur de la première case vide et on la stocke dans la variable indice. 
 	int i=indice+1; // variable qui parcourt les case inférieure à la case vide
@@ -38,6 +39,7 @@ void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 			// le joueur ne peut pas jouer une pleine si la prmière case contient une pleine
 			printf("\n ATTENTION : Vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",colonne);
 			couleur(DEFAULT);// pour remettre la couleur par default du systeme
+			
 		}
 		else
 		{	
@@ -45,7 +47,11 @@ void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 			//le joueur ne peut plus jouer dans la colonne si la première case contient une bloquante
 			printf("\n ATTENTION : la colonne %i est pleine, choisissez en une autre \n\n",colonne);
 			couleur(DEFAULT);
+			
 		}
+		return FAUX;
+		
+		
 	}
 	// dans tous les autres cas
 	else
@@ -69,9 +75,10 @@ void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 		{
 			V[colonne-1]--; // on ne decrémente pas la hauteur de la colonne si la première case libre est la première case de la colonne
 		}			// on ne decrémente pas la hauteur de la colonne si une creuse est passée dessus une pièce pleine	
-	}				// ou si une pièce pleine est passée au travers une pièce creuse
+					// ou si une pièce pleine est passée au travers une pièce creuse
 					// car la première case libre reste la meme
-	
+		return VRAI;
+	}
 }
 
 /**

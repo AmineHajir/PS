@@ -53,6 +53,7 @@ int main()
 	int joueur=1;
 	char joueur1[10];
 	char joueur2[10];
+	booleen jouer;
 	
 	printf("\n");
 	initialiser_jeu(grille);
@@ -64,31 +65,35 @@ int main()
 	lire(joueur2,10);
 	clrscr();
 	
-	
 	do
 	{	
 		if(joueur==1)
 		{
-			piece=menuChoixPion(joueur1);
-			colonne=menuChoixColonne(joueur1);
+			jouer=FAUX;
 			
-			switch(piece)
+			while(!jouer)
 			{
-				case 'b' : 
-				{
-					placerBlocante(grille, hauteurColonne, colonne, joueur);
-				}break;
+				piece=menuChoixPion(joueur1);
+				colonne=menuChoixColonne(joueur1);
 				
-				case 'c' :
+				switch(piece)
 				{
-					placerCreuse(grille, hauteurColonne, colonne, joueur);
-				}break;
-				
-				case 'p' : 
-				{
-					placerPleine(grille, hauteurColonne, colonne, joueur);
+					case 'b' : 
+					{
+						placerBlocante(grille, hauteurColonne, colonne, joueur);
+					}break;
 					
-				}break;
+					case 'c' :
+					{
+						placerCreuse(grille, hauteurColonne, colonne, joueur);
+					}break;
+					
+					case 'p' : 
+					{
+						jouer=placerPleine(grille, hauteurColonne, colonne, joueur);
+						
+					}break;
+				}
 			}
 			joueur++;
 		}
