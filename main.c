@@ -66,27 +66,61 @@ int main()
 	
 	
 	do
-	{	piece=menuChoixPion(joueur1);
-		colonne=menuChoixColonne(joueur1);
-		
-		switch(piece)
+	{	
+		if(joueur==1)
 		{
-			case 'b' : 
-			{
-				placerBlocante(grille, hauteurColonne, colonne, joueur);
-			}break;
+			piece=menuChoixPion(joueur1);
+			colonne=menuChoixColonne(joueur1);
 			
-			case 'c' :
+			switch(piece)
 			{
-				placerCreuse(grille, hauteurColonne, colonne, joueur);
-			}break;
-			
-			case 'p' : 
-			{
-				placerPleine(grille, hauteurColonne, colonne, joueur);
+				case 'b' : 
+				{
+					placerBlocante(grille, hauteurColonne, colonne, joueur);
+				}break;
 				
-			}break;
+				case 'c' :
+				{
+					placerCreuse(grille, hauteurColonne, colonne, joueur);
+				}break;
+				
+				case 'p' : 
+				{
+					placerPleine(grille, hauteurColonne, colonne, joueur);
+					
+				}break;
+			}
+			joueur++;
 		}
+		else
+		{
+			if(joueur==2)
+			{
+				piece=menuChoixPion(joueur2);
+				colonne=menuChoixColonne(joueur2);
+				
+				switch(piece)
+				{
+					case 'b' : 
+					{
+						placerBlocante(grille, hauteurColonne, colonne, joueur);
+					}break;
+					
+					case 'c' :
+					{
+						placerCreuse(grille, hauteurColonne, colonne, joueur);
+					}break;
+					
+					case 'p' : 
+					{
+						placerPleine(grille, hauteurColonne, colonne, joueur);
+						
+					}break;
+				}
+			}
+			joueur--;
+		}
+		
 	}while(grillePleine(grille,hauteurColonne) == FAUX);
 			
 	
