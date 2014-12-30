@@ -84,7 +84,7 @@ int menuChoixColonne()
 		printf(" votre choix : ");
 		couleur(DEFAULT);
 		scanf("%i",&colonne);
-		viderBuffer(); // nécessaire pour éviter un bug si le joueur saisis un caractère au lieu d'un entier
+		viderBuffer(); // nécessaire pour éviter un bug (boucle infini d'affichage!!!) si le joueur saisis un caractère au lieu d'un entier
 		//system("clear"); 
 		clrscr(); // pour ne pas encombrer l'écran
 		

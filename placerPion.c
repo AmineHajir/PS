@@ -21,6 +21,7 @@
  * \param T la grille du jeu puissance4++.
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
+ * \param joueur le numéro du player qui a choisis de joueur la piece pleine.
 */
 void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
 {
@@ -79,6 +80,7 @@ void placerPleine(pion T[N][M], int V[M], int colonne, int joueur)
  * \param T la grille du jeu puissance4++.
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
+ * \param joueur le numéro du player qui a choisis de joueur la piece creuse.
 */
 // meme principe que pour la pièce pleine
 void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
@@ -133,6 +135,7 @@ void placerCreuse(pion T[N][M], int V[M], int colonne,int joueur)
  * \param T la grille du jeu puissance4++.
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
+ * \param joueur le numéro du player qui a choisis de joueur la piece bloquante.
 */
 void placerBlocante(pion T[N][M], int V[M], int colonne, int joueur)
 {

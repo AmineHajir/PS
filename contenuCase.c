@@ -7,7 +7,7 @@
  * \file contenuCase.c
  * \author Hajir Mohammed Amine
  * \date 21 Décembre 2014
- * \brief ce fichier source contient les définitions des fonctions booloéenne qui permettent de savoir le contenu d'une case de la grille du jeu.
+ * \brief ce fichier source contient les définitions des fonctions booloéenne qui permettent d'identifier le contenu d'une case de la grille du jeu.
  * \details Il existe cinq cas possible pour le contenu d'une case :
  * 	    1er cas : case vide | 2eme cas : case contient une pièce pleine | 3eme cas : case contient une pièce creuse
  *          4eme cas : case contient une pièce blocante | 5eme cas : case contient deux pièce (une creuse et une pleine)

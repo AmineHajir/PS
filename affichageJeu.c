@@ -9,7 +9,7 @@
  * \author Hajir Mohammed Amine
  * \date 19 Décembre 2014
  * \brief ce fichier source contient les définitions des fonctions d'affichage du titre et de la grille du jeu.
- * \details ce fichier contient aussi la définition fonction d'initialisations de la grille du jeu.
+ * \details ce fichier contient aussi la définition de la fonction d'initialisation de la grille du jeu.
  *          il contient également la définition de la fonction d'initialisation du tableau qui stocke la hauteur de chaque colonne.
  * */
 
@@ -91,7 +91,7 @@ void afficher_numColonne_jeu(int nbre_colonne)
 		}						       // on traite ce cas à part pour bien centrer l'affichage au dessus de la colonne
 		else
 		{
-			printf("       %i",i+1); // on affiche le numéro des autres colonnes
+			printf("       %i",i+1); // on affiche le numéro des autres colonnes (de 2 à M)S
 		}
 	}
 	couleur(DEFAULT);
@@ -125,7 +125,7 @@ void afficher_bordure_grille(int nbre_colonne)
 */
 void afficher_jeu(pion T[N][M])
 {
-	int i,j,k;
+	int i,j,k; // variables pour parcourir les cases de la matrice (grille du jeu)
 	
 	couleur(GRAS); // titre du jeu en gras (c plus joli!!)
 	printf("			 	       _      _  _  _  _  _  _       \n");
@@ -133,9 +133,6 @@ void afficher_jeu(pion T[N][M])
 	printf("				      |  |_|| _| _|| || ||_ |_    | ++\n\n");
 	couleur(DEFAULT);
 				          
-						
-	
-	
 	afficher_numColonne_jeu(M); // on commence par afficher les numéro des colonnes.
 	
 	printf("\n");
@@ -149,7 +146,7 @@ void afficher_jeu(pion T[N][M])
 		couleur(DEFAULT);
 		for(j=0;j<M;j++)
 		{
-			if( caseVide(T,i,j) )
+			if( caseVide(T,i,j) ) // si la case est vide on affiche des espaces.
 			{
 				couleur(GRAS);
 				printf("       |");
@@ -161,7 +158,7 @@ void afficher_jeu(pion T[N][M])
 				printf("   %c   ",BLOCANTE);
 				couleur(DEFAULT);
 				couleur(GRAS);
-				printf("|"); // séparateur de cases
+				printf("|"); // séparateur de cases de la grille
 				couleur(DEFAULT);
 			}
 			if( caseCreuse(T,i,j) )
@@ -186,7 +183,6 @@ void afficher_jeu(pion T[N][M])
 			{
 				couleur(ROUGE);
 				printf("  %c %c  ",CREUSE,PLEINE);
-				//printf("   %c   ",PLEINE);
 				couleur(DEFAULT);
 				couleur(GRAS);
 				printf("|");

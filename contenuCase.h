@@ -8,7 +8,7 @@
 
 /**
  * \enum booleen contenuCase.h
- * \brief le type booleen.
+ * \brief définition du type booléen type booleen.
  */
 typedef enum{FAUX,VRAI}booleen;
 

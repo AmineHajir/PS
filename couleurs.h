@@ -2,7 +2,7 @@
  * \file 
  * \author Hajir Mohammed Amine
  * \date 25 Décembre 2014
- * \brief header de définition des couleurs et de l'arrière plan du texte + fonction d'affichage de couleur + fonction nettoyage d'ecran.
+ * \brief header de définition des couleurs et de l'arrière plan du texte + fonction d'affichage de couleur + fonction nettoyage d'ecran ...
 **/
 
 #ifndef COULEURS
@@ -41,12 +41,12 @@
 #define WHITE   "47" 
 
 // autre deifnitions
-#define BLINK  "5" // faire clignoter le texte.
+#define BLINK  "5" // faire clignoter le texte.( ne fonctionne pas dans la console ubuntu!! faut-il modifier le bash!! )
 #define GRAS   "1" // active la haute intensité des caractères.
 #define INVERT "7" // inverse la sélection de couleurs.(facultatif)
 #define STRESS "4" // souligne le texte.(facultatif)
 
-// efface l'ecran (clrscr = clearScrean)
+// efface l'ecran (clrscr = clearScrean) ~ system("clear")
 #define clrscr() printf("\033[H\033[2J") 
 
 // selectionne les couleurs du texte et de l'arrière plan 
