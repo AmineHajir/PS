@@ -5,7 +5,6 @@
 #include "affichageMenus.h"
 #include "couleurs.h"
 
-
 /**
  * \file affichageMenus.c
  * \author Hajir Mohammed Amine
