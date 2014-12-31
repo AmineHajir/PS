@@ -76,6 +76,11 @@ int main()
 			while(!jouer) // tant que le joueur1 n'a pas placer son jeton
 			{
 				colonne=menuChoixColonne(nom1);
+				while(colonne==0)
+				{
+					piece=menuChoixPion(nom1);
+					colonne=menuChoixColonne(nom1);
+				}
 				
 				switch(piece)
 				{
@@ -108,6 +113,12 @@ int main()
 				while(!jouer) // meme commentaire que précédemment
 				{
 					colonne=menuChoixColonne(nom2);
+					while(colonne==0)
+					{
+						piece=menuChoixPion(nom2);
+						colonne=menuChoixColonne(nom2);
+					}
+						
 					
 					switch(piece)
 					{

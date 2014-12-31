@@ -40,6 +40,7 @@ char menuChoixPion(char nom[10])
 	int i;
 	int lg=strlen(nom); // on récupère la longueur du nom du joueur dans la variable lg
 	
+	
 	do
 	{	
 		afficher_jeu(grille);
@@ -104,6 +105,7 @@ int menuChoixColonne(char nom[10])
 	int colonne; // variable qui reçoit le choix de la colonne (entier compris entre 1 et 7)
 	int i;
 	int lg=strlen(nom);
+	int s; // pour récupérer la valeur retourner par scanf (ça va servir à controler la saisie)
 	
 	do
 	{	
@@ -135,21 +137,28 @@ int menuChoixColonne(char nom[10])
 		printf("\n");
 		//printf("\n\n                        ------------------- %s a vous de jouer -------------------\n",nom);
 		printf(" Tapez un chiffre entre 1 et 7 pour choisir la colonne \n");
+		printf(" Tapez 0 pour changer de pion \n");
 		printf(" votre choix : ");
 		couleur(DEFAULT);
-		scanf("%i",&colonne);
+		s=scanf("%i",&colonne);
+       		if(s==0) // si le joueur saisis un caractère (ou plusieurs) au lieu d'un entier 
+		{
+			colonne = 8; // on donne la valeur 8 à la variable colonne afin d'afficher un message d'erreur
+		}
+		printf("%i",colonne);
+		//colonne=fgetc(stdin);
 		viderBuffer(); // nécessaire pour éviter un bug (boucle infini d'affichage!!!) si le joueur saisis un caractère au lieu d'un entier
 		//system("clear"); 
 		clrscr(); // pour ne pas encombrer l'écran
 		
-		if( colonne<1 || colonne>7 ) 
+		if( colonne<0 || colonne>7 ) 
 		{
 			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge et en gras (ALERTE!!!)
 			printf("\n MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
-	}while( colonne<1 || colonne>7 ); // controle de la saisie du joueur
+	}while( colonne<0 || colonne>7 ); // controle de la saisie du joueur
 	//system("clear");
 	clrscr(); // clearScreen
 	
