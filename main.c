@@ -45,7 +45,8 @@ int lire(char *chaine, int longueur)
 		return 0;
 	}
 }
-		
+
+
 int main()
 {
 	char piece;

@@ -149,86 +149,97 @@ void afficher_jeu(pion T[N][M])
 			if( caseVide(T,i,j) ) // si la case est vide on affiche des espaces.
 			{
 				couleur(GRAS);
-				printf("       |");
+				printf("       ");
 				couleur(DEFAULT);
 			}
 			if( caseBlocante(T,i,j) )
 			{
-				couleur(ROUGE);
-				printf("   %c   ",BLOCANTE);
-				couleur(DEFAULT);
-				couleur(GRAS);
-				printf("|"); // séparateur de cases de la grille
-				couleur(DEFAULT);
+				if( T[i][j].bloc == 1 )
+				{
+					couleur(ROUGE);
+					printf("   %c   ",BLOCANTE);
+					couleur(DEFAULT);
+					
+				}
+				if( T[i][j].bloc == 2 )
+				{
+					couleur(VERT);
+					printf("   %c   ",BLOCANTE);
+					couleur(DEFAULT);
+				}
+						
 			}
 			if( caseCreuse(T,i,j) )
 			{
-				couleur(ROUGE);
-				printf("   %c   ",CREUSE);
-				couleur(DEFAULT);
-				couleur(GRAS);
-				printf("|");
-				couleur(DEFAULT);
+				if( T[i][j].creux == 1 )
+				{
+					couleur(ROUGE);
+					printf("   %c   ",CREUSE);
+					couleur(DEFAULT);
+				}
+				
+				if( T[i][j].creux == 2 )
+				{
+					couleur(VERT);
+					printf("   %c   ",CREUSE);
+					couleur(DEFAULT);
+				}
 			}
 			if( casePleine(T,i,j) )
 			{
-				couleur(ROUGE);
-				printf("   %c   ",PLEINE);
-				couleur(DEFAULT);
-				couleur(GRAS);
-				printf("|");
-				couleur(DEFAULT);
+				if( T[i][j].plein == 1 )
+				{
+					couleur(ROUGE);
+					printf("   %c   ",PLEINE);
+					couleur(DEFAULT);
+				}
+				else
+				{
+					if( T[i][j].plein == 2 )
+					{
+						couleur(VERT);
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
+				}
+					
 			}
 			if( casePleineCreuse(T,i,j) )
 			{
-				couleur(ROUGE);
-				printf("  %c %c  ",CREUSE,PLEINE);
-				couleur(DEFAULT);
-				couleur(GRAS);
-				printf("|");
-				couleur(DEFAULT);
+				if( (T[i][j].creux == 1) && (T[i][j].plein == 1) )
+				{
+					couleur(ROUGE);
+					printf("  %c %c  ",CREUSE,PLEINE);
+					couleur(DEFAULT);
+				}
+				if( (T[i][j].creux == 2) && (T[i][j].plein == 2) )
+				{
+					couleur(VERT);
+					printf("  %c %c  ",CREUSE,PLEINE);
+					couleur(DEFAULT);
+				}
+				if( (T[i][j].creux == 1) && (T[i][j].plein == 2) )
+				{
+					couleur(ROUGE);
+					printf("  %c",CREUSE);
+					couleur(DEFAULT);
+					couleur(VERT);
+					printf(" %c  ",PLEINE);
+					couleur(DEFAULT);
+				}
+				if( (T[i][j].creux == 2) && (T[i][j].plein == 1) )
+				{
+					couleur(VERT);
+					printf("  %c",CREUSE);
+					couleur(DEFAULT);
+					couleur(ROUGE);
+					printf(" %c  ",PLEINE);
+					couleur(DEFAULT);
+				}
 			}
-				
-			/*switch(T[i][j].bloc)
-			{
-				case VIDE :
-				{
-					printf("  ");
-				}break;
-				case 1 :
-				{
-					couleur("31");
-					printf(" X");
-					couleur("0");
-				}break;
-			}
-			switch(T[i][j].creux)
-			{
-				case VIDE :
-				{
-					printf("  ");
-				}break;
-				case 1 :
-				{
-					couleur("31");
-					printf(" C");
-					couleur("0");
-				}break;
-			}
-			switch(T[i][j].plein)
-			{
-				case VIDE :
-				{
-					printf("   |");
-				}break;
-				case 1 :
-				{
-					couleur("31");
-					printf(" P");
-					couleur("0");
-					printf(" |");
-				}break;
-			}*/
+			couleur(GRAS);
+			printf("|"); // séparateur de cases de la grille
+			couleur(DEFAULT);
 		}
 		couleur(GRAS);
 		printf("|"); // affiche la bordure droite de chaque ligne 
