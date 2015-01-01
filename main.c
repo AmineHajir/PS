@@ -2,10 +2,12 @@
 #include <stdio.h>
 #include <string.h>
 #include "affichageJeu.h"
-#include "affichageMenus.h"
+#include "menuJeu.h"
 #include "contenuCase.h"
 #include "placerPion.h"
 #include "couleurs.h"
+#include "boiteOutil.h"
+#include "menuDebut.h"
 
 booleen grillePleine(pion T[N][M], int V[M])
 {
@@ -22,50 +24,31 @@ booleen grillePleine(pion T[N][M], int V[M])
 }
 
 
-int lire(char *chaine, int longueur)
-{
-	char *positionEntree = NULL;
-	
-	if (fgets(chaine, longueur, stdin) != NULL)
-	{
-		positionEntree = strchr(chaine, '\n');
-		if (positionEntree != NULL)
-		{
-			*positionEntree = '\0';
-		}
-		else
-		{
-			viderBuffer();
-		}
-		return 1;
-	}
-	else
-	{
-		viderBuffer();
-		return 0;
-	}
-}
-
-
 int main()
 {
+	int i;
 	char piece;
 	int colonne;
 	int player=1;  // variable qui permet d'alterner le tour des joueurs
 	// le nom du 1er joueur (ne peut dépasser 10 caractères, mais on déclare 11 car fgets reserve la dernière case
-	char nom1[11]; // le nom du 1er joueur (ne peut dépasser 10 caractères, mais on déclare 11 car fgets reserve la dernière case
-	char nom2[11]; // le nom ou pseudo du deuxième joueur 
+	//char nom1[12]; // le nom du 1er joueur (ne peut dépasser 10 caractères, mais on déclare 11 car fgets reserve la dernière case
+	//char nom2[12]; // le nom ou pseudo du deuxième joueur 
 	booleen jouer; // variable qui reçoit vrai si le joueur a bien placer son pion, faux sinon
 	
 	printf("\n");
 	initialiser_jeu(grille);
 	initialiser_hauteurColonne(hauteurColonne);
-	printf(" Binevenu sur Puissance 4++ \n");
-	printf(" joueur 1, quel est votre nom ");
+	
+	for(i=1;i<=2;i++)
+	{
+		menuDebut(i,joueurs);
+	}
+	
+	/*printf(" joueur 1, quel est votre nom ");
 	lire(nom1,11);
 	printf(" joueur 2, quel est votre nom ");
 	lire(nom2,11);
-	clrscr();
+	clrscr();*/
 	
 	do
 	{	
@@ -73,31 +56,31 @@ int main()
 		{
 			jouer=FAUX;
 			
-			piece=menuChoixPion(nom1);
+			piece=menuChoixPion(joueurs[0].nom);
 			while(!jouer) // tant que le joueur1 n'a pas placer son jeton
 			{
-				colonne=menuChoixColonne(nom1);
+				colonne=menuChoixColonne(joueurs[0].nom);
 				while(colonne==0)
 				{
-					piece=menuChoixPion(nom1);
-					colonne=menuChoixColonne(nom1);
+					piece=menuChoixPion(joueurs[0].nom);
+					colonne=menuChoixColonne(joueurs[0].nom);
 				}
 				
 				switch(piece)
 				{
 					case 'b' : 
 					{
-						jouer=placerBlocante(grille, hauteurColonne, colonne, player,nom1);
+						jouer=placerBlocante(grille, hauteurColonne, colonne, player,joueurs[0].nom);
 					}break;
 					
 					case 'c' :
 					{
-						jouer=placerCreuse(grille, hauteurColonne, colonne, player,nom1);
+						jouer=placerCreuse(grille, hauteurColonne, colonne, player,joueurs[0].nom);
 					}break;
 					
 					case 'p' : 
 					{
-						jouer=placerPleine(grille, hauteurColonne, colonne, player,nom1);
+						jouer=placerPleine(grille, hauteurColonne, colonne, player,joueurs[0].nom);
 						
 					}break;
 				}
@@ -110,14 +93,14 @@ int main()
 			{
 				jouer=FAUX;
 				
-				piece=menuChoixPion(nom2);
+				piece=menuChoixPion(joueurs[1].nom);
 				while(!jouer) // meme commentaire que précédemment
 				{
-					colonne=menuChoixColonne(nom2);
+					colonne=menuChoixColonne(joueurs[1].nom);
 					while(colonne==0)
 					{
-						piece=menuChoixPion(nom2);
-						colonne=menuChoixColonne(nom2);
+						piece=menuChoixPion(joueurs[1].nom);
+						colonne=menuChoixColonne(joueurs[1].nom);
 					}
 						
 					
@@ -125,17 +108,17 @@ int main()
 					{
 						case 'b' : 
 						{
-							jouer=placerBlocante(grille, hauteurColonne, colonne, player,nom2);
+							jouer=placerBlocante(grille, hauteurColonne, colonne, player,joueurs[1].nom);
 						}break;
 						
 						case 'c' :
 						{
-							jouer=placerCreuse(grille, hauteurColonne, colonne, player,nom2);
+							jouer=placerCreuse(grille, hauteurColonne, colonne, player,joueurs[1].nom);
 						}break;
 						
 						case 'p' : 
 						{
-							jouer=placerPleine(grille, hauteurColonne, colonne, player,nom2);
+							jouer=placerPleine(grille, hauteurColonne, colonne, player,joueurs[1].nom);
 							
 						}break;
 					}

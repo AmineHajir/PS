@@ -18,7 +18,7 @@
 #define BLEU    "34" 
 #define VIOLET  "35" 
 #define CYAN    "36" 
-#define BLANC   "37" 
+#define WHITE   "37" 
 
 //definition des couleurs en gras
 #define NOIRGRAS    "30;1" 
@@ -38,7 +38,7 @@
 #define BLUE    "44" 
 #define PURPLE  "45" 
 #define CYANE   "46" 
-#define WHITE   "47" 
+#define BLANC   "47" 
 
 // autre deifnitions
 #define BLINK  "5" // faire clignoter le texte.( ne fonctionne pas dans la console ubuntu!! faut-il modifier le bash!! )

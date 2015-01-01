@@ -22,7 +22,7 @@
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
  * \param player le numéro du joueur(1 ou 2 si 2joueurs dans la partie) qui a choisis de jouer la piece pleine.
- * \param nom tableau de 11 caractère ou est stocké le nom du joueur.
+ * \param nom tableau de 12 caractères ou est stocké le nom du joueur.
  * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
 booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[11])
@@ -91,11 +91,11 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[1
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
  * \param player le numéro du joueur qui a choisis de jouer la piece creuse.
- * \param nom tableau de 11 caractère ou est stocké le nom du joueur.
+ * \param nom tableau de 12 caractères ou est stocké le nom du joueur.
  * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
 // meme principe que pour la pièce pleine
-booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[11])
+booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[12])
 {
 	int indice=V[colonne-1];
 	int i=indice+1;
@@ -150,10 +150,10 @@ booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[11]
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
  * \param player le numéro du joueur qui a choisis de jouer la piece bloquante.
- * \param nom tableau de 11 caractère ou est stocké le nom du joueur.
+ * \param nom tableau de 12 caractères ou est stocké le nom du joueur.
  * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
-booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom[11])
+booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom[12])
 {
 	int indice=V[colonne-1];
 	
