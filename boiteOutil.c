@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "boiteOutil.h"
+#include "couleurs.h"
 
 /**
  * \file boiteOutil.c
@@ -53,6 +54,54 @@ int lire(char *chaine, int longueur)
 		}
 }
 
+/**
+ * \fn char* codage(char x)
+ * \brief fonction qui prend en paramètre le caractère qui représente une couleur et renvoi la chaine de caractère (séquence d'échappement)
+ * \brief de cette couleur. 
+ * \details quand le joueur choisis la couleur de ses pions, il saisit un seul caractère représentant cette couleur,
+ *	    (par exemple, il saisit n pour la couleur noir) ce caractère est stockés dans le tableau joueurs.
+ *	    cette fonction permet donc de convertir le caractère saisis en une chaine de caractère (par exemple n est converti en NOIR)
+ * 	    NOIR n'est pas la chaine "NOIR" c'est une variable qui représente la séquence d'échappement de la couleur noir.
+ *	    cette fonction est appelé par la fonction afficherJeu qui se situe dans le fichier source affichagejeu.c. 
+ * \param x le caractère qui représente une couleur saisis par le joueur.
+ * \return une chaine de caractère qui permet d'afficher un texte en une couleur donnée.
+*/
+char* codage(char x)
+{ 
+	switch(x)
+	{
+		case 'n' : return NOIR;   break;
+		case 'r' : return ROUGE;  break;
+		case 'v' : return VERT;   break;
+		case 'j' : return JAUNE;  break;
+		case 'b' : return BLEU;   break;
+		case 'p' : return VIOLET; break;
+		case 'c' : return CYAN;   break;
+		case 'w' : return WHITE;  break;
+		default  : return DEFAULT;
+	}
+}
 
-
-
+/**
+ * \fn char* convert(char x)
+ * \brief fonction qui prend en paramètre le caractère qui représente une couleur et renvoi le non de cette couleur. 
+ * \brief cette fonction est très semblable à celle du dessus.
+ * \details meme détail qu ci dessus à la différence que cette fonction renvoi le nom de la couleur en question et non pas son code ASCII.
+ * \param x le caractère qui représente une couleur saisis par le joueur.
+ * \return pointeur sur un tableau contenant le nom de la couleur en question.
+*/
+char* convert(char x)
+{
+	switch(x)
+	{
+		case 'n' : return "noir";   break;
+		case 'r' : return "rouge";  break;
+		case 'v' : return "vert";   break;
+		case 'j' : return "jaune";  break;
+		case 'b' : return "bleu";   break;
+		case 'p' : return "violet"; break;
+		case 'c' : return "cyan";   break;
+		case 'w' : return "blanc";  break; 
+		default  : return "system"; 
+	}
+}

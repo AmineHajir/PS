@@ -9,21 +9,7 @@
 #include "boiteOutil.h"
 #include "menuDebut.h"
 
-char* convert(char x)
-{
-	switch(x)
-	{
-		case 'n' : return "noir";   break;
-		case 'r' : return "rouge";  break;
-		case 'v' : return "vert";   break;
-		case 'j' : return "jaune";  break;
-		case 'b' : return "bleu";   break;
-		case 'p' : return "violet"; break;
-		case 'c' : return "cyan";   break;
-		case 'w' : return "blanc";  break; 
-		default  : return "system"; 
-	}
-}
+
 int main()
 {
 	int i;

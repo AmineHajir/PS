@@ -30,7 +30,7 @@
 #define CYANGRAS    "36;1" 
 #define BLANCGRAS   "37;1" 
 
-//definition de l'arrière plan (facultatif)
+//definition de l'arrière plan (facultatif non utilisé dans ce projet, pourront servir dans un autre)
 #define BLACK   "40" 
 #define RED     "41" 
 #define YELLOW  "42" 

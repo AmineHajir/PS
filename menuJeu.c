@@ -131,15 +131,13 @@ int menuChoixColonne(char nom[12])
 		printf(" Tapez 0 pour changer de pion \n");
 		printf(" votre choix : ");
 		couleur(DEFAULT);
-		s=scanf("%i",&colonne);
+		s=scanf("%i",&colonne); // la fonction scanf retourne 1 si la saisie s'est bien passé, 0 sinon
        		if(s==0) // si le joueur saisis un caractère (ou plusieurs) au lieu d'un entier 
 		{
 			colonne = 9; // on donne la valeur 9 à la variable colonne afin d'afficher un message d'erreur
 		}
-		printf("%i",colonne);
 		//colonne=fgetc(stdin);
 		viderBuffer(); // nécessaire pour éviter un bug (boucle infini d'affichage!!!) si le joueur saisis un caractère au lieu d'un entier
-		//system("clear"); 
 		clrscr(); // pour ne pas encombrer l'écran
 		
 		if( colonne<0 || colonne>8 ) // si le choix de la colonne dépasse la taille de la matrice ==> message d'erreur

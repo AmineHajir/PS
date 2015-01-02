@@ -9,6 +9,7 @@
 
 void viderBuffer();
 int lire(char *chaine, int longueur);
-
+char* codage(char x);
+char* convert(char x);
 
 
