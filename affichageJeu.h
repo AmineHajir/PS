@@ -57,7 +57,7 @@ typedef struct
 }pion;
 
 /**
- * \var pion grille[N][M];
+ * \var pion grille[N][M]
  * \brief structure de données utilisé pour le jeu puissance4++
  * \details matrice de type pion et de taille N*M (6*7=42 cases dans le cas de deux joueurs). 
  *          chaque case de la matrice peut contenir deux pièces(pions) au maximum. 
@@ -67,7 +67,7 @@ typedef struct
 pion grille[N][M];
 
 /**
- * \var hauteurColonne[M];
+ * \var hauteurColonne[M]
  * \brief structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu.
  * \details la taille de ce tableau est égale au nombres de colonnes de la grille (constante M)
  * 	    ce tableau permet de stocker dans chacune de ses cases l'indice de la première case vide de la colonne correspondante 

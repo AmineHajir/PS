@@ -5,54 +5,87 @@
 #include "boiteOutil.h"
 #include "couleurs.h"
 
+/**
+ * \file menuJeu.c
+ * \author Hajir Mohammed Amine
+ * \date 31 Décembre 2014
+ * \brief ce fichier source contient la définition de la fonction d'affichage du menu du début du jeu.
+ * \details cette fonction permettra de faire saisir au joueur son nom(ou pseudo) et sa couleur de préférence de ses pions
+ * 	    qui seront stockés dans le tableau des joueurs.
+ * 
+*/
+
+/**
+ * \fn void menuDebut(int numJoueur,joueur V[12])
+ * \brief fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom).
+ * \brief elle permet de faire des controle de saisie si l'utilisateur choisis une couleur ou un pseudo déjà choisis par un autre joueur.
+ * \brief des messages d'erreurs seront affichés dans de tels cas et dans le cas ou le joueur saisi plus que 10 caractères pour le nom.
+ * \param numJoueur égale à 1 si on s'adresse au premier joueur, 2 si 2eme joueur .....
+ * \param v tableau de structure (joueur) ou l'on stocke les informations (couleur,nom). sur les joueurs .
+*/
 void menuDebut(int numJoueur,joueur V[12])
 {
-	char coul;
-	char nom[12];
-	int saisieCorrect;
-	int i;
+	char coul; // on y stocke la couleur des pions choisie par le joueur
+	char nom[12]; // on y stocke le nom ou pseudo choisi par le joueur
+	int saisieCorrect; // variable entière qui est égale à 1 si la saisie est correcte 0 sinon
+	int i; // pour parcourir le tableau des joueurs
 	
 	
 	clrscr();
 	printf("\n");
 	do
 	{
-		couleur(GRAS); // titre du jeu en gras (c plus joli!!)
+		couleur(GRAS); // titre du jeu en gras 
 		printf("			 	       _      _  _  _  _  _  _       \n");
 		printf("				      |_|| |||_ |_ |_|| ||  |_  |_|   \n");
 		printf("				      |  |_|| _| _|| || ||_ |_    | ++\n\n");
 		
 		
-		printf("\n                    ------------------- Choix du pseudo du joueur%i -------------------\n",numJoueur);
+		printf("\n                    ------------------ Choix du pseudo du joueur%i ------------------\n",numJoueur);
 		printf(" joueur%i, saisissez votre nom ou choisissez un pseudo ",numJoueur);
 		couleur(DEFAULT);
-		saisieCorrect=lire(nom,12);
+		saisieCorrect=lire(nom,12); // lire renvoi 1 si la saisie est correcte, 0 sinon. (pour détail voir fichier boiteOutil.c)
 		clrscr();
-		if(saisieCorrect==0)
+		if(saisieCorrect==0) // si le joueur saisis un nom composé de plus de 10 caractères on affiche un message d'erreur
 		{
 			couleur(ROUGEGRAS);
 			printf("\n ATTENTION : joueur%i, votre nom ou pseudo est trop long, 10 caractères au maximum \n\n",numJoueur);
 			couleur(DEFAULT);
 		}
-		else
+		else // si la saisie est correcte ...
 		{
-			strcpy(V[numJoueur-1].nom,nom);
+			for(i=0;i<numJoueur-1;i++) // on verifie dans le tableau des joueurs si le nom ou pseudo choisi existe déjà
+			{
+				if( strcmp(nom,V[i].nom) == 0 ) // si on trouve le nom dans l'une des cases du tableau ---> message d'erreur
+				{
+					couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge en gras (ALERTE!!!)
+					printf("\n ATTENTION: joueur%i, ce nom existe déjà, choisissez en un autre \n\n",numJoueur);
+					saisieCorrect=0; // la saisie est incorrecte car ce pseudo est déjà choisis par un autre joueur
+					couleur(DEFAULT);
+					break;
+				}
+			}
 		}
-	}while(saisieCorrect==0);
+		if(saisieCorrect == 1)
+		{
+			strcpy(V[numJoueur-1].nom,nom); // on copie le nom saisie au clavier dans le tableau des joueurs
+		}
+	}while(saisieCorrect==0); // on boucle tant que la saisie ne s'est pas bien passé
 	
-	do
+	// de meme on affiche le menu du choix de la couleur des pions, on affiche un message d'erreur si saisie incorrect ou si couleur déja prise
+	do 
 	{
 		saisieCorrect=1;
-		couleur(GRAS); // titre du jeu en gras (c plus joli!!)
-		printf("\n			 	              _      _  _  _  _  _  _       \n");
-		printf("				             |_|| |||_ |_ |_|| ||  |_  |_|   \n");
-		printf("				             |  |_|| _| _|| || ||_ |_    | ++\n\n");
+		couleur(GRAS); // titre du jeu en gras 
+		printf("\n			 	             _      _  _  _  _  _  _       \n");
+		printf("				            |_|| |||_ |_ |_|| ||  |_  |_|   \n");
+		printf("				            |  |_|| _| _|| || ||_ |_    | ++\n\n");
 		
-		printf("\n                    ------------------- %s choisissez la couleur de vos pions -------------------\n",V[numJoueur-1].nom);
+		printf("\n                    ----------------- %s choisissez la couleur de vos pions -----------------\n",V[numJoueur-1].nom);
 		printf(" Tapez n pour jouer avec des pions noir \n");
 		printf(" Tapez r pour jouer avec des");
-		couleur(ROUGEGRAS);
-		printf(" pions");
+		couleur(ROUGEGRAS); // on affiche le mot pion avec la couleur proposée 
+		printf(" pions");   // si la couleur proposée est rouge le mot pion s'affichera en rouge
 		couleur(DEFAULT);
 		couleur(GRAS);
 		printf(" rouge\n");
@@ -93,22 +126,23 @@ void menuDebut(int numJoueur,joueur V[12])
 		couleur(GRAS);
 		printf(" white (blanc) \n");
 		printf(" Votre choix : ");
-		coul=fgetc(stdin);
-		viderBuffer();
+		coul=fgetc(stdin); // fgetc pour eviter un buffer overflow 
+		viderBuffer(); // on vide le fichier standard si +sieurs caractère saisie au lieu d'un
 		clrscr();
 		
-		for(i=0;i<numJoueur-1;i++)
+		for(i=0;i<numJoueur-1;i++) // on verifie dans le tableau des joueurs si la couleur choisie a deja été prise par un autre joueur
 		{
-			if(coul==V[i].couleur)
+			if(coul==V[i].couleur) // si on trouve la couleur dans l'une des cases du tableau ---> message d'erreur
 			{
 				couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge en gras (ALERTE!!!)
 				printf("\n ATTENTION: %s, cette couleur est déjà prise, choisissez en une autre \n\n",V[numJoueur-1].nom);
-				saisieCorrect=0;
+				saisieCorrect=0; // la saisie est incorrecte --> permet de boucler
 				couleur(DEFAULT);
 				break;
 			}
 		}
-				
+		
+		// si le caractère saisi ne représente aucune couleur proposée ---> saisie incorrecte + message d'erreur
 		if( coul!='n' && coul!='r' && coul!='v' && coul!='j' && coul!='b' && coul!='p' && coul!='c' && coul!='w' ) 
 		{
 			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge en gras (ALERTE!!!)
@@ -119,6 +153,7 @@ void menuDebut(int numJoueur,joueur V[12])
 		{
 			V[numJoueur-1].couleur=coul;
 		}
+	// le processus se répète tant que le joueur saisie une valeur incorrecte ou choisi une couleur deja utilisé	
 	}while( (coul!='n' && coul!='r' && coul!='v' && coul!='j' && coul!='b' && coul!='p' && coul!='c' && coul!='w') || (saisieCorrect == 0) );
 	
 	

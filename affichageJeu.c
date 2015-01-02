@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "affichageJeu.h"
 #include "contenuCase.h"
+#include "boiteOutil.h"
 #include "couleurs.h"
 
 /**

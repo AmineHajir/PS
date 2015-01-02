@@ -10,7 +10,7 @@ exe : $(OBJ)
 main.o : main.c affichageJeu.h menuJeu.h contenuCase.h boiteOutil.h menuDebut.h
 	$(CC) -c main.c $(OPT)
 	
-affichageJeu.o : affichageJeu.c affichageJeu.h
+affichageJeu.o : affichageJeu.c affichageJeu.h contenuCase.h
 	$(CC) -c affichageJeu.c $(OPT)
 	
 menuJeu.o : menuJeu.c menuJeu.h boiteOutil.h

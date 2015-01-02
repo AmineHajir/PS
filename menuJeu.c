@@ -7,7 +7,7 @@
 #include "boiteOutil.h"
 
 /**
- * \file affichageMenus.c
+ * \file menuJeu.c
  * \author Hajir Mohammed Amine
  * \date 20 Décembre 2014
  * \brief ce fichier source contient les définitions des fonctions d'affichage des menus du jeu.
@@ -83,8 +83,10 @@ char menuChoixPion(char nom[12])
 /**
  * \fn int menuChoixPion()
  * \brief fonction qui affiche le menu pour un joueur afin de choisir la colonne ou il souhaite jouer le pion.
- * \brief cette fonction retourne le numéro de la colonne (entier compris entre 1 et M) choisis par le joueur.
- * \return le numéro de la colonne choisis 
+ * \details cette fonction retourne le numéro de la colonne (entier compris entre 1 et M) choisis par le joueur.
+ * 	    retourne 0 si le joueur choisis de revenir au menu précédant pour changer de pion.
+ *\param nom le nom du joueur pour l'afficher dans le menu ou dans les messages d'erreurs.	
+ * \return le numéro de la colonne choisis (0 pour changer de pion / entre 1 et 7 pour placer le pion dans une colonne).
 */	
 int menuChoixColonne(char nom[12])	
 {
@@ -146,7 +148,6 @@ int menuChoixColonne(char nom[12])
 		}
 		
 	}while( colonne<0 || colonne>7 ); // controle de la saisie du joueur
-	//system("clear");
 	clrscr(); // clearScreen
 	
 	return colonne;

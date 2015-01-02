@@ -43,12 +43,7 @@ int main()
 	{
 		menuDebut(i,joueurs);
 	}
-	
-	/*printf(" joueur 1, quel est votre nom ");
-	lire(nom1,11);
-	printf(" joueur 2, quel est votre nom ");
-	lire(nom2,11);
-	clrscr();*/
+	printf("\n");
 	
 	do
 	{	

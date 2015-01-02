@@ -3,7 +3,6 @@
 #include "affichageJeu.h"
 #include "contenuCase.h"
 
-
 /**
  * \file contenuCase.c
  * \author Hajir Mohammed Amine
@@ -12,8 +11,7 @@
  * \details Il existe cinq cas possible pour le contenu d'une case :
  * 	    1er cas : case vide | 2eme cas : case contient une pièce pleine | 3eme cas : case contient une pièce creuse
  *          4eme cas : case contient une pièce blocante | 5eme cas : case contient deux pièce (une creuse et une pleine)
- * 	    on va donc définir 5 fonctions
- * 
+ * 	    on va donc définir 5 fonctions 
 */
 
 /**
