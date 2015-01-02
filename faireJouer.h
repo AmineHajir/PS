@@ -1,0 +1,1 @@
+void faireJouer(int *player);

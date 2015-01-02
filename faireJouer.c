@@ -8,10 +8,17 @@
 #include "couleurs.h"
 #include "boiteOutil.h"
 #include "menuDebut.h"
-#include "faireJouer.h"
 
+/**
+ * \file affichageJeu.c
+ * \author Hajir Mohammed Amine
+ * \date 19 Décembre 2014
+ * \brief ce fichier source contient les définitions des fonctions d'affichage du titre et de la grille du jeu.
+ * \details ce fichier contient aussi la définition de la fonction d'initialisation de la grille du jeu.
+ *          il contient également la définition de la fonction d'initialisation du tableau qui stocke la hauteur de chaque colonne.
+ * */
 
-/*void faireJouer(int *player)
+void faireJouer(int *player)
 {
 	char piece; // variable qui stocke la pièce choisie par le joueur ('b', 'c' ou 'p')
 	int colonne; // variable qui stocke le numéro de la colonne ou le joueur a choisi de mettre son pion
@@ -67,45 +74,5 @@
 	{
 		(*player)--; // on decrémente cette fois pour revenir au premier joueur
 	}
-}*/
-	
-int main()
-{
-	int i;
-	int player=1;  // variable qui permet d'alterner le tour des joueurs
-	
-	printf("\n");
-	initialiser_jeu(grille);
-	initialiser_hauteurColonne(hauteurColonne);
-	
-	for(i=1;i<=2;i++)
-	{
-		menuDebut(i,joueurs);
-	}
-	printf("\n");
-	
-	do
-	{	
-		if(player==1)
-		{
-			faireJouer(&player);
-		}
-		else
-		{
-			if(player==2)
-			{
-				faireJouer(&player);
-			}
-		}
-	}while(grillePleine(grille,hauteurColonne) == FAUX);
-			
-	
-	afficher_jeu(grille);
-	
-	printf("\n\n");
-	return 0;
 }
-		
-		
-
-
+	

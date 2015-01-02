@@ -1,5 +1,5 @@
 CC = gcc
-OBJ = affichageJeu.o menuJeu.o contenuCase.o placerPion.o boiteOutil.o menuDebut.o main.o
+OBJ = affichageJeu.o menuJeu.o contenuCase.o placerPion.o boiteOutil.o menuDebut.o faireJouer.o main.o
 OPT = -g -W -Wall
 
 all: exe
@@ -7,8 +7,11 @@ all: exe
 exe : $(OBJ)
 	$(CC) $(OBJ) -o exe
 
-main.o : main.c affichageJeu.h menuJeu.h contenuCase.h boiteOutil.h menuDebut.h
+main.o : main.c faireJouer.h affichageJeu.h menuJeu.h contenuCase.h boiteOutil.h menuDebut.h placerPion.h
 	$(CC) -c main.c $(OPT)
+
+faireJouer.o : faireJouer.c faireJouer.h affichageJeu.h menuJeu.h contenuCase.h boiteOutil.h menuDebut.h placerPion.h
+	$(CC) -c faireJouer.c $(OPT)
 	
 affichageJeu.o : affichageJeu.c affichageJeu.h contenuCase.h
 	$(CC) -c affichageJeu.c $(OPT)
