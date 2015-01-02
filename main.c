@@ -9,19 +9,6 @@
 #include "boiteOutil.h"
 #include "menuDebut.h"
 
-booleen grillePleine(pion T[N][M], int V[M])
-{
-	int i;
-	
-	for(i=0;i<M;i++)
-	{
-		if( (V[i]!=0) || (V[i]==0 && caseBlocante(T,0,i)==FAUX && casePleineCreuse(T,0,i)==FAUX) )
-		{
-			return 0;
-		}
-	}
-	return 1;
-}
 
 
 int main()
@@ -30,9 +17,6 @@ int main()
 	char piece;
 	int colonne;
 	int player=1;  // variable qui permet d'alterner le tour des joueurs
-	// le nom du 1er joueur (ne peut dépasser 10 caractères, mais on déclare 11 car fgets reserve la dernière case
-	//char nom1[12]; // le nom du 1er joueur (ne peut dépasser 10 caractères, mais on déclare 11 car fgets reserve la dernière case
-	//char nom2[12]; // le nom ou pseudo du deuxième joueur 
 	booleen jouer; // variable qui reçoit vrai si le joueur a bien placer son pion, faux sinon
 	
 	printf("\n");

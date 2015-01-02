@@ -77,7 +77,7 @@ void menuDebut(int numJoueur,joueur V[12])
 	{
 		saisieCorrect=1;
 		couleur(GRAS); // titre du jeu en gras 
-		printf("\n			 	             _      _  _  _  _  _  _       \n");
+		printf("			 	             _      _  _  _  _  _  _       \n");
 		printf("				            |_|| |||_ |_ |_|| ||  |_  |_|   \n");
 		printf("				            |  |_|| _| _|| || ||_ |_    | ++\n\n");
 		

@@ -3,6 +3,7 @@
 #include "affichageJeu.h"
 #include "contenuCase.h"
 
+
 /**
  * \file contenuCase.c
  * \author Hajir Mohammed Amine
@@ -102,4 +103,18 @@ booleen casePleineCreuse(pion T[N][M], int ligne, int colonne)
 	{
 		return FAUX;
 	}
+}
+
+booleen grillePleine(pion T[N][M], int V[M])
+{
+	int i;
+	
+	for(i=0;i<M;i++)
+	{
+		if( (V[i]!=0) || (V[i]==0 && caseBlocante(T,0,i)==FAUX && casePleineCreuse(T,0,i)==FAUX) )
+		{
+			return FAUX;
+		}
+	}
+	return VRAI;
 }

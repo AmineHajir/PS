@@ -17,3 +17,4 @@ booleen casePleine(pion T[N][M], int colonne, int ligne);
 booleen caseBlocante(pion T[N][M], int colonne, int ligne);
 booleen caseCreuse(pion T[N][M], int colonne, int ligne);
 booleen casePleineCreuse(pion T[N][M], int colonne, int ligne);
+booleen grillePleine(pion T[N][M], int V[M]);
