@@ -3,6 +3,7 @@
 #include "affichageJeu.h"
 #include "contenuCase.h"
 #include "couleurs.h"
+#include "menuDebut.h"
 
 /**
  * \file affichageJeu.c
@@ -116,7 +117,23 @@ void afficher_bordure_grille(int nbre_colonne)
 	printf("|\n");
 	couleur(DEFAULT);
 }
-	
+
+char* codage(char x)
+{ 
+	switch(x)
+	{
+		case 'n' : return NOIR;   break;
+		case 'r' : return ROUGE;  break;
+		case 'v' : return VERT;   break;
+		case 'j' : return JAUNE;  break;
+		case 'b' : return BLEU;   break;
+		case 'p' : return VIOLET; break;
+		case 'c' : return CYAN;   break;
+		case 'w' : return WHITE;  break;
+		default  : return DEFAULT;
+	}
+}
+
 
 /**
  * \fn void afficher_jeu(pion T[N][M])
@@ -156,14 +173,14 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( T[i][j].bloc == 1 )
 				{
-					couleur(ROUGE);
+					couleur( codage(joueurs[0].couleur) );
 					printf("   %c   ",BLOCANTE);
 					couleur(DEFAULT);
 					
 				}
 				if( T[i][j].bloc == 2 )
 				{
-					couleur(VERT);
+					couleur( codage(joueurs[1].couleur) );
 					printf("   %c   ",BLOCANTE);
 					couleur(DEFAULT);
 				}
@@ -173,14 +190,14 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( T[i][j].creux == 1 )
 				{
-					couleur(ROUGE);
+					couleur( codage(joueurs[0].couleur) );
 					printf("   %c   ",CREUSE);
 					couleur(DEFAULT);
 				}
 				
 				if( T[i][j].creux == 2 )
 				{
-					couleur(VERT);
+					couleur( codage(joueurs[1].couleur) );
 					printf("   %c   ",CREUSE);
 					couleur(DEFAULT);
 				}
@@ -189,7 +206,7 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( T[i][j].plein == 1 )
 				{
-					couleur(ROUGE);
+					couleur( codage(joueurs[0].couleur) );
 					printf("   %c   ",PLEINE);
 					couleur(DEFAULT);
 				}
@@ -197,7 +214,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( T[i][j].plein == 2 )
 					{
-						couleur(VERT);
+						couleur( codage(joueurs[1].couleur) );
 						printf("   %c   ",PLEINE);
 						couleur(DEFAULT);
 					}
@@ -208,31 +225,31 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 1) )
 				{
-					couleur(ROUGE);
+					couleur( codage(joueurs[0].couleur) );
 					printf("  %c %c  ",CREUSE,PLEINE);
 					couleur(DEFAULT);
 				}
 				if( (T[i][j].creux == 2) && (T[i][j].plein == 2) )
 				{
-					couleur(VERT);
+					couleur( codage(joueurs[1].couleur) );
 					printf("  %c %c  ",CREUSE,PLEINE);
 					couleur(DEFAULT);
 				}
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 2) )
 				{
-					couleur(ROUGE);
+					couleur( codage(joueurs[0].couleur) );
 					printf("  %c",CREUSE);
 					couleur(DEFAULT);
-					couleur(VERT);
+					couleur( codage(joueurs[1].couleur) );
 					printf(" %c  ",PLEINE);
 					couleur(DEFAULT);
 				}
 				if( (T[i][j].creux == 2) && (T[i][j].plein == 1) )
 				{
-					couleur(VERT);
+					couleur( codage(joueurs[1].couleur) );
 					printf("  %c",CREUSE);
 					couleur(DEFAULT);
-					couleur(ROUGE);
+					couleur( codage(joueurs[0].couleur) );
 					printf(" %c  ",PLEINE);
 					couleur(DEFAULT);
 				}

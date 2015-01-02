@@ -82,3 +82,4 @@ void initialiser_jeu(pion T[N][M]);
 void initialiser_hauteurColonne(int V[M]);
 void afficher_jeu(pion T[N][M]);
 void afficher_numColonne_jeu(int nbre_colonne);
+char* codage(char x);

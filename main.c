@@ -9,8 +9,21 @@
 #include "boiteOutil.h"
 #include "menuDebut.h"
 
-
-
+char* convert(char x)
+{
+	switch(x)
+	{
+		case 'n' : return "noir";   break;
+		case 'r' : return "rouge";  break;
+		case 'v' : return "vert";   break;
+		case 'j' : return "jaune";  break;
+		case 'b' : return "bleu";   break;
+		case 'p' : return "violet"; break;
+		case 'c' : return "cyan";   break;
+		case 'w' : return "blanc";  break; 
+		default  : return "system"; 
+	}
+}
 int main()
 {
 	int i;
@@ -39,12 +52,24 @@ int main()
 			while(!jouer) // tant que le joueur1 n'a pas placer son jeton
 			{
 				colonne=menuChoixColonne(joueurs[0].nom);
-				while(colonne==0)
+				while(colonne==0 || colonne==8)
 				{
-					piece=menuChoixPion(joueurs[0].nom);
-					colonne=menuChoixColonne(joueurs[0].nom);
+					if(colonne==0)
+					{
+						piece=menuChoixPion(joueurs[0].nom);
+						colonne=menuChoixColonne(joueurs[0].nom);
+					}
+					else
+					{
+						if(colonne==8)
+						{
+							couleur(ROUGEGRAS);
+							printf("\n RAPPEL : %s, vous jouez avec des pions %s \n\n",joueurs[0].nom,convert(joueurs[0].couleur));
+							couleur(DEFAULT);
+							colonne=menuChoixColonne(joueurs[0].nom);
+						}		
+					}
 				}
-				
 				switch(piece)
 				{
 					case 'b' : 
@@ -76,13 +101,24 @@ int main()
 				while(!jouer) // meme commentaire que précédemment
 				{
 					colonne=menuChoixColonne(joueurs[1].nom);
-					while(colonne==0)
+					while(colonne==0 || colonne==8)
 					{
-						piece=menuChoixPion(joueurs[1].nom);
-						colonne=menuChoixColonne(joueurs[1].nom);
+						if(colonne==0)
+						{
+							piece=menuChoixPion(joueurs[1].nom);
+							colonne=menuChoixColonne(joueurs[1].nom);
+						}
+						else
+						{
+							if(colonne==8)
+							{
+								couleur(ROUGEGRAS);
+								printf("\n RAPPEL : %s, vous jouez avec des pions %s \n\n",joueurs[1].nom,convert(joueurs[1].couleur));
+								couleur(DEFAULT);
+								colonne=menuChoixColonne(joueurs[1].nom);
+							}		
+						}
 					}
-						
-					
 					switch(piece)
 					{
 						case 'b' : 

@@ -127,13 +127,14 @@ int menuChoixColonne(char nom[12])
 		printf("\n");
 		//printf("\n\n                        ------------------- %s a vous de jouer -------------------\n",nom);
 		printf(" Tapez un chiffre entre 1 et 7 pour choisir la colonne \n");
+		printf(" Tapez 8 si vous avez oublié la couleur de vos pions \n");
 		printf(" Tapez 0 pour changer de pion \n");
 		printf(" votre choix : ");
 		couleur(DEFAULT);
 		s=scanf("%i",&colonne);
        		if(s==0) // si le joueur saisis un caractère (ou plusieurs) au lieu d'un entier 
 		{
-			colonne = 8; // on donne la valeur 8 à la variable colonne afin d'afficher un message d'erreur
+			colonne = 9; // on donne la valeur 9 à la variable colonne afin d'afficher un message d'erreur
 		}
 		printf("%i",colonne);
 		//colonne=fgetc(stdin);
@@ -141,14 +142,14 @@ int menuChoixColonne(char nom[12])
 		//system("clear"); 
 		clrscr(); // pour ne pas encombrer l'écran
 		
-		if( colonne<0 || colonne>7 ) // si le choix de la colonne dépasse la taille de la matrice ==> message d'erreur
+		if( colonne<0 || colonne>8 ) // si le choix de la colonne dépasse la taille de la matrice ==> message d'erreur
 		{
 			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge et en gras (ALERTE!!!)
 			printf("\n MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
-	}while( colonne<0 || colonne>7 ); // controle de la saisie du joueur
+	}while( colonne<0 || colonne>8 ); // controle de la saisie du joueur
 	clrscr(); // clearScreen
 	
 	return colonne;
