@@ -26,6 +26,7 @@ void faireJouer(int player)
 {
 	char piece; // variable ou l'on stocke la pièce choisie par le joueur ('b', 'c' ou 'p')
 	int colonne; // variable ou l'on stocke le numéro de la colonne ou le joueur a choisi de mettre son pion
+	int ligne;
 	booleen jouer; // variable qui reçoit vrai si le joueur a bien placer son pion, faux sinon
 	
 	jouer=FAUX;
@@ -57,12 +58,12 @@ void faireJouer(int player)
 			// si le joueur choisis une blocante, on range cette dernière au bon emplacement dans la grille et on jouer reçoit VRAI
 			// si le choix de la colonne n'est pas bon (joueur qui essaye de placer un pion dans une colonne pleine par exemple)
 			// on affiche un message d'erreur et jouer reçoit FAUX
-			case 'b' : jouer=placerBlocante(grille, hauteurColonne, colonne, player,joueurs[player-1].nom); break;
+			case 'b' : jouer=placerBlocante(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne); break;
 			
 			// meme commentaire ....( cette fois pour la creuse)
-			case 'c' : jouer=placerCreuse(grille, hauteurColonne, colonne, player,joueurs[player-1].nom); break;
+			case 'c' : jouer=placerCreuse(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne); break;
 					
-			case 'p' : jouer=placerPleine(grille, hauteurColonne, colonne, player,joueurs[player-1].nom); break;
+			case 'p' : jouer=placerPleine(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne); break;
 		}
 	}
 	
