@@ -9,35 +9,41 @@
 /**
  * \file menuJeu.c
  * \author Hajir Mohammed Amine
- * \date 31 Décembre 2014
- * \brief ce fichier source contient la définition de la fonction d'affichage du menu du début du jeu.
- * \details cette fonction permettra de faire saisir au joueur son nom(ou pseudo) et sa couleur de préférence de ses pions
- * 	    qui seront stockés dans le tableau des joueurs.
+ * \date 05 Janvier 2015
+ * \brief ce fichier source contient la définition des fonctions d'affichage du menu principal et du menu du début du jeu.
+ * \details la fonction d'affichage du menu du début permettra de faire saisir à chaque joueur son nom(ou pseudo) et sa couleur de préférence 
+ * 	    de ses pions qui seront stockés dans le tableau des joueurs.
+ * 	    la fonction d'affichage du menu principal permet de faire saisir le nombre de joueurs de la partie.
  * 
 */
 
 int menuPrincipal()
 {
 	int nbJoueur; // le nombre de joueur de la partie du jeu
-	int saisieCorrect=1;
+	int saisieCorrect=1; // pour controler a saisie
+	int s; // pour récupérer la valeur retourné pas la focntion scanf
 	
 	clrscr();
+	printf("\n");
 	do
 	{
 		afficher_titre_jeu();
+		printf("\n\n");
 		couleur(GRAS);
-		printf("\n                    ------------------ BIENVENUE SUR PUISSANCE4++ ------------------\n",numJoueur);
-		printf(" → Tapez 2 pour jouer en mode deux joueurs \n");
-		printf(" → Tapez 3 pour jouer en mode trois joueurs \n");
-		printf(" → Tapez 4 pour jouer en mode quatre joueurs \n");
-		printf(" → Votre choix : ");
+		printf("\n                    ------------------ BIENVENUE SUR PUISSANCE4++ ------------------\n");
+		printf("   Tapez 2 pour jouer en mode deux joueurs \n");
+		printf("   Tapez 3 pour jouer en mode trois joueurs \n");
+		printf("   Tapez 4 pour jouer en mode quatre joueurs \n");
+		printf("   Votre choix : ");
 		s=scanf("%i",&nbJoueur); // la fonction scanf retourne 1 si la saisie s'est bien passé, 0 sinon
 		if( s==0 || (nbJoueur!=2 && nbJoueur!=3 && nbJoueur!=4) ) // si le joueur saisis un caractère (ou plusieurs) au lieu d'un entier 
 		{
 			saisieCorrect = 0; // on donne la valeur 9 à la variable colonne afin d'afficher un message d'erreur
 		}
 		viderBuffer(); // nécessaire pour éviter un bug (boucle infini d'affichage!!!) si le joueur saisis un caractère au lieu d'un entier
-	}while( saisieCorrect == 0 )
+	}while( saisieCorrect == 0 ); // on boucle tant que le joueur n'a pas saisis une valeur correcte
+	
+	return nbJoueur;
 }
 	
 /**

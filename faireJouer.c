@@ -46,7 +46,7 @@ void faireJouer(int player)
 				if(colonne==8) // si le joueur choisis d'afficher sa couleur de pion 
 				{       // pour la fonction convert, voir détail dans le fichier boiteOutil.c
 					couleur(ROUGEGRAS); // on affiche sa couleur en l'appelant par son nom 
-					printf("\n RAPPEL : %s, vous jouez avec des pions %s \n\n",joueurs[player-1].nom,convert(joueurs[player-1].couleur));
+					printf("\n RAPPEL : %s, vous jouez avec des pions %s ",joueurs[player-1].nom,convert(joueurs[player-1].couleur));
 					couleur(DEFAULT);
 					colonne=menuChoixColonne(joueurs[player-1].nom); // tout affichant le menu de choix de colonne
 				}		

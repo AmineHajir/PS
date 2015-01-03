@@ -28,7 +28,7 @@ char menuChoixPion(char nom[12])
 	int i;
 	int lg=strlen(nom); // on récupère la longueur du nom du joueur dans la variable lg
 	
-	
+	printf("\n\n");
 	do
 	{	
 		afficher_jeu(grille);
@@ -97,6 +97,7 @@ int menuChoixColonne(char nom[12])
 	int lg=strlen(nom);
 	int s; // pour récupérer la valeur retourner par scanf (ça va servir à controler la saisie)
 	
+	printf("\n\n");
 	do
 	{	
 		afficher_jeu(grille);

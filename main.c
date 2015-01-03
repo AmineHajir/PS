@@ -13,12 +13,14 @@
 int main()
 {
 	int player;  // variable qui permet d'alterner le tour des joueurs
+	int nbJoueur; // nombre de joueurs de la partie saisis dans le menu principal
 	
 	printf("\n");
 	initialiser_jeu(grille);
 	initialiser_hauteurColonne(hauteurColonne);
+	nbJoueur=menuPrincipal();
 	
-	for(player=1;player<=4;player++)
+	for(player=1;player<=nbJoueur;player++)
 	{
 		menuDebut(player,joueurs);
 	}
@@ -26,7 +28,7 @@ int main()
 	
 	do
 	{	
-		for(player=1;player<=4;player++)
+		for(player=1;player<=nbJoueur;player++)
 		{
 			faireJouer(player);
 		}

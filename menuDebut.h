@@ -31,4 +31,5 @@ typedef struct
 joueur joueurs[MAXJOUEUR];
 
 
+int menuPrincipal();
 void menuDebut(int numJoueur,joueur V[12]);
