@@ -17,6 +17,11 @@
  * 
 */
 
+/**
+ * \fn int menuPrincipal()
+ * \brief fonction qui affiche le menu principal du jeu puissance4++.
+ * \return le nombre de joueur de la partie choisie.
+*/
 int menuPrincipal()
 {
 	int nbJoueur; // le nombre de joueur de la partie du jeu
