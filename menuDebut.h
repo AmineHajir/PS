@@ -17,12 +17,18 @@ typedef struct
 }joueur;	      // on déclare un tableau de taille 12 car les deux dernieres case sont reservé au caractère '\n' et '\0'.
 
 /**
+ * \def MAXJOUEUR
+ * \brief nombre maximum de joueurs pouvant participer à une partie du puissance4++.
+ */
+#define MAXJOUEUR 4
+
+/**
  * \var joueurs[2]
  * \brief tableau contenant les informations sur les joueurs. 
  * \details la taille de ce tableau est égale au nombre de joueurs de la partie.
  * 	    ce tableau permet de stocker dans chacune de ses cases la couleur et le nom du joueur en question.
  */ 	    
-joueur joueurs[4];
+joueur joueurs[MAXJOUEUR];
 
 
 void menuDebut(int numJoueur,joueur V[12]);

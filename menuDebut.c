@@ -4,6 +4,7 @@
 #include "menuDebut.h"
 #include "boiteOutil.h"
 #include "couleurs.h"
+#include "affichageJeu.h"
 
 /**
  * \file menuJeu.c
@@ -15,6 +16,30 @@
  * 
 */
 
+int menuPrincipal()
+{
+	int nbJoueur; // le nombre de joueur de la partie du jeu
+	int saisieCorrect=1;
+	
+	clrscr();
+	do
+	{
+		afficher_titre_jeu();
+		couleur(GRAS);
+		printf("\n                    ------------------ BIENVENUE SUR PUISSANCE4++ ------------------\n",numJoueur);
+		printf(" → Tapez 2 pour jouer en mode deux joueurs \n");
+		printf(" → Tapez 3 pour jouer en mode trois joueurs \n");
+		printf(" → Tapez 4 pour jouer en mode quatre joueurs \n");
+		printf(" → Votre choix : ");
+		s=scanf("%i",&nbJoueur); // la fonction scanf retourne 1 si la saisie s'est bien passé, 0 sinon
+		if( s==0 || (nbJoueur!=2 && nbJoueur!=3 && nbJoueur!=4) ) // si le joueur saisis un caractère (ou plusieurs) au lieu d'un entier 
+		{
+			saisieCorrect = 0; // on donne la valeur 9 à la variable colonne afin d'afficher un message d'erreur
+		}
+		viderBuffer(); // nécessaire pour éviter un bug (boucle infini d'affichage!!!) si le joueur saisis un caractère au lieu d'un entier
+	}while( saisieCorrect == 0 )
+}
+	
 /**
  * \fn void menuDebut(int numJoueur,joueur V[12])
  * \brief fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom).
@@ -32,7 +57,8 @@ void menuDebut(int numJoueur,joueur V[12])
 	
 	
 	clrscr();
-	printf("\n");
+	
+	printf("\n\n\n"); // pour centrer l'affichage dans le terminal
 	do
 	{
 		couleur(GRAS); // titre du jeu en gras 
@@ -73,6 +99,7 @@ void menuDebut(int numJoueur,joueur V[12])
 	}while(saisieCorrect==0); // on boucle tant que la saisie ne s'est pas bien passé
 	
 	// de meme on affiche le menu du choix de la couleur des pions, on affiche un message d'erreur si saisie incorrect ou si couleur déja prise
+	printf("\n\n\n");// pour centrer l'affichage dans la console
 	do 
 	{
 		saisieCorrect=1;
