@@ -23,19 +23,19 @@ void afficher_titre_jeu()
 {
 	couleur(GRAS);
 	printf("\n");
-	printf("                           68b                                                                       \n");
-	printf("                           Y89                                                                       \n");
-	printf("       __ ____   ___   ___ ___   ____     ____      ___    ___  __     ____     ____                 \n");
-	printf("       `M6MMMMb  `MM    MM `MM  6MMMMb  6MMMMb    6MMMMb   `MM 6MMb   6MMMMb.  6MMMMb              M \n");
-	printf("        MM'  `Mb  MM    MM  MM MM'    ` MM'    ` 8M'  `Mb   MMM9 `Mb 6M'   Mb 6M'  `Mb           ,dM \n");
-	printf("        MM    MM  MM    MM  MM YM.      YM.          ,oMM   MM'   MM MM    `' MM    MM          ,dMM \n");
-	printf("        MM    MM  MM    MM  MM  YMMMMb   YMMMMb  ,6MM9'MM   MM    MM MM       MMMMMMMM         ,d MM \n");
-	printf("        MM    MM  MM    MM  MM      `Mb      `Mb MM'   MM   MM    MM MM       MM              ,d  MM       MM        MM\n");
-	printf("        MM.  ,M9  YM.   MM  MM L    ,MM L    ,MM MM.  ,MM   MM    MM YM.   d9 YM    d9       ,d   MM       MM        MM\n");
-	printf("        MMYMMM9    YMMM9MM__MM_MYMMMM9  MYMMMM9  `YMMM9'Yb._MM_  _MM_ YMMMM9   YMMMM9        MMMMMMMM   MMMMMMMM  MMMMMMMM\n");
-	printf("        MM                                                                                        MM       MM        MM\n");
-	printf("        MM                                                                                        MM       MM        MM\n");
-	printf("       _MM_                                                                                       MM \n");
+	printf("                         68b                                                                       \n");
+	printf("                         Y89                                                                       \n");
+	printf("     __ ____   ___   ___ ___   ____     ____      ___    ___  __     ____     ____                 \n");
+	printf("     `M6MMMMb  `MM    MM `MM  6MMMMb  6MMMMb    6MMMMb   `MM 6MMb   6MMMMb.  6MMMMb              M \n");
+	printf("      MM'  `Mb  MM    MM  MM MM'    ` MM'    ` 8M'  `Mb   MMM9 `Mb 6M'   Mb 6M'  `Mb           ,dM \n");
+	printf("      MM    MM  MM    MM  MM YM.      YM.          ,oMM   MM'   MM MM    `' MM    MM          ,dMM \n");
+	printf("      MM    MM  MM    MM  MM  YMMMMb   YMMMMb  ,6MM9'MM   MM    MM MM       MMMMMMMM         ,d MM \n");
+	printf("      MM    MM  MM    MM  MM      `Mb      `Mb MM'   MM   MM    MM MM       MM              ,d  MM       MM        MM\n");
+	printf("      MM.  ,M9  YM.   MM  MM L    ,MM L    ,MM MM.  ,MM   MM    MM YM.   d9 YM    d9       ,d   MM       MM        MM\n");
+	printf("      MMYMMM9    YMMM9MM__MM_MYMMMM9  MYMMMM9  `YMMM9'Yb._MM_  _MM_ YMMMM9   YMMMM9        MMMMMMMM   MMMMMMMM  MMMMMMMM\n");
+	printf("      MM                                                                                        MM       MM        MM\n");
+	printf("      MM                                                                                        MM       MM        MM\n");
+	printf("     _MM_                                                                                       MM \n");
 	printf("\n");
 	couleur(DEFAULT);
 }

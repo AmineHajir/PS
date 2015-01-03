@@ -6,7 +6,6 @@
 #include "couleurs.h"
 #include "boiteOutil.h"
 
-
 /**
  * \file menuJeu.c
  * \author Hajir Mohammed Amine
@@ -57,10 +56,10 @@ char menuChoixPion(char nom[12])
 			}
 		}
 		printf("\n");
-		printf(" Tapez b pour jouer la piece bloquante \n");
-		printf(" Tapez c pour jouer la piece creuse \n");
-		printf(" Tapez p pour jouer la piece pleine \n");
-		printf(" votre choix : ");
+		printf("  Tapez b pour jouer la piece bloquante \n");
+		printf("  Tapez c pour jouer la piece creuse \n");
+		printf("  Tapez p pour jouer la piece pleine \n");
+		printf("  votre choix : ");
 		couleur(DEFAULT);
 		//scanf(" %c",&piece);
 		piece=fgetc(stdin); // fgetc au lieu de scanf pour sécuriser la saisie et éviter un dépassement du tampon (buffer overflow)
@@ -71,7 +70,7 @@ char menuChoixPion(char nom[12])
 		if( piece!='b' && piece!='c' && piece!='p' ) 
 		{
 			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge en gras (ALERTE!!!)
-			printf("\n MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
+			printf("\n  MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
@@ -127,10 +126,10 @@ int menuChoixColonne(char nom[12])
 		}
 		printf("\n");
 		//printf("\n\n                        ------------------- %s a vous de jouer -------------------\n",nom);
-		printf(" Tapez un chiffre entre 1 et 7 pour choisir la colonne \n");
-		printf(" Tapez 8 si vous avez oublié la couleur de vos pions \n");
-		printf(" Tapez 0 pour changer de pion \n");
-		printf(" votre choix : ");
+		printf("  Tapez un chiffre entre 1 et 7 pour choisir la colonne \n");
+		printf("  Tapez 8 si vous avez oublié la couleur de vos pions \n");
+		printf("  Tapez 0 pour changer de pion \n");
+		printf("  votre choix : ");
 		couleur(DEFAULT);
 		s=scanf("%i",&colonne); // la fonction scanf retourne 1 si la saisie s'est bien passé, 0 sinon
        		if(s==0) // si le joueur saisis un caractère (ou plusieurs) au lieu d'un entier 
@@ -144,7 +143,7 @@ int menuChoixColonne(char nom[12])
 		if( colonne<0 || colonne>8 ) // si le choix de la colonne dépasse la taille de la matrice ==> message d'erreur
 		{
 			couleur(ROUGEGRAS); // les message d'erreurs sont affichés en rouge et en gras (ALERTE!!!)
-			printf("\n MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
+			printf("\n  MESSAGE D'ERREUR: %s, veuillez saisir une valeur correcte!! \n\n",nom);
 			couleur(DEFAULT); // pour remettre la couleur de base du terminal
 		}
 		
