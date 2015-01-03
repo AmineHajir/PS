@@ -22,7 +22,7 @@ typedef struct
  * \details la taille de ce tableau est égale au nombre de joueurs de la partie.
  * 	    ce tableau permet de stocker dans chacune de ses cases la couleur et le nom du joueur en question.
  */ 	    
-joueur joueurs[3];
+joueur joueurs[4];
 
 
 void menuDebut(int numJoueur,joueur V[12]);
