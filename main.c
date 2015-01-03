@@ -18,7 +18,7 @@ int main()
 	initialiser_jeu(grille);
 	initialiser_hauteurColonne(hauteurColonne);
 	
-	for(player=1;player<=2;player++)
+	for(player=1;player<=3;player++)
 	{
 		menuDebut(player,joueurs);
 	}
@@ -26,7 +26,7 @@ int main()
 	
 	do
 	{	
-		for(player=1;player<=2;player++)
+		for(player=1;player<=3;player++)
 		{
 			faireJouer(player);
 		}

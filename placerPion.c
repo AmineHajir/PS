@@ -22,10 +22,10 @@
  * \param V le tableau ou sont stockées les hauteurs des colonnes.
  * \param colonne numéro de la colonne saisis par le joueur.
  * \param player le numéro du joueur(1 ou 2 si 2joueurs dans la partie) qui a choisis de jouer la piece pleine.
- * \param nom tableau de 12 caractères ou est stocké le nom du joueur.
+ * \param nom tableau de 12 caractères ou est stocké le nom du joueur.(10 carac. pr le nom car 2 dernieres cases reservées pr '\n' et '\0'.  
  * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
-booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[11])
+booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[12])
 {
 	int indice=V[colonne-1]; // on récupère la valeur de la première case vide et on la stocke dans la variable indice. 
 	int i=indice+1; // variable qui parcourt les case inférieure à la case vide

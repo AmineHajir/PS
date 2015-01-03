@@ -168,7 +168,12 @@ void afficher_jeu(pion T[N][M])
 					printf("   %c   ",BLOCANTE);
 					couleur(DEFAULT);
 				}
-						
+				if( T[i][j].bloc == 3 ) // de meme pour le joueur2
+				{
+					couleur( codage(joueurs[2].couleur) );
+					printf("   %c   ",BLOCANTE);
+					couleur(DEFAULT);
+				}
 			}
 			if( caseCreuse(T,i,j) ) // si la case contient uniquement une creuse
 			{
@@ -178,10 +183,15 @@ void afficher_jeu(pion T[N][M])
 					printf("   %c   ",CREUSE); 
 					couleur(DEFAULT);
 				}
-				
 				if( T[i][j].creux == 2 ) // de meme pour joueur2 ...
 				{
 					couleur( codage(joueurs[1].couleur) );
+					printf("   %c   ",CREUSE);
+					couleur(DEFAULT);
+				}
+				if( T[i][j].creux == 3 ) // de meme pour joueur2 ...
+				{
+					couleur( codage(joueurs[2].couleur) );
 					printf("   %c   ",CREUSE);
 					couleur(DEFAULT);
 				}
@@ -194,18 +204,20 @@ void afficher_jeu(pion T[N][M])
 					printf("   %c   ",PLEINE);
 					couleur(DEFAULT);
 				}
-				else
+				if( T[i][j].plein == 2 )
 				{
-					if( T[i][j].plein == 2 )
-					{
-						couleur( codage(joueurs[1].couleur) );
-						printf("   %c   ",PLEINE);
-						couleur(DEFAULT);
-					}
+					couleur( codage(joueurs[1].couleur) );
+					printf("   %c   ",PLEINE);
+					couleur(DEFAULT);
 				}
-					
+				if( T[i][j].plein == 3 )
+				{
+					couleur( codage(joueurs[2].couleur) );
+					printf("   %c   ",PLEINE);
+					couleur(DEFAULT);
+				}
 			}
-			if( casePleineCreuse(T,i,j) ) // meme commentaire mais plus de cas à traiter car la case contient 2 pions
+			if( casePleineCreuse(T,i,j) ) // (nbreJoueur)² cas possibles ( soit 4 pr 2 joueurs et 9 pr 3joueurs )
 			{
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 1) ) // si la creuse et la pleine appartiennent au joueur1
 				{
@@ -219,6 +231,13 @@ void afficher_jeu(pion T[N][M])
 					printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur2
 					couleur(DEFAULT);
 				}
+				if( (T[i][j].creux == 3) && (T[i][j].plein == 3) ) // si elles appartiennent au joueur2
+				{
+					couleur( codage(joueurs[2].couleur) );
+					printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur2
+					couleur(DEFAULT);
+				}
+				
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 2) ) // si la creuse appartient au joueur1 et la pleine au joueur2
 				{
 					couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
@@ -234,6 +253,42 @@ void afficher_jeu(pion T[N][M])
 					printf("  %c",CREUSE);
 					couleur(DEFAULT);
 					couleur( codage(joueurs[0].couleur) );
+					printf(" %c  ",PLEINE);
+					couleur(DEFAULT);
+				}
+				if( (T[i][j].creux == 1) && (T[i][j].plein == 3) ) // de meme ....
+				{
+					couleur( codage(joueurs[0].couleur) );
+					printf("  %c",CREUSE);
+					couleur(DEFAULT);
+					couleur( codage(joueurs[2].couleur) );
+					printf(" %c  ",PLEINE);
+					couleur(DEFAULT);
+				}
+				if( (T[i][j].creux == 3) && (T[i][j].plein == 1) ) // de meme ....
+				{
+					couleur( codage(joueurs[2].couleur) );
+					printf("  %c",CREUSE);
+					couleur(DEFAULT);
+					couleur( codage(joueurs[0].couleur) );
+					printf(" %c  ",PLEINE);
+					couleur(DEFAULT);
+				}
+				if( (T[i][j].creux == 2) && (T[i][j].plein == 3) ) // de meme ....
+				{
+					couleur( codage(joueurs[1].couleur) );
+					printf("  %c",CREUSE);
+					couleur(DEFAULT);
+					couleur( codage(joueurs[2].couleur) );
+					printf(" %c  ",PLEINE);
+					couleur(DEFAULT);
+				}
+				if( (T[i][j].creux == 3) && (T[i][j].plein == 2) ) // de meme ....
+				{
+					couleur( codage(joueurs[2].couleur) );
+					printf("  %c",CREUSE);
+					couleur(DEFAULT);
+					couleur( codage(joueurs[1].couleur) );
 					printf(" %c  ",PLEINE);
 					couleur(DEFAULT);
 				}
