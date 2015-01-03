@@ -1,0 +1,96 @@
+\hypertarget{boiteOutil_8h}{\section{\-Référence du fichier boite\-Outil.\-h}
+\label{boiteOutil_8h}\index{boite\-Outil.\-h@{boite\-Outil.\-h}}
+}
+
+
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{boiteOutil_8c}{boite\-Outil.\-c} et du type booleen.  
+
+
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{boiteOutil_8h_a294587294111bfede1e11bdf876b6d10}{void \hyperlink{boiteOutil_8h_a294587294111bfede1e11bdf876b6d10}{vider\-Buffer} ()}\label{boiteOutil_8h_a294587294111bfede1e11bdf876b6d10}
+
+\begin{DoxyCompactList}\small\item\em fonction qui vide le buffer (stdin) grace à la fonction getchar() si le joueur saisis plus de caractères qu'il n'est demandé. \end{DoxyCompactList}\item 
+int \hyperlink{boiteOutil_8h_a8c0aaebb33e693fc00c39ad44f5fd7fe}{lire} (char $\ast$chaine, int longueur)
+\begin{DoxyCompactList}\small\item\em on définit notre propre fonction de saisie qu'on appele lire pour éviter les problèmes de saisie causé par scanf. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{boiteOutil_8h_a30c9f8da97a6fc5f7018f6ae6cbb7260}{codage} (char x)
+\begin{DoxyCompactList}\small\item\em fonction qui prend en paramètre le caractère qui représente une couleur et renvoi la chaine de caractère (séquence d'échappement) \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{boiteOutil_8h_afb931e145a2c1af717a916e6517c1bb4}{convert} (char x)
+\begin{DoxyCompactList}\small\item\em fonction qui prend en paramètre le caractère qui représente une couleur et renvoi le non de cette couleur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{boiteOutil_8c}{boite\-Outil.\-c} et du type booleen. \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+19 \-Décembre 2014 
+\end{DoxyDate}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{boiteOutil_8h_a30c9f8da97a6fc5f7018f6ae6cbb7260}{\index{boite\-Outil.\-h@{boite\-Outil.\-h}!codage@{codage}}
+\index{codage@{codage}!boiteOutil.h@{boite\-Outil.\-h}}
+\subsubsection[{codage}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf codage} (
+\begin{DoxyParamCaption}
+\item[{char}]{x}
+\end{DoxyParamCaption}
+)}}\label{boiteOutil_8h_a30c9f8da97a6fc5f7018f6ae6cbb7260}
+
+
+fonction qui prend en paramètre le caractère qui représente une couleur et renvoi la chaine de caractère (séquence d'échappement) 
+
+de cette couleur.
+
+quand le joueur choisis la couleur de ses pions, il saisit un seul caractère représentant cette couleur, (par exemple, il saisit n pour la couleur noir) ce caractère est stockés dans le tableau joueurs. cette fonction permet donc de convertir le caractère saisis en une chaine de caractère (par exemple n est converti en \-N\-O\-I\-R) \-N\-O\-I\-R n'est pas la chaine \char`\"{}\-N\-O\-I\-R\char`\"{} c'est une variable qui représente la séquence d'échappement de la couleur noir. cette fonction est appelé par la fonction afficher\-Jeu qui se situe dans le fichier source affichagejeu.\-c. 
+\begin{DoxyParams}{\-Paramètres}
+{\em x} & le caractère qui représente une couleur saisis par le joueur. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+une chaine de caractère qui permet d'afficher un texte en une couleur donnée. 
+\end{DoxyReturn}
+\hypertarget{boiteOutil_8h_afb931e145a2c1af717a916e6517c1bb4}{\index{boite\-Outil.\-h@{boite\-Outil.\-h}!convert@{convert}}
+\index{convert@{convert}!boiteOutil.h@{boite\-Outil.\-h}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf convert} (
+\begin{DoxyParamCaption}
+\item[{char}]{x}
+\end{DoxyParamCaption}
+)}}\label{boiteOutil_8h_afb931e145a2c1af717a916e6517c1bb4}
+
+
+fonction qui prend en paramètre le caractère qui représente une couleur et renvoi le non de cette couleur. 
+
+cette fonction est très semblable à celle du dessus.
+
+meme détail qu ci dessus à la différence que cette fonction renvoi le nom de la couleur en question et non pas son code \-A\-S\-C\-I\-I. 
+\begin{DoxyParams}{\-Paramètres}
+{\em x} & le caractère qui représente une couleur saisis par le joueur. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+pointeur sur un tableau contenant le nom de la couleur en question. 
+\end{DoxyReturn}
+\hypertarget{boiteOutil_8h_a8c0aaebb33e693fc00c39ad44f5fd7fe}{\index{boite\-Outil.\-h@{boite\-Outil.\-h}!lire@{lire}}
+\index{lire@{lire}!boiteOutil.h@{boite\-Outil.\-h}}
+\subsubsection[{lire}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf lire} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{chaine, }
+\item[{int}]{longueur}
+\end{DoxyParamCaption}
+)}}\label{boiteOutil_8h_a8c0aaebb33e693fc00c39ad44f5fd7fe}
+
+
+on définit notre propre fonction de saisie qu'on appele lire pour éviter les problèmes de saisie causé par scanf. 
+
+cette fonction permet la saisie sécurisée pour le joueur en évitant un dépassement du tampon grace à fgets d'une part. elle permet aussi d'éliminer le retour à la ligne récupéré par fgets et de le remplacer par '$\backslash$0', d'autre part. si le caract de retour n'a pas été trouvé dans la chaine, ceci voudra dire que le joueur a saisi plus de caractères qu'il n'est demandé la fonction retourne donc 0 pour indiquer que la saisie est incorrecte, elle retourne 1 sinon. 
+\begin{DoxyParams}{\-Paramètres}
+{\em $\ast$chaine} & un pointeur vers un tableau alloué en mémoire où la fonction va pouvoir écrire le texte entré par l'utilisateur. \\
+\hline
+{\em longueur} & la taille du tableau envoyé en premier paramètre. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si tout s'est bien passé, 0 sinon. 
+\end{DoxyReturn}

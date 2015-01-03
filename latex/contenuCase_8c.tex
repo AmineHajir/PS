@@ -1,0 +1,186 @@
+\hypertarget{contenuCase_8c}{\section{\-Référence du fichier contenu\-Case.\-c}
+\label{contenuCase_8c}\index{contenu\-Case.\-c@{contenu\-Case.\-c}}
+}
+
+
+ce fichier source contient les définitions des fonctions booloéenne qui permettent d'identifier le contenu d'une case de la grille du jeu.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include \char`\"{}affichage\-Jeu.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}contenu\-Case.\-h\char`\"{}}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{contenuCase_8c_a3163316232a0a39542d30bd7bf10f2c3}{case\-Vide} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction qui indique si une case de la grille est vide \char`\"{}ne contient aucun pion\char`\"{} (ou pas!!). \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{contenuCase_8c_a1ebe9b5207d7277a1d391d72d125552b}{case\-Pleine} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction qui indique si une case de la grille comporte uniquement la piece pleine. \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{contenuCase_8c_a228b78b6b16c29782cb191e87fcf3e9d}{case\-Blocante} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction qui indique si une case de la grille comporte uniquement la piece bloquante. \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{contenuCase_8c_a1df0083481c79fd73b0662acb17f4d5a}{case\-Creuse} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction qui indique si une case de la grille comporte uniquement la piece creuse. \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{contenuCase_8c_ae1ed5407f0ef0decaa388853246470b5}{case\-Pleine\-Creuse} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction qui indique si une case de la grille comporte exactement les deux pièces pleine et creuse. (non nécessaire) \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{contenuCase_8c_a6e41f57826d4c901465a2dacba739c28}{grille\-Pleine} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int \-V\mbox{[}\-M\mbox{]})
+\begin{DoxyCompactList}\small\item\em fonction qui indique si la grille du jeu est pleine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier source contient les définitions des fonctions booloéenne qui permettent d'identifier le contenu d'une case de la grille du jeu. \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+21 \-Décembre 2014 il contient également la définition de la fonction qui pesrmet de savoir si la grille du jeu est entièrement remplie.
+\end{DoxyDate}
+\-Il existe cinq cas possible pour le contenu d'une case \-: 1er cas \-: case vide $|$ 2eme cas \-: case contient une pièce pleine $|$ 3eme cas \-: case contient une pièce creuse 4eme cas \-: case contient une pièce blocante $|$ 5eme cas \-: case contient deux pièce (une creuse et une pleine) on va donc définir 5 fonctions 
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{contenuCase_8c_a228b78b6b16c29782cb191e87fcf3e9d}{\index{contenu\-Case.\-c@{contenu\-Case.\-c}!case\-Blocante@{case\-Blocante}}
+\index{case\-Blocante@{case\-Blocante}!contenuCase.c@{contenu\-Case.\-c}}
+\subsubsection[{case\-Blocante}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf case\-Blocante} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{contenuCase_8c_a228b78b6b16c29782cb191e87fcf3e9d}
+
+
+fonction qui indique si une case de la grille comporte uniquement la piece bloquante. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice qu'on souhaite tester si elle contient que la pièce blocante \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si la case contient uniquement une pièce bloquante \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
+\hypertarget{contenuCase_8c_a1df0083481c79fd73b0662acb17f4d5a}{\index{contenu\-Case.\-c@{contenu\-Case.\-c}!case\-Creuse@{case\-Creuse}}
+\index{case\-Creuse@{case\-Creuse}!contenuCase.c@{contenu\-Case.\-c}}
+\subsubsection[{case\-Creuse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf case\-Creuse} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{contenuCase_8c_a1df0083481c79fd73b0662acb17f4d5a}
+
+
+fonction qui indique si une case de la grille comporte uniquement la piece creuse. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice qu'on souhaite tester si elle contient que la pièce creuse \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si la case contient uniquement une pièce creuse \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
+\hypertarget{contenuCase_8c_a1ebe9b5207d7277a1d391d72d125552b}{\index{contenu\-Case.\-c@{contenu\-Case.\-c}!case\-Pleine@{case\-Pleine}}
+\index{case\-Pleine@{case\-Pleine}!contenuCase.c@{contenu\-Case.\-c}}
+\subsubsection[{case\-Pleine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf case\-Pleine} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{contenuCase_8c_a1ebe9b5207d7277a1d391d72d125552b}
+
+
+fonction qui indique si une case de la grille comporte uniquement la piece pleine. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice qu'on souhaite tester si elle contient que la piece pleine \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice qu'on souhaite tester ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si la case contient uniquement une pièce pleine \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
+\hypertarget{contenuCase_8c_ae1ed5407f0ef0decaa388853246470b5}{\index{contenu\-Case.\-c@{contenu\-Case.\-c}!case\-Pleine\-Creuse@{case\-Pleine\-Creuse}}
+\index{case\-Pleine\-Creuse@{case\-Pleine\-Creuse}!contenuCase.c@{contenu\-Case.\-c}}
+\subsubsection[{case\-Pleine\-Creuse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf case\-Pleine\-Creuse} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{contenuCase_8c_ae1ed5407f0ef0decaa388853246470b5}
+
+
+fonction qui indique si une case de la grille comporte exactement les deux pièces pleine et creuse. (non nécessaire) 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice qu'on souhaite tester si elle contient les deux pièces \-: creuse et pleine \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si la case contient uniquement une pièce pleine \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
+\hypertarget{contenuCase_8c_a3163316232a0a39542d30bd7bf10f2c3}{\index{contenu\-Case.\-c@{contenu\-Case.\-c}!case\-Vide@{case\-Vide}}
+\index{case\-Vide@{case\-Vide}!contenuCase.c@{contenu\-Case.\-c}}
+\subsubsection[{case\-Vide}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf case\-Vide} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{contenuCase_8c_a3163316232a0a39542d30bd7bf10f2c3}
+
+
+fonction qui indique si une case de la grille est vide \char`\"{}ne contient aucun pion\char`\"{} (ou pas!!). 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice qu'on souhaite tester si vide ou pas \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice qu'on souhaite tester si vide \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si la case est vide \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
+\hypertarget{contenuCase_8c_a6e41f57826d4c901465a2dacba739c28}{\index{contenu\-Case.\-c@{contenu\-Case.\-c}!grille\-Pleine@{grille\-Pleine}}
+\index{grille\-Pleine@{grille\-Pleine}!contenuCase.c@{contenu\-Case.\-c}}
+\subsubsection[{grille\-Pleine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf grille\-Pleine} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{\-V\mbox{[}\-M\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{contenuCase_8c_a6e41f57826d4c901465a2dacba739c28}
+
+
+fonction qui indique si la grille du jeu est pleine. 
+
+la grille est pleine ssi chaque case de la matrice contient soit \-: une blocante, soit une creuse et une pleine. 
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em \-V} & tableau des hauteurs des colonnes de la grille du jeu. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si la grille est remplie \-F\-A\-U\-X sinon 
+\end{DoxyReturn}

@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>PUISSANCE 4++:  Fichier source de couleurs.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">PUISSANCE 4++
+   
+   </div>
+   <div id="projectbrief">Projet L2 SPI : développement du jeu puissance4++ en langage C</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">couleurs.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="couleurs_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00008"></a>00008 <span class="preprocessor">#ifndef COULEURS</span>
+<a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define COULEURS</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<a name="l00011"></a>00011 
+<a name="l00012"></a>00012 <span class="comment">// defintion des couleurs </span>
+<a name="l00013"></a>00013 <span class="preprocessor">#define DEFAULT  &quot;0&quot; // system color (réinitialise le système de couleur).</span>
+<a name="l00014"></a>00014 <span class="preprocessor"></span><span class="preprocessor">#define NOIR    &quot;30&quot; </span>
+<a name="l00015"></a>00015 <span class="preprocessor"></span><span class="preprocessor">#define ROUGE   &quot;31&quot; </span>
+<a name="l00016"></a>00016 <span class="preprocessor"></span><span class="preprocessor">#define VERT    &quot;32&quot; </span>
+<a name="l00017"></a>00017 <span class="preprocessor"></span><span class="preprocessor">#define JAUNE   &quot;33&quot; </span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span><span class="preprocessor">#define BLEU    &quot;34&quot; </span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="preprocessor">#define VIOLET  &quot;35&quot; </span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define CYAN    &quot;36&quot; </span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span><span class="preprocessor">#define WHITE   &quot;37&quot; </span>
+<a name="l00022"></a>00022 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 <span class="comment">//definition des couleurs en gras</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#define NOIRGRAS    &quot;30;1&quot; </span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define ROUGEGRAS   &quot;31;1&quot; </span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#define VERTGRAS    &quot;32;1&quot; </span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span><span class="preprocessor">#define JAUNEGRAS   &quot;33;1&quot; </span>
+<a name="l00028"></a>00028 <span class="preprocessor"></span><span class="preprocessor">#define BLEUGRAS    &quot;34;1&quot; </span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#define VIOLETGRAS  &quot;35;1&quot; </span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span><span class="preprocessor">#define CYANGRAS    &quot;36;1&quot; </span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="preprocessor">#define BLANCGRAS   &quot;37;1&quot; </span>
+<a name="l00032"></a>00032 <span class="preprocessor"></span>
+<a name="l00033"></a>00033 <span class="comment">//definition de l&#39;arrière plan (facultatif non utilisé dans ce projet, pourront servir dans un autre)</span>
+<a name="l00034"></a>00034 <span class="preprocessor">#define BLACK   &quot;40&quot; </span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#define RED     &quot;41&quot; </span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="preprocessor">#define YELLOW  &quot;42&quot; </span>
+<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="preprocessor">#define GREEN   &quot;43&quot; </span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="preprocessor">#define BLUE    &quot;44&quot; </span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span><span class="preprocessor">#define PURPLE  &quot;45&quot; </span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="preprocessor">#define CYANE   &quot;46&quot; </span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="preprocessor">#define BLANC   &quot;47&quot; </span>
+<a name="l00042"></a>00042 <span class="preprocessor"></span>
+<a name="l00043"></a>00043 <span class="comment">// autre deifnitions</span>
+<a name="l00044"></a>00044 <span class="preprocessor">#define BLINK  &quot;5&quot; // faire clignoter le texte.( ne fonctionne pas dans la console ubuntu!! faut-il modifier le bash!! )</span>
+<a name="l00045"></a>00045 <span class="preprocessor"></span><span class="preprocessor">#define GRAS   &quot;1&quot; // active la haute intensité des caractères.</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span><span class="preprocessor">#define INVERT &quot;7&quot; // inverse la sélection de couleurs.(facultatif)</span>
+<a name="l00047"></a>00047 <span class="preprocessor"></span><span class="preprocessor">#define STRESS &quot;4&quot; // souligne le texte.(facultatif)</span>
+<a name="l00048"></a>00048 <span class="preprocessor"></span>
+<a name="l00049"></a>00049 <span class="comment">// efface l&#39;ecran (clrscr = clearScrean) ~ system(&quot;clear&quot;)</span>
+<a name="l00050"></a>00050 <span class="preprocessor">#define clrscr() printf(&quot;\033[H\033[2J&quot;) </span>
+<a name="l00051"></a>00051 <span class="preprocessor"></span>
+<a name="l00052"></a>00052 <span class="comment">// selectionne les couleurs du texte et de l&#39;arrière plan </span>
+<a name="l00053"></a>00053 <span class="preprocessor">#define couleur(param) printf(&quot;\033[%sm&quot;,param)</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
+<a name="l00056"></a>00056 <span class="preprocessor"></span>
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058 
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Samedi Janvier 3 2015 14:33:33 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

@@ -7,9 +7,9 @@
 #include "affichageJeu.h"
 
 /**
- * \file menuJeu.c
+ * \file menuDebut.c
  * \author Hajir Mohammed Amine
- * \date 05 Janvier 2015
+ * \date 31 Décembre 2014
  * \brief ce fichier source contient la définition des fonctions d'affichage du menu principal et du menu du début du jeu.
  * \details la fonction d'affichage du menu du début permettra de faire saisir à chaque joueur son nom(ou pseudo) et sa couleur de préférence 
  * 	    de ses pions qui seront stockés dans le tableau des joueurs.

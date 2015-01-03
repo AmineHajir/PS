@@ -1,0 +1,36 @@
+\hypertarget{placerPion_8c}{\section{\-Référence du fichier placer\-Pion.\-c}
+\label{placerPion_8c}\index{placer\-Pion.\-c@{placer\-Pion.\-c}}
+}
+
+
+ce fichier source contient les définitions des fonctions qui permettent de placer un pion dans la bonne case de la grille du jeu.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include \char`\"{}affichage\-Jeu.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}contenu\-Case.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}placer\-Pion.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}couleurs.\-h\char`\"{}}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{placerPion_8c_a08f437cfc154f9e010d01e7609f0160a}{\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} {\bfseries placer\-Pleine} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int \-V\mbox{[}\-M\mbox{]}, int colonne, int player, char nom\mbox{[}12\mbox{]})}\label{placerPion_8c_a08f437cfc154f9e010d01e7609f0160a}
+
+\item 
+\hypertarget{placerPion_8c_aedca16b947f58af4698fa60cd918a854}{\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} {\bfseries placer\-Creuse} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int \-V\mbox{[}\-M\mbox{]}, int colonne, int player, char nom\mbox{[}12\mbox{]})}\label{placerPion_8c_aedca16b947f58af4698fa60cd918a854}
+
+\item 
+\hypertarget{placerPion_8c_aea5160ef1b5ad6fff92f35d70e799b25}{\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} {\bfseries placer\-Blocante} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int \-V\mbox{[}\-M\mbox{]}, int colonne, int player, char nom\mbox{[}12\mbox{]})}\label{placerPion_8c_aea5160ef1b5ad6fff92f35d70e799b25}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier source contient les définitions des fonctions qui permettent de placer un pion dans la bonne case de la grille du jeu. \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+23 \-Décembre 2014
+\end{DoxyDate}
+\-On définit trois fonctions puisqu'il y trois types de pions différents \-: une procèdure pour placer la pièce pleine, une deuxième pour placer la pièce creuse et une troisième pour placer la bloquante. \-N.\-B\-: ces procédures affichent des messages si la colonne choisis est pleine.... 

@@ -1,0 +1,54 @@
+\hypertarget{menuDebut_8c}{\section{\-Référence du fichier menu\-Debut.\-c}
+\label{menuDebut_8c}\index{menu\-Debut.\-c@{menu\-Debut.\-c}}
+}
+
+
+ce fichier source contient la définition des fonctions d'affichage du menu principal et du menu du début du jeu.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include \char`\"{}menu\-Debut.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}boite\-Outil.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}couleurs.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}affichage\-Jeu.\-h\char`\"{}}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{menuDebut_8c_aa627f5c292c2805ce98360b225760f27}{int {\bfseries menu\-Principal} ()}\label{menuDebut_8c_aa627f5c292c2805ce98360b225760f27}
+
+\item 
+void \hyperlink{menuDebut_8c_aeb1d5e609e1faaf5b69db3062358ae39}{menu\-Debut} (int num\-Joueur, \hyperlink{structjoueur}{joueur} \-V\mbox{[}12\mbox{]})
+\begin{DoxyCompactList}\small\item\em fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier source contient la définition des fonctions d'affichage du menu principal et du menu du début du jeu. \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+31 \-Décembre 2014
+\end{DoxyDate}
+la fonction d'affichage du menu du début permettra de faire saisir à chaque joueur son nom(ou pseudo) et sa couleur de préférence de ses pions qui seront stockés dans le tableau des joueurs. la fonction d'affichage du menu principal permet de faire saisir le nombre de joueurs de la partie. 
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{menuDebut_8c_aeb1d5e609e1faaf5b69db3062358ae39}{\index{menu\-Debut.\-c@{menu\-Debut.\-c}!menu\-Debut@{menu\-Debut}}
+\index{menu\-Debut@{menu\-Debut}!menuDebut.c@{menu\-Debut.\-c}}
+\subsubsection[{menu\-Debut}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf menu\-Debut} (
+\begin{DoxyParamCaption}
+\item[{int}]{num\-Joueur, }
+\item[{{\bf joueur}}]{\-V\mbox{[}12\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{menuDebut_8c_aeb1d5e609e1faaf5b69db3062358ae39}
+
+
+fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom). 
+
+elle permet de faire des controle de saisie si l'utilisateur choisis une couleur ou un pseudo déjà choisis par un autre joueur. des messages d'erreurs seront affichés dans de tels cas et dans le cas ou le joueur saisi plus que 10 caractères pour le nom. 
+\begin{DoxyParams}{\-Paramètres}
+{\em num\-Joueur} & égale à 1 si on s'adresse au premier joueur, 2 si 2eme joueur ..... \\
+\hline
+{\em v} & tableau de structure (joueur) ou l'on stocke les informations (couleur,nom). sur les joueurs . \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,114 @@
+\hypertarget{couleurs_8h}{\section{\-Référence du fichier couleurs.\-h}
+\label{couleurs_8h}\index{couleurs.\-h@{couleurs.\-h}}
+}
+
+
+header de définition des couleurs et de l'arrière plan du texte + fonction d'affichage de couleur + fonction nettoyage d'ecran ...  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+\subsection*{\-Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{couleurs_8h_a3da44afeba217135a680a7477b5e3ce3}{\#define {\bfseries \-D\-E\-F\-A\-U\-L\-T}~\char`\"{}0\char`\"{}}\label{couleurs_8h_a3da44afeba217135a680a7477b5e3ce3}
+
+\item 
+\hypertarget{couleurs_8h_a8a711bd77f878f23e61dfd98fc505a1c}{\#define {\bfseries \-N\-O\-I\-R}~\char`\"{}30\char`\"{}}\label{couleurs_8h_a8a711bd77f878f23e61dfd98fc505a1c}
+
+\item 
+\hypertarget{couleurs_8h_a358a59dd21062085dd34d5c228c5f136}{\#define {\bfseries \-R\-O\-U\-G\-E}~\char`\"{}31\char`\"{}}\label{couleurs_8h_a358a59dd21062085dd34d5c228c5f136}
+
+\item 
+\hypertarget{couleurs_8h_a22c2b7cb14b1ffb516a9ed4a164b5cda}{\#define {\bfseries \-V\-E\-R\-T}~\char`\"{}32\char`\"{}}\label{couleurs_8h_a22c2b7cb14b1ffb516a9ed4a164b5cda}
+
+\item 
+\hypertarget{couleurs_8h_a34c109ff6a0293c4706defe141ef7e0c}{\#define {\bfseries \-J\-A\-U\-N\-E}~\char`\"{}33\char`\"{}}\label{couleurs_8h_a34c109ff6a0293c4706defe141ef7e0c}
+
+\item 
+\hypertarget{couleurs_8h_ae22837728df88da892b4bb16bb98296d}{\#define {\bfseries \-B\-L\-E\-U}~\char`\"{}34\char`\"{}}\label{couleurs_8h_ae22837728df88da892b4bb16bb98296d}
+
+\item 
+\hypertarget{couleurs_8h_a928ad872921809adddfdd7f5d260fac0}{\#define {\bfseries \-V\-I\-O\-L\-E\-T}~\char`\"{}35\char`\"{}}\label{couleurs_8h_a928ad872921809adddfdd7f5d260fac0}
+
+\item 
+\hypertarget{couleurs_8h_ad243f93c16bc4c1d3e0a13b84421d760}{\#define {\bfseries \-C\-Y\-A\-N}~\char`\"{}36\char`\"{}}\label{couleurs_8h_ad243f93c16bc4c1d3e0a13b84421d760}
+
+\item 
+\hypertarget{couleurs_8h_a87b537f5fa5c109d3c05c13d6b18f382}{\#define {\bfseries \-W\-H\-I\-T\-E}~\char`\"{}37\char`\"{}}\label{couleurs_8h_a87b537f5fa5c109d3c05c13d6b18f382}
+
+\item 
+\hypertarget{couleurs_8h_a7f887de13f08f63d8a1c95efa86b22ca}{\#define {\bfseries \-N\-O\-I\-R\-G\-R\-A\-S}~\char`\"{}30;1\char`\"{}}\label{couleurs_8h_a7f887de13f08f63d8a1c95efa86b22ca}
+
+\item 
+\hypertarget{couleurs_8h_a0b247fdd28f7fe2d0d8d3e0f389d235a}{\#define {\bfseries \-R\-O\-U\-G\-E\-G\-R\-A\-S}~\char`\"{}31;1\char`\"{}}\label{couleurs_8h_a0b247fdd28f7fe2d0d8d3e0f389d235a}
+
+\item 
+\hypertarget{couleurs_8h_a8634d05c0a133f43e478cfbffddf1d14}{\#define {\bfseries \-V\-E\-R\-T\-G\-R\-A\-S}~\char`\"{}32;1\char`\"{}}\label{couleurs_8h_a8634d05c0a133f43e478cfbffddf1d14}
+
+\item 
+\hypertarget{couleurs_8h_a7e832cb1d2ab55d71f4d8e0432540523}{\#define {\bfseries \-J\-A\-U\-N\-E\-G\-R\-A\-S}~\char`\"{}33;1\char`\"{}}\label{couleurs_8h_a7e832cb1d2ab55d71f4d8e0432540523}
+
+\item 
+\hypertarget{couleurs_8h_a38852ed0b78ed1e0598b0a95010d1b7c}{\#define {\bfseries \-B\-L\-E\-U\-G\-R\-A\-S}~\char`\"{}34;1\char`\"{}}\label{couleurs_8h_a38852ed0b78ed1e0598b0a95010d1b7c}
+
+\item 
+\hypertarget{couleurs_8h_a05dbfc53808b423b7e91d0b0c0947995}{\#define {\bfseries \-V\-I\-O\-L\-E\-T\-G\-R\-A\-S}~\char`\"{}35;1\char`\"{}}\label{couleurs_8h_a05dbfc53808b423b7e91d0b0c0947995}
+
+\item 
+\hypertarget{couleurs_8h_ad99465c7ec6e4d85b631dbb67990e21d}{\#define {\bfseries \-C\-Y\-A\-N\-G\-R\-A\-S}~\char`\"{}36;1\char`\"{}}\label{couleurs_8h_ad99465c7ec6e4d85b631dbb67990e21d}
+
+\item 
+\hypertarget{couleurs_8h_a01f2b92f241c991ec158db545b2454e7}{\#define {\bfseries \-B\-L\-A\-N\-C\-G\-R\-A\-S}~\char`\"{}37;1\char`\"{}}\label{couleurs_8h_a01f2b92f241c991ec158db545b2454e7}
+
+\item 
+\hypertarget{couleurs_8h_a7b3b25cba33b07c303f3060fe41887f6}{\#define {\bfseries \-B\-L\-A\-C\-K}~\char`\"{}40\char`\"{}}\label{couleurs_8h_a7b3b25cba33b07c303f3060fe41887f6}
+
+\item 
+\hypertarget{couleurs_8h_a8d23feea868a983c8c2b661e1e16972f}{\#define {\bfseries \-R\-E\-D}~\char`\"{}41\char`\"{}}\label{couleurs_8h_a8d23feea868a983c8c2b661e1e16972f}
+
+\item 
+\hypertarget{couleurs_8h_abf681265909adf3d3e8116c93c0ba179}{\#define {\bfseries \-Y\-E\-L\-L\-O\-W}~\char`\"{}42\char`\"{}}\label{couleurs_8h_abf681265909adf3d3e8116c93c0ba179}
+
+\item 
+\hypertarget{couleurs_8h_acfbc006ea433ad708fdee3e82996e721}{\#define {\bfseries \-G\-R\-E\-E\-N}~\char`\"{}43\char`\"{}}\label{couleurs_8h_acfbc006ea433ad708fdee3e82996e721}
+
+\item 
+\hypertarget{couleurs_8h_a79d10e672abb49ad63eeaa8aaef57c38}{\#define {\bfseries \-B\-L\-U\-E}~\char`\"{}44\char`\"{}}\label{couleurs_8h_a79d10e672abb49ad63eeaa8aaef57c38}
+
+\item 
+\hypertarget{couleurs_8h_a0bb0b009e7a7390473ace4d98bd843c0}{\#define {\bfseries \-P\-U\-R\-P\-L\-E}~\char`\"{}45\char`\"{}}\label{couleurs_8h_a0bb0b009e7a7390473ace4d98bd843c0}
+
+\item 
+\hypertarget{couleurs_8h_abed95628fb7bd80d880ac4d46f7e1c0f}{\#define {\bfseries \-C\-Y\-A\-N\-E}~\char`\"{}46\char`\"{}}\label{couleurs_8h_abed95628fb7bd80d880ac4d46f7e1c0f}
+
+\item 
+\hypertarget{couleurs_8h_a4371941fa5aa27c04b3e2b973c39f4b0}{\#define {\bfseries \-B\-L\-A\-N\-C}~\char`\"{}47\char`\"{}}\label{couleurs_8h_a4371941fa5aa27c04b3e2b973c39f4b0}
+
+\item 
+\hypertarget{couleurs_8h_a38eec52a7dccb94ff563e30eda32c891}{\#define {\bfseries \-B\-L\-I\-N\-K}~\char`\"{}5\char`\"{}}\label{couleurs_8h_a38eec52a7dccb94ff563e30eda32c891}
+
+\item 
+\hypertarget{couleurs_8h_a169c4617c221ac5666addefe171a155d}{\#define {\bfseries \-G\-R\-A\-S}~\char`\"{}1\char`\"{}}\label{couleurs_8h_a169c4617c221ac5666addefe171a155d}
+
+\item 
+\hypertarget{couleurs_8h_a95febca84b9b6b5b9cfd278e44ffc56f}{\#define {\bfseries \-I\-N\-V\-E\-R\-T}~\char`\"{}7\char`\"{}}\label{couleurs_8h_a95febca84b9b6b5b9cfd278e44ffc56f}
+
+\item 
+\hypertarget{couleurs_8h_a6bff7afb81b98a2176b98ef95afb6760}{\#define {\bfseries \-S\-T\-R\-E\-S\-S}~\char`\"{}4\char`\"{}}\label{couleurs_8h_a6bff7afb81b98a2176b98ef95afb6760}
+
+\item 
+\hypertarget{couleurs_8h_ada0430ff0133c72d1ab38ca336610f5a}{\#define {\bfseries clrscr}()~printf(\char`\"{}$\backslash$033\mbox{[}\-H$\backslash$033\mbox{[}2\-J\char`\"{})}\label{couleurs_8h_ada0430ff0133c72d1ab38ca336610f5a}
+
+\item 
+\hypertarget{couleurs_8h_aabcb2d6536b6c0ab41f99493c911489b}{\#define {\bfseries couleur}(param)~printf(\char`\"{}$\backslash$033\mbox{[}\%sm\char`\"{},param)}\label{couleurs_8h_aabcb2d6536b6c0ab41f99493c911489b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+header de définition des couleurs et de l'arrière plan du texte + fonction d'affichage de couleur + fonction nettoyage d'ecran ... \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+25 \-Décembre 2014 
+\end{DoxyDate}

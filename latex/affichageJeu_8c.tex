@@ -1,0 +1,123 @@
+\hypertarget{affichageJeu_8c}{\section{\-Référence du fichier affichage\-Jeu.\-c}
+\label{affichageJeu_8c}\index{affichage\-Jeu.\-c@{affichage\-Jeu.\-c}}
+}
+
+
+ce fichier source contient les définitions des fonctions d'affichage du titre et de la grille du jeu.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include \char`\"{}affichage\-Jeu.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}contenu\-Case.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}couleurs.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}menu\-Debut.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}boite\-Outil.\-h\char`\"{}}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{affichageJeu_8c_ab55700bc09c4eb458a1519dde69e9334}{void \hyperlink{affichageJeu_8c_ab55700bc09c4eb458a1519dde69e9334}{afficher\-\_\-titre\-\_\-jeu} ()}\label{affichageJeu_8c_ab55700bc09c4eb458a1519dde69e9334}
+
+\begin{DoxyCompactList}\small\item\em affiche le titre du jeu (\-A\-S\-C\-I\-I art). \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8c_a35ba056f1c83f2a308bcd95d439a4f99}{initialiser\-\_\-jeu} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]})
+\begin{DoxyCompactList}\small\item\em procédure qui initialise les cases de la grille à vide (des espaces). \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8c_aa3e1a084f9890d50919f437addc07508}{initialiser\-\_\-hauteur\-Colonne} (int \-V\mbox{[}\-M\mbox{]})
+\begin{DoxyCompactList}\small\item\em procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille. \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8c_a17b4307927c52ece77ab09a1c0acafc7}{afficher\-\_\-num\-Colonne\-\_\-jeu} (int nbre\-\_\-colonne)
+\begin{DoxyCompactList}\small\item\em procédure qui affiche les numéros des colonnes de la grille du jeu. \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8c_a9d68eaac073710bc997c87fecbd93fd1}{afficher\-\_\-bordure\-\_\-grille} (int nbre\-\_\-colonne)
+\begin{DoxyCompactList}\small\item\em procédure qui affiche les bordures de la grille du jeu. \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8c_a0be28cbf2700e0f9b1ff109b42b4d91c}{afficher\-\_\-jeu} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]})
+\begin{DoxyCompactList}\small\item\em procédure qui affiche la grille du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier source contient les définitions des fonctions d'affichage du titre et de la grille du jeu. \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+19 \-Décembre 2014
+\end{DoxyDate}
+ce fichier contient aussi la définition de la fonction d'initialisation de la grille du jeu. il contient également la définition de la fonction d'initialisation du tableau qui stocke la hauteur de chaque colonne. 
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{affichageJeu_8c_a9d68eaac073710bc997c87fecbd93fd1}{\index{affichage\-Jeu.\-c@{affichage\-Jeu.\-c}!afficher\-\_\-bordure\-\_\-grille@{afficher\-\_\-bordure\-\_\-grille}}
+\index{afficher\-\_\-bordure\-\_\-grille@{afficher\-\_\-bordure\-\_\-grille}!affichageJeu.c@{affichage\-Jeu.\-c}}
+\subsubsection[{afficher\-\_\-bordure\-\_\-grille}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf afficher\-\_\-bordure\-\_\-grille} (
+\begin{DoxyParamCaption}
+\item[{int}]{nbre\-\_\-colonne}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8c_a9d68eaac073710bc997c87fecbd93fd1}
+
+
+procédure qui affiche les bordures de la grille du jeu. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em nbre\-\_\-colonne} & nombre de colonnes de la grille du jeu. \\
+\hline
+\end{DoxyParams}
+\hypertarget{affichageJeu_8c_a0be28cbf2700e0f9b1ff109b42b4d91c}{\index{affichage\-Jeu.\-c@{affichage\-Jeu.\-c}!afficher\-\_\-jeu@{afficher\-\_\-jeu}}
+\index{afficher\-\_\-jeu@{afficher\-\_\-jeu}!affichageJeu.c@{affichage\-Jeu.\-c}}
+\subsubsection[{afficher\-\_\-jeu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf afficher\-\_\-jeu} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8c_a0be28cbf2700e0f9b1ff109b42b4d91c}
+
+
+procédure qui affiche la grille du jeu. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em \-T} & matrice de type pion de taille \-N$\ast$\-M à afficher. \\
+\hline
+\end{DoxyParams}
+\hypertarget{affichageJeu_8c_a17b4307927c52ece77ab09a1c0acafc7}{\index{affichage\-Jeu.\-c@{affichage\-Jeu.\-c}!afficher\-\_\-num\-Colonne\-\_\-jeu@{afficher\-\_\-num\-Colonne\-\_\-jeu}}
+\index{afficher\-\_\-num\-Colonne\-\_\-jeu@{afficher\-\_\-num\-Colonne\-\_\-jeu}!affichageJeu.c@{affichage\-Jeu.\-c}}
+\subsubsection[{afficher\-\_\-num\-Colonne\-\_\-jeu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf afficher\-\_\-num\-Colonne\-\_\-jeu} (
+\begin{DoxyParamCaption}
+\item[{int}]{nbre\-\_\-colonne}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8c_a17b4307927c52ece77ab09a1c0acafc7}
+
+
+procédure qui affiche les numéros des colonnes de la grille du jeu. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em nbre\-\_\-colonne} & nombre de colonnes de la grille du jeu. \\
+\hline
+\end{DoxyParams}
+\hypertarget{affichageJeu_8c_aa3e1a084f9890d50919f437addc07508}{\index{affichage\-Jeu.\-c@{affichage\-Jeu.\-c}!initialiser\-\_\-hauteur\-Colonne@{initialiser\-\_\-hauteur\-Colonne}}
+\index{initialiser\-\_\-hauteur\-Colonne@{initialiser\-\_\-hauteur\-Colonne}!affichageJeu.c@{affichage\-Jeu.\-c}}
+\subsubsection[{initialiser\-\_\-hauteur\-Colonne}]{\setlength{\rightskip}{0pt plus 5cm}{\bf initialiser\-\_\-hauteur\-Colonne} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V\mbox{[}\-M\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8c_aa3e1a084f9890d50919f437addc07508}
+
+
+procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em \-V} & tableau dont la taille est égale au nombre de colonnes de la grille. \\
+\hline
+\end{DoxyParams}
+\hypertarget{affichageJeu_8c_a35ba056f1c83f2a308bcd95d439a4f99}{\index{affichage\-Jeu.\-c@{affichage\-Jeu.\-c}!initialiser\-\_\-jeu@{initialiser\-\_\-jeu}}
+\index{initialiser\-\_\-jeu@{initialiser\-\_\-jeu}!affichageJeu.c@{affichage\-Jeu.\-c}}
+\subsubsection[{initialiser\-\_\-jeu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf initialiser\-\_\-jeu} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8c_a35ba056f1c83f2a308bcd95d439a4f99}
+
+
+procédure qui initialise les cases de la grille à vide (des espaces). 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em \-T} & matrcie de taille \-N(lignes)$\ast$\-M(colonnes) qui représente la grille du jeu. \\
+\hline
+\end{DoxyParams}

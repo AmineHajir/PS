@@ -1,0 +1,170 @@
+\hypertarget{affichageJeu_8h}{\section{\-Référence du fichier affichage\-Jeu.\-h}
+\label{affichageJeu_8h}\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}}
+}
+
+
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{affichageJeu_8c}{affichage\-Jeu.\-c}  
+
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpion}{pion}
+\begin{DoxyCompactList}\small\item\em \-Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au puissance4++. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{affichageJeu_8h_a0240ac851181b84ac374872dc5434ee4}{\#define {\bfseries \-N}~6}\label{affichageJeu_8h_a0240ac851181b84ac374872dc5434ee4}
+
+\item 
+\hypertarget{affichageJeu_8h_a52037c938e3c1b126c6277da5ca689d0}{\#define {\bfseries \-M}~7}\label{affichageJeu_8h_a52037c938e3c1b126c6277da5ca689d0}
+
+\item 
+\#define \hyperlink{affichageJeu_8h_a812c14a17899d5a627e3adec7bd1b8ab}{\-B\-L\-O\-C\-A\-N\-T\-E}~'\-B'
+\begin{DoxyCompactList}\small\item\em une pièce blocante du jeu est représentée par le caractère '\-B'. \end{DoxyCompactList}\item 
+\#define \hyperlink{affichageJeu_8h_a85c1bc5ca2e4e966b991049a6610bc5f}{\-C\-R\-E\-U\-S\-E}~'\-C'
+\begin{DoxyCompactList}\small\item\em une pièce creuse du jeu est représentée par le caractère '\-C'. \end{DoxyCompactList}\item 
+\#define \hyperlink{affichageJeu_8h_aa2e47948083b80b532a9c223be4c7c9b}{\-P\-L\-E\-I\-N\-E}~'\-P'
+\begin{DoxyCompactList}\small\item\em une pièce pleine du jeu est représentée par le caractère '\-P'. \end{DoxyCompactList}\item 
+\hypertarget{affichageJeu_8h_a3ee479371002a0a258e5c4111cc6e54f}{\#define \hyperlink{affichageJeu_8h_a3ee479371002a0a258e5c4111cc6e54f}{\-V\-I\-D\-E}~' '}\label{affichageJeu_8h_a3ee479371002a0a258e5c4111cc6e54f}
+
+\begin{DoxyCompactList}\small\item\em constante pour désigner qu'un champ d'une case de la matrice ne contient aucun pion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{affichageJeu_8h_ab55700bc09c4eb458a1519dde69e9334}{void \hyperlink{affichageJeu_8h_ab55700bc09c4eb458a1519dde69e9334}{afficher\-\_\-titre\-\_\-jeu} ()}\label{affichageJeu_8h_ab55700bc09c4eb458a1519dde69e9334}
+
+\begin{DoxyCompactList}\small\item\em affiche le titre du jeu (\-A\-S\-C\-I\-I art). \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8h_a35ba056f1c83f2a308bcd95d439a4f99}{initialiser\-\_\-jeu} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]})
+\begin{DoxyCompactList}\small\item\em procédure qui initialise les cases de la grille à vide (des espaces). \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8h_a0e62204937aabc638035d775bbf82ace}{initialiser\-\_\-hauteur\-Colonne} (int \-V\mbox{[}\-M\mbox{]})
+\begin{DoxyCompactList}\small\item\em procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille. \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8h_a0be28cbf2700e0f9b1ff109b42b4d91c}{afficher\-\_\-jeu} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]})
+\begin{DoxyCompactList}\small\item\em procédure qui affiche la grille du jeu. \end{DoxyCompactList}\item 
+void \hyperlink{affichageJeu_8h_a17b4307927c52ece77ab09a1c0acafc7}{afficher\-\_\-num\-Colonne\-\_\-jeu} (int nbre\-\_\-colonne)
+\begin{DoxyCompactList}\small\item\em procédure qui affiche les numéros des colonnes de la grille du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structpion}{pion} \hyperlink{affichageJeu_8h_a370837543f3d655636552bb90721f6d5}{grille} \mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}
+\begin{DoxyCompactList}\small\item\em structure de données utilisé pour le jeu puissance4++ \end{DoxyCompactList}\item 
+int \hyperlink{affichageJeu_8h_a0efe9464b700b0632e4eccb97a89daf4}{hauteur\-Colonne} \mbox{[}\-M\mbox{]}
+\begin{DoxyCompactList}\small\item\em structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{affichageJeu_8c}{affichage\-Jeu.\-c} \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+19 \-Décembre 2014
+\end{DoxyDate}
+ce fichier contient aussi la déclaration, des variables globales et des structures de données utilisées (matrcie,typedef,tableau...) 
+
+\subsection{\-Documentation des macros}
+\hypertarget{affichageJeu_8h_a812c14a17899d5a627e3adec7bd1b8ab}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!\-B\-L\-O\-C\-A\-N\-T\-E@{\-B\-L\-O\-C\-A\-N\-T\-E}}
+\index{\-B\-L\-O\-C\-A\-N\-T\-E@{\-B\-L\-O\-C\-A\-N\-T\-E}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{\-B\-L\-O\-C\-A\-N\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-B\-L\-O\-C\-A\-N\-T\-E}~'\-B'}}\label{affichageJeu_8h_a812c14a17899d5a627e3adec7bd1b8ab}
+
+
+une pièce blocante du jeu est représentée par le caractère '\-B'. 
+
+on peut aussi représenter ce pion par une croix \-X. \hypertarget{affichageJeu_8h_a85c1bc5ca2e4e966b991049a6610bc5f}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!\-C\-R\-E\-U\-S\-E@{\-C\-R\-E\-U\-S\-E}}
+\index{\-C\-R\-E\-U\-S\-E@{\-C\-R\-E\-U\-S\-E}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{\-C\-R\-E\-U\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-C\-R\-E\-U\-S\-E}~'\-C'}}\label{affichageJeu_8h_a85c1bc5ca2e4e966b991049a6610bc5f}
+
+
+une pièce creuse du jeu est représentée par le caractère '\-C'. 
+
+on peut aussi représenter ce pion par le caractère dont le code \-A\-S\-C\-I\-I est 169. (logo droit d'auteur) \hypertarget{affichageJeu_8h_aa2e47948083b80b532a9c223be4c7c9b}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!\-P\-L\-E\-I\-N\-E@{\-P\-L\-E\-I\-N\-E}}
+\index{\-P\-L\-E\-I\-N\-E@{\-P\-L\-E\-I\-N\-E}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{\-P\-L\-E\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf \-P\-L\-E\-I\-N\-E}~'\-P'}}\label{affichageJeu_8h_aa2e47948083b80b532a9c223be4c7c9b}
+
+
+une pièce pleine du jeu est représentée par le caractère '\-P'. 
+
+on peut aussi représenter ce pion par le caractère dont le code \-A\-S\-C\-I\-I est 216(ou248). (logo ensemble vide, zéro barré) 
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{affichageJeu_8h_a0be28cbf2700e0f9b1ff109b42b4d91c}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!afficher\-\_\-jeu@{afficher\-\_\-jeu}}
+\index{afficher\-\_\-jeu@{afficher\-\_\-jeu}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{afficher\-\_\-jeu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf afficher\-\_\-jeu} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8h_a0be28cbf2700e0f9b1ff109b42b4d91c}
+
+
+procédure qui affiche la grille du jeu. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em \-T} & matrice de type pion de taille \-N$\ast$\-M à afficher. \\
+\hline
+\end{DoxyParams}
+\hypertarget{affichageJeu_8h_a17b4307927c52ece77ab09a1c0acafc7}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!afficher\-\_\-num\-Colonne\-\_\-jeu@{afficher\-\_\-num\-Colonne\-\_\-jeu}}
+\index{afficher\-\_\-num\-Colonne\-\_\-jeu@{afficher\-\_\-num\-Colonne\-\_\-jeu}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{afficher\-\_\-num\-Colonne\-\_\-jeu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf afficher\-\_\-num\-Colonne\-\_\-jeu} (
+\begin{DoxyParamCaption}
+\item[{int}]{nbre\-\_\-colonne}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8h_a17b4307927c52ece77ab09a1c0acafc7}
+
+
+procédure qui affiche les numéros des colonnes de la grille du jeu. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em nbre\-\_\-colonne} & nombre de colonnes de la grille du jeu. \\
+\hline
+\end{DoxyParams}
+\hypertarget{affichageJeu_8h_a0e62204937aabc638035d775bbf82ace}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!initialiser\-\_\-hauteur\-Colonne@{initialiser\-\_\-hauteur\-Colonne}}
+\index{initialiser\-\_\-hauteur\-Colonne@{initialiser\-\_\-hauteur\-Colonne}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{initialiser\-\_\-hauteur\-Colonne}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf initialiser\-\_\-hauteur\-Colonne} (
+\begin{DoxyParamCaption}
+\item[{int}]{\-V\mbox{[}\-M\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8h_a0e62204937aabc638035d775bbf82ace}
+
+
+procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em \-V} & tableau dont la taille est égale au nombre de colonnes de la grille. \\
+\hline
+\end{DoxyParams}
+\hypertarget{affichageJeu_8h_a35ba056f1c83f2a308bcd95d439a4f99}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!initialiser\-\_\-jeu@{initialiser\-\_\-jeu}}
+\index{initialiser\-\_\-jeu@{initialiser\-\_\-jeu}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{initialiser\-\_\-jeu}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf initialiser\-\_\-jeu} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{affichageJeu_8h_a35ba056f1c83f2a308bcd95d439a4f99}
+
+
+procédure qui initialise les cases de la grille à vide (des espaces). 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em \-T} & matrcie de taille \-N(lignes)$\ast$\-M(colonnes) qui représente la grille du jeu. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Documentation des variables}
+\hypertarget{affichageJeu_8h_a370837543f3d655636552bb90721f6d5}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!grille@{grille}}
+\index{grille@{grille}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{grille}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pion} {\bf grille}\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}}}\label{affichageJeu_8h_a370837543f3d655636552bb90721f6d5}
+
+
+structure de données utilisé pour le jeu puissance4++ 
+
+matrice de type pion et de taille \-N$\ast$\-M (6$\ast$7=42 cases dans le cas de deux joueurs). chaque case de la matrice peut contenir deux pièces(pions) au maximum. une case peut contenir une pièce \char`\"{}bloquante\char`\"{} ou \char`\"{}pleine\char`\"{} ou \char`\"{}creuse\char`\"{} ou deus pièces \char`\"{}creuse/pleine\char`\"{} ou peut etre vide(espace). on distingue donc 5 cas possibles pour une case de la matrice. \hypertarget{affichageJeu_8h_a0efe9464b700b0632e4eccb97a89daf4}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!hauteur\-Colonne@{hauteur\-Colonne}}
+\index{hauteur\-Colonne@{hauteur\-Colonne}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{hauteur\-Colonne}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hauteur\-Colonne}\mbox{[}\-M\mbox{]}}}\label{affichageJeu_8h_a0efe9464b700b0632e4eccb97a89daf4}
+
+
+structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu. 
+
+la taille de ce tableau est égale au nombres de colonnes de la grille (constante \-M) ce tableau permet de stocker dans chacune de ses cases l'indice de la première case vide de la colonne correspondante dans le cas ou la colonne est pleine, la valeur de la case correspondante à cette colonne dans le tableau est égale à 0. au début du jeu toutes les cases du tableau sont initialisées à \-N-\/1(5) car l'indice de la premiere case vide de chaque colonne est égale à l'indice de la dernière ligne de la grille. 

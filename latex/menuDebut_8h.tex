@@ -1,0 +1,74 @@
+\hypertarget{menuDebut_8h}{\section{\-Référence du fichier menu\-Debut.\-h}
+\label{menuDebut_8h}\index{menu\-Debut.\-h@{menu\-Debut.\-h}}
+}
+
+
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{menuDebut_8c}{menu\-Debut.\-c}  
+
+
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structjoueur}{joueur}
+\begin{DoxyCompactList}\small\item\em définition du type joueur qui caractérise chaque joueur par son nom et sa couleur de pion \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{menuDebut_8h_aef49715ab7dfe559d4b220dd5be6c382}{\#define \hyperlink{menuDebut_8h_aef49715ab7dfe559d4b220dd5be6c382}{\-M\-A\-X\-J\-O\-U\-E\-U\-R}~4}\label{menuDebut_8h_aef49715ab7dfe559d4b220dd5be6c382}
+
+\begin{DoxyCompactList}\small\item\em nombre maximum de joueurs pouvant participer à une partie du puissance4++. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{menuDebut_8h_aa627f5c292c2805ce98360b225760f27}{int {\bfseries menu\-Principal} ()}\label{menuDebut_8h_aa627f5c292c2805ce98360b225760f27}
+
+\item 
+void \hyperlink{menuDebut_8h_aeb1d5e609e1faaf5b69db3062358ae39}{menu\-Debut} (int num\-Joueur, \hyperlink{structjoueur}{joueur} \-V\mbox{[}12\mbox{]})
+\begin{DoxyCompactList}\small\item\em fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structjoueur}{joueur} \hyperlink{menuDebut_8h_abcfea5882cbb6f31cee77a7cec874e1a}{joueurs} \mbox{[}\hyperlink{menuDebut_8h_aef49715ab7dfe559d4b220dd5be6c382}{\-M\-A\-X\-J\-O\-U\-E\-U\-R}\mbox{]}
+\begin{DoxyCompactList}\small\item\em tableau contenant les informations sur les joueurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{menuDebut_8c}{menu\-Debut.\-c} \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+31 \-Décembre 2014 
+\end{DoxyDate}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{menuDebut_8h_aeb1d5e609e1faaf5b69db3062358ae39}{\index{menu\-Debut.\-h@{menu\-Debut.\-h}!menu\-Debut@{menu\-Debut}}
+\index{menu\-Debut@{menu\-Debut}!menuDebut.h@{menu\-Debut.\-h}}
+\subsubsection[{menu\-Debut}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf menu\-Debut} (
+\begin{DoxyParamCaption}
+\item[{int}]{num\-Joueur, }
+\item[{{\bf joueur}}]{\-V\mbox{[}12\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{menuDebut_8h_aeb1d5e609e1faaf5b69db3062358ae39}
+
+
+fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom). 
+
+elle permet de faire des controle de saisie si l'utilisateur choisis une couleur ou un pseudo déjà choisis par un autre joueur. des messages d'erreurs seront affichés dans de tels cas et dans le cas ou le joueur saisi plus que 10 caractères pour le nom. 
+\begin{DoxyParams}{\-Paramètres}
+{\em num\-Joueur} & égale à 1 si on s'adresse au premier joueur, 2 si 2eme joueur ..... \\
+\hline
+{\em v} & tableau de structure (joueur) ou l'on stocke les informations (couleur,nom). sur les joueurs . \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Documentation des variables}
+\hypertarget{menuDebut_8h_abcfea5882cbb6f31cee77a7cec874e1a}{\index{menu\-Debut.\-h@{menu\-Debut.\-h}!joueurs@{joueurs}}
+\index{joueurs@{joueurs}!menuDebut.h@{menu\-Debut.\-h}}
+\subsubsection[{joueurs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf joueurs}\mbox{[}2\mbox{]}}}\label{menuDebut_8h_abcfea5882cbb6f31cee77a7cec874e1a}
+
+
+tableau contenant les informations sur les joueurs. 
+
+la taille de ce tableau est égale au nombre de joueurs de la partie. ce tableau permet de stocker dans chacune de ses cases la couleur et le nom du joueur en question. 

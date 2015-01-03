@@ -28,9 +28,9 @@ void viderBuffer()
  * \fn int lire(char *chaine, int longueur)
  * \brief on définit notre propre fonction de saisie qu'on appele lire pour éviter les problèmes de saisie causé par scanf. 
  * \details cette fonction permet la saisie sécurisée pour le joueur en évitant un dépassement du tampon grace à fgets d'une part.
- * 	    elle permet aussi d'éliminer le retour à la ligne '\n' récupéré par fgets et de le remplacer par '\0', d'autre part.
- * 	    si '\n' n'a pas été trouvé dans la chaine, ceci voudra dire que le joueur a saisi plus de caractères qu'il n'est demandé
- * 	    la fonction retourne donc 0 pour indiquer que la saisie est incorrecte, elle retourne 1 sinon.
+ * 	    elle permet aussi d'éliminer le retour à la ligne récupéré par fgets et de le remplacer par '\0', d'autre part.
+ * 	    si le caract de retour n'a pas été trouvé dans la chaine, ceci voudra dire que le joueur a saisi plus de caractères 
+ *          qu'il n'est demandé la fonction retourne donc 0 pour indiquer que la saisie est incorrecte, elle retourne 1 sinon.
  * \param *chaine  un pointeur vers un tableau alloué en mémoire où la fonction va pouvoir écrire le texte entré par l'utilisateur.
  * \param longueur la taille du tableau envoyé en premier paramètre.
  * \return 1 si tout s'est bien passé, 0 sinon.
