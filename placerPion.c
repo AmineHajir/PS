@@ -25,7 +25,7 @@
  * \param nom tableau de 12 caractères ou est stocké le nom du joueur.(10 carac. pr le nom car 2 dernieres cases reservées pr '\n' et '\0'.  
  * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
-booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[12], int* ligne)
+booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[12], int* p_ligne)
 {
 	int indice=V[colonne-1]; // on récupère la valeur de la première case vide et on la stocke dans la variable indice. 
 	int i=indice+1; // variable qui parcourt les case inférieure à la case vide
@@ -73,7 +73,7 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[1
 		/* on place la pièce pleine dans la bonne case (en fait c'est le numéro du joueur qui est stocké en mémoire
 		   et non pas le type de pièce)*/
 		T[indice][colonne-1].plein = player; 
-		(*ligne)=indice;
+		(*p_ligne)=indice;
 								
 		if( (V[colonne-1] > 0) && (caseVide(T,V[colonne-1],colonne-1) == FAUX) ) 
 		{
@@ -96,7 +96,7 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[1
  * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
 // meme principe que pour la pièce pleine
-booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[12], int* ligne)
+booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[12], int* p_ligne)
 {
 	int indice=V[colonne-1];
 	int i=indice+1;
@@ -135,7 +135,7 @@ booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[12]
 			}
 		}
 		T[indice][colonne-1].creux = player; // voir première fonction
-		(*ligne)=indice;
+		(*p_ligne)=indice;
 								
 		if( (V[colonne-1] > 0) && (caseVide(T,V[colonne-1],colonne-1) == FAUX) )
 		{
@@ -155,7 +155,7 @@ booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[12]
  * \param nom tableau de 12 caractères ou est stocké le nom du joueur.
  * \return VRAI si le joueur a bien placer son pion FAUX sinon.
 */
-booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom[12],int* ligne)
+booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom[12],int* p_ligne)
 {
 	int indice=V[colonne-1];
 	
@@ -188,7 +188,7 @@ booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom
 	else
 	{
 		T[indice][colonne-1].bloc = player;
-		(*ligne)=indice;
+		(*p_ligne)=indice;
 	
 		if(indice > 0) // pour éviter que la hauteur d'une colonne soit négative
 		{

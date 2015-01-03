@@ -14,6 +14,7 @@ int main()
 {
 	int player;  // variable qui permet d'alterner le tour des joueurs
 	int nbJoueur; // nombre de joueurs de la partie saisis dans le menu principal
+	int ligne;
 	
 	printf("\n");
 	initialiser_jeu(grille);
@@ -30,7 +31,8 @@ int main()
 	{	
 		for(player=1;player<=nbJoueur;player++)
 		{
-			faireJouer(player);
+			ligne=faireJouer(player);
+			printf("\n%i",ligne);
 		}
 	
 	}while(grillePleine(grille,hauteurColonne) == FAUX); // on continue de jouer tant que la grille n'est pas remplie

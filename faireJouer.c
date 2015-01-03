@@ -22,7 +22,7 @@
  * \brief de ranger le pion choisis par le joueur dans la bon emplacement.
  * \param player le joueur qui doit jouer 1 ou 2 ....
 */
-void faireJouer(int player)
+int faireJouer(int player)
 {
 	char piece; // variable ou l'on stocke la pièce choisie par le joueur ('b', 'c' ou 'p')
 	int colonne; // variable ou l'on stocke le numéro de la colonne ou le joueur a choisi de mettre son pion
@@ -66,6 +66,7 @@ void faireJouer(int player)
 			case 'p' : jouer=placerPleine(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne); break;
 		}
 	}
+	return ligne;
 	
 }
 	
