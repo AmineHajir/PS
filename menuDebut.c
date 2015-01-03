@@ -81,12 +81,12 @@ void menuDebut(int numJoueur,joueur V[12])
 	do
 	{
 		couleur(GRAS); // titre du jeu en gras 
-		printf("			 	       _      _  _  _  _  _  _       \n");
-		printf("				      |_|| |||_ |_ |_|| ||  |_  |_|   \n");
-		printf("				      |  |_|| _| _|| || ||_ |_    | ++\n\n");
+		printf("			 	             _      _  _  _  _  _  _       \n");
+		printf("				            |_|| |||_ |_ |_|| ||  |_  |_|   \n");
+		printf("				            |  |_|| _| _|| || ||_ |_    | ++\n\n");
 		
 		
-		printf("\n                    ------------------ Choix du pseudo du joueur%i ------------------\n",numJoueur);
+		printf("\n                            ----------------- Choix du pseudo du joueur%i -----------------\n",numJoueur);
 		printf("  joueur%i, saisissez votre nom ou choisissez un pseudo ",numJoueur);
 		couleur(DEFAULT);
 		saisieCorrect=lire(nom,12); // lire renvoi 1 si la saisie est correcte, 0 sinon. (pour détail voir fichier boiteOutil.c)
