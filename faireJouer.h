@@ -7,4 +7,4 @@
  * \brief ce fichier contient les en-tete des fonctions définies dans le fichier source faireJouer.c
 **/
 
-int faireJouer(int player);
+booleen faireJouer(int player);

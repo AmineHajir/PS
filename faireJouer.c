@@ -8,6 +8,7 @@
 #include "couleurs.h"
 #include "boiteOutil.h"
 #include "menuDebut.h"
+#include "victoire.h"
 
 /**
  * \file faireJouer.c
@@ -22,7 +23,7 @@
  * \brief de ranger le pion choisis par le joueur dans la bon emplacement.
  * \param player le joueur qui doit jouer 1 ou 2 ....
 */
-int faireJouer(int player)
+booleen faireJouer(int player)
 {
 	char piece; // variable ou l'on stocke la pièce choisie par le joueur ('b', 'c' ou 'p')
 	int colonne; // variable ou l'on stocke le numéro de la colonne ou le joueur a choisi de mettre son pion
@@ -58,7 +59,7 @@ int faireJouer(int player)
 			// si le joueur choisis une blocante, on range cette dernière au bon emplacement dans la grille et on jouer reçoit VRAI
 			// si le choix de la colonne n'est pas bon (joueur qui essaye de placer un pion dans une colonne pleine par exemple)
 			// on affiche un message d'erreur et jouer reçoit FAUX
-			case 'b' : jouer=placerBlocante(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne); break;
+			case 'b' : jouer=placerBlocante(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne);break;
 			
 			// meme commentaire ....( cette fois pour la creuse)
 			case 'c' : jouer=placerCreuse(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne); break;
@@ -66,7 +67,17 @@ int faireJouer(int player)
 			case 'p' : jouer=placerPleine(grille, hauteurColonne, colonne, player,joueurs[player-1].nom,&ligne); break;
 		}
 	}
-	return ligne;
 	
+	if( /*(win_left_horizontal(grille,player,ligne,colonne-1) == VRAI) ||*/ (win_right_horizontal(grille,player,ligne,colonne-1) == VRAI) )
+	{
+		return VRAI;
+	}
+	else
+	{
+		return FAUX;
+	}
+	//return FAUX;
 }
+	
+
 	

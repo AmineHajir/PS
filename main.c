@@ -9,12 +9,13 @@
 #include "boiteOutil.h"
 #include "menuDebut.h"
 #include "faireJouer.h"
+#include "victoire.h"
 
 int main()
 {
 	int player;  // variable qui permet d'alterner le tour des joueurs
 	int nbJoueur; // nombre de joueurs de la partie saisis dans le menu principal
-	int ligne;
+	booleen winner;
 	
 	printf("\n");
 	initialiser_jeu(grille);
@@ -31,11 +32,14 @@ int main()
 	{	
 		for(player=1;player<=nbJoueur;player++)
 		{
-			ligne=faireJouer(player);
-			printf("\n%i",ligne);
+			winner=faireJouer(player);
+			if(winner==VRAI)
+			{
+				break;
+			}
 		}
 	
-	}while(grillePleine(grille,hauteurColonne) == FAUX); // on continue de jouer tant que la grille n'est pas remplie
+	}while( (grillePleine(grille,hauteurColonne) == FAUX) && (winner == FAUX) ); // on continue de jouer tant que la grille n'est pas remplie
 			
 	
 	afficher_jeu(grille);
