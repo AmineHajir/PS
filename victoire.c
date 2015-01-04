@@ -45,8 +45,8 @@ booleen case_du_joueur(pion T[N][M], int player, int ligne, int colonne)
 */
 booleen horizontal_win(pion T[N][M], int player, int ligne, int colonne)
 {
-	int i=1; // variable qui va parcourir les cases voisines qui se trouvent à droite de la case ou le pion a été placé
-	int j=1; // variable qui va parcourir les cases voisines qui se trouvent à gauche de la case ou le pion a été placé
+	int i=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent à droite de la case ou le pion a été placé
+	int j=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent à gauche de la case ou le pion a été placé
 	int cpt_droite=0; // compte le nombre de case voisines droites appartenant au joueur qui vient de placer son pion 
 	int cpt_gauche=0; // compte le nombre de case voisines gauches appartenant au joueur qui vient de placer son pion 
 	
@@ -98,8 +98,8 @@ booleen horizontal_win(pion T[N][M], int player, int ligne, int colonne)
 // meme principe que la fonction victoire horizontale, ici on parcourt les cases verticales au lieu des cases horizontales
 booleen vertical_win(pion T[N][M], int player, int ligne, int colonne)
 {
-	int i=1; // variable qui va parcourir les cases voisines qui se trouvent en dessous de la case ou le pion a été placé
-	int j=1; // variable qui va parcourir les cases voisines qui se trouvent au dessus de la case ou le pion a été placé
+	int i=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent en dessous de la case ou le pion a été placé
+	int j=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent au dessus de la case ou le pion a été placé
 	int cpt_bas=0; // compte le nombre de case voisines d'en dessous appartenant au joueur qui vient de placer son pion 
 	int cpt_haut=0; // compte le nombre de case voisines du dessus appartenant au joueur qui vient de placer son pion 
 	
@@ -143,7 +143,51 @@ booleen vertical_win(pion T[N][M], int player, int ligne, int colonne)
 }		
 	
 	
+booleen diagonal_win(pion T[N][M], int player, int ligne, int colonne)	
+{
+	int i=1;
+	int j=1;
+	int cpt_droite_haut=0;
+	int cpt_gauche_bas=0;
 	
+	
+	while( (ligne-i >= 0) && (colonne+i < M) )
+	{
+		if( case_du_joueur(T,player, ligne-i, colonne+i) )
+		{
+			cpt_droite_haut++;
+			i++;
+		}
+		else
+		{
+			i=N;
+		}
+	}
+	while( (ligne+j < N) && (colonne-j >= 0) )
+	{
+		if( case_du_joueur(T,player, ligne+j, colonne-j) )
+		{
+			cpt_gauche_bas++;
+			j++;
+		}
+		else
+		{
+			j=N;
+		}
+	}
+	if( (cpt_droite_haut+cpt_gauche_bas) >= 3 ) // si le nombre de cases voisines verticales (du dessus et d'en d'en dessous) de la case ou le joueur 
+				       // a déposé son pion est >=3 alors le joueur a gagné.
+	{ 				    
+		return VRAI;
+	}
+	else // si inferieur à 3 alors il n'y a pas de victoire verticale
+	{
+		return FAUX;
+	}
+}
+			
+			
+		
 	
 	
 
