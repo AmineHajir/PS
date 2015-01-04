@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['case_5fdu_5fjoueur',['case_du_joueur',['../victoire_8c.html#a81deccfbf18f016630a3840135482e08',1,'case_du_joueur(pion T[N][M], int player, int ligne, int colonne):&#160;victoire.c'],['../victoire_8h.html#a81deccfbf18f016630a3840135482e08',1,'case_du_joueur(pion T[N][M], int player, int ligne, int colonne):&#160;victoire.c']]],
   ['caseblocante',['caseBlocante',['../contenuCase_8c.html#a228b78b6b16c29782cb191e87fcf3e9d',1,'caseBlocante(pion T[N][M], int ligne, int colonne):&#160;contenuCase.c'],['../contenuCase_8h.html#a6de6323e40e43dbee6f0f42cba3efe1d',1,'caseBlocante(pion T[N][M], int colonne, int ligne):&#160;contenuCase.c']]],
   ['casecreuse',['caseCreuse',['../contenuCase_8c.html#a1df0083481c79fd73b0662acb17f4d5a',1,'caseCreuse(pion T[N][M], int ligne, int colonne):&#160;contenuCase.c'],['../contenuCase_8h.html#a37918c847037c135dc270300ae387ea1',1,'caseCreuse(pion T[N][M], int colonne, int ligne):&#160;contenuCase.c']]],
   ['casepleine',['casePleine',['../contenuCase_8c.html#a1ebe9b5207d7277a1d391d72d125552b',1,'casePleine(pion T[N][M], int ligne, int colonne):&#160;contenuCase.c'],['../contenuCase_8h.html#ae50301019390defdcea1ad756fc02221',1,'casePleine(pion T[N][M], int colonne, int ligne):&#160;contenuCase.c']]],

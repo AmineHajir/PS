@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>PUISSANCE 4++:  Fichier source de menuDebut.h</title>
+<title>PUISSANCE 4++:  Fichier source de victoire.h</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -76,23 +76,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="header">
   <div class="headertitle">
-<div class="title">menuDebut.h</div>  </div>
+<div class="title">victoire.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="menuDebut_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00013"></a><a class="code" href="structjoueur.html">00013</a> <span class="keyword">typedef</span> <span class="keyword">struct</span>
-<a name="l00014"></a>00014 {
-<a name="l00015"></a>00015         <span class="keywordtype">char</span> couleur; <span class="comment">// variable qui stocke la couleur des pions choisis par le joueur</span>
-<a name="l00016"></a>00016         <span class="keywordtype">char</span> nom[12]; <span class="comment">// tableau de caractère qui stocke le nom du joueur. (ce dernier ne peut dépasser 10 caractère)</span>
-<a name="l00017"></a>00017 }<a class="code" href="structjoueur.html" title="définition du type joueur qui caractérise chaque joueur par son nom et sa couleur de pion...">joueur</a>;              <span class="comment">// on déclare un tableau de taille 12 car les deux dernieres case sont reservé au caractère &#39;\n&#39; et &#39;\0&#39;.</span>
-<a name="l00018"></a>00018 
-<a name="l00023"></a><a class="code" href="menuDebut_8h.html#aef49715ab7dfe559d4b220dd5be6c382">00023</a> <span class="preprocessor">#define MAXJOUEUR 4</span>
-<a name="l00024"></a>00024 <span class="preprocessor"></span>
-<a name="l00031"></a><a class="code" href="menuDebut_8h.html#abcfea5882cbb6f31cee77a7cec874e1a">00031</a> <a class="code" href="structjoueur.html" title="définition du type joueur qui caractérise chaque joueur par son nom et sa couleur de pion...">joueur</a> <a class="code" href="menuDebut_8h.html#abcfea5882cbb6f31cee77a7cec874e1a" title="tableau contenant les informations sur les joueurs.">joueurs</a>[<a class="code" href="menuDebut_8h.html#aef49715ab7dfe559d4b220dd5be6c382" title="nombre maximum de joueurs pouvant participer à une partie du puissance4++.">MAXJOUEUR</a>];
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="keywordtype">int</span> <a class="code" href="menuDebut_8c.html#aa627f5c292c2805ce98360b225760f27" title="fonction qui affiche le menu principal du jeu puissance4++.">menuPrincipal</a>();
-<a name="l00035"></a>00035 <span class="keywordtype">void</span> <a class="code" href="menuDebut_8c.html#aeb1d5e609e1faaf5b69db3062358ae39" title="fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu ...">menuDebut</a>(<span class="keywordtype">int</span> numJoueur,<a class="code" href="structjoueur.html" title="définition du type joueur qui caractérise chaque joueur par son nom et sa couleur de pion...">joueur</a> V[12]);
+<a href="victoire_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00009"></a>00009 <a class="code" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7" title="définition du type booléen type booleen.">booleen</a> <a class="code" href="victoire_8c.html#a81deccfbf18f016630a3840135482e08" title="fonction qui indique si une case de la grille appartient à un joueur donné.">case_du_joueur</a>(<a class="code" href="structpion.html" title="Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au pui...">pion</a> T[N][M], <span class="keywordtype">int</span> player, <span class="keywordtype">int</span> ligne, <span class="keywordtype">int</span> colonne);
+<a name="l00010"></a>00010 <a class="code" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7" title="définition du type booléen type booleen.">booleen</a> <a class="code" href="victoire_8c.html#aaf05b4db19dfbcd4852026bd70f7068b" title="fonction booleenne permettant de déceler un alignement horizontal de 4 pions du joueur en question...">horizontal_win</a>(<a class="code" href="structpion.html" title="Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au pui...">pion</a> T[N][M],<span class="keywordtype">int</span> player, <span class="keywordtype">int</span> ligne, <span class="keywordtype">int</span> colonne);
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

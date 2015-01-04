@@ -15,7 +15,7 @@ int main()
 {
 	int player;  // variable qui permet d'alterner le tour des joueurs
 	int nbJoueur; // nombre de joueurs de la partie saisis dans le menu principal
-	booleen winner;
+	booleen winner; // variable booleenne qui permet de détecter une victoire
 	
 	printf("\n");
 	initialiser_jeu(grille);

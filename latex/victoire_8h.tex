@@ -1,0 +1,79 @@
+\hypertarget{victoire_8h}{\section{\-Référence du fichier victoire.\-h}
+\label{victoire_8h}\index{victoire.\-h@{victoire.\-h}}
+}
+
+
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{victoire_8c}{victoire.\-c}  
+
+
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{victoire_8h_a81deccfbf18f016630a3840135482e08}{case\-\_\-du\-\_\-joueur} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int player, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction qui indique si une case de la grille appartient à un joueur donné. \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{victoire_8h_aaf05b4db19dfbcd4852026bd70f7068b}{horizontal\-\_\-win} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int player, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction booleenne permettant de déceler un alignement horizontal de 4 pions du joueur en question \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+ce fichier contient les en-\/tete des fonctions définies dans le fichier source \hyperlink{victoire_8c}{victoire.\-c} \begin{DoxyAuthor}{\-Auteur}
+\-Hajir \-Mohammed \-Amine 
+\end{DoxyAuthor}
+\begin{DoxyDate}{\-Date}
+03 \-Janvier 2015 
+\end{DoxyDate}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{victoire_8h_a81deccfbf18f016630a3840135482e08}{\index{victoire.\-h@{victoire.\-h}!case\-\_\-du\-\_\-joueur@{case\-\_\-du\-\_\-joueur}}
+\index{case\-\_\-du\-\_\-joueur@{case\-\_\-du\-\_\-joueur}!victoire.h@{victoire.\-h}}
+\subsubsection[{case\-\_\-du\-\_\-joueur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf case\-\_\-du\-\_\-joueur} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{player, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{victoire_8h_a81deccfbf18f016630a3840135482e08}
+
+
+fonction qui indique si une case de la grille appartient à un joueur donné. 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si la cette case appartient ou joueur, faux sinon 
+\end{DoxyReturn}
+\hypertarget{victoire_8h_aaf05b4db19dfbcd4852026bd70f7068b}{\index{victoire.\-h@{victoire.\-h}!horizontal\-\_\-win@{horizontal\-\_\-win}}
+\index{horizontal\-\_\-win@{horizontal\-\_\-win}!victoire.h@{victoire.\-h}}
+\subsubsection[{horizontal\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf horizontal\-\_\-win} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{player, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{victoire_8h_aaf05b4db19dfbcd4852026bd70f7068b}
+
+
+fonction booleenne permettant de déceler un alignement horizontal de 4 pions du joueur en question 
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si une victoire horizontale est detectée, \-F\-A\-U\-X sinon 
+\end{DoxyReturn}

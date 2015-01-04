@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>PUISSANCE 4++: Référence du fichier menuDebut.c</title>
+<title>PUISSANCE 4++: Référence du fichier victoire.h</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
@@ -78,48 +78,54 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div class="summary">
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
-<div class="title">Référence du fichier menuDebut.c</div>  </div>
+<div class="title">Référence du fichier victoire.h</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>ce fichier source contient la définition des fonctions d'affichage du menu principal et du menu du début du jeu.  
+<p>ce fichier contient les en-tete des fonctions définies dans le fichier source <a class="el" href="victoire_8c.html" title="ce fichier source contient les définitions des fonctions booloéenne qui permettent de detecter une vi...">victoire.c</a>  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
-<code>#include &lt;stdio.h&gt;</code><br/>
-<code>#include &lt;string.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="menuDebut_8h_source.html">menuDebut.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="boiteOutil_8h_source.html">boiteOutil.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="couleurs_8h_source.html">couleurs.h</a>&quot;</code><br/>
-<code>#include &quot;<a class="el" href="affichageJeu_8h_source.html">affichageJeu.h</a>&quot;</code><br/>
-</div><table class="memberdecls">
+
+<p><a href="victoire_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDebut_8c.html#aa627f5c292c2805ce98360b225760f27">menuPrincipal</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui affiche le menu principal du jeu puissance4++.  <a href="#aa627f5c292c2805ce98360b225760f27"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menuDebut_8c.html#aeb1d5e609e1faaf5b69db3062358ae39">menuDebut</a> (int numJoueur, <a class="el" href="structjoueur.html">joueur</a> V[12])</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom).  <a href="#aeb1d5e609e1faaf5b69db3062358ae39"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8h.html#a81deccfbf18f016630a3840135482e08">case_du_joueur</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui indique si une case de la grille appartient à un joueur donné.  <a href="#a81deccfbf18f016630a3840135482e08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8h.html#aaf05b4db19dfbcd4852026bd70f7068b">horizontal_win</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement horizontal de 4 pions du joueur en question  <a href="#aaf05b4db19dfbcd4852026bd70f7068b"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
-<div class="textblock"><p>ce fichier source contient la définition des fonctions d'affichage du menu principal et du menu du début du jeu. </p>
+<div class="textblock"><p>ce fichier contient les en-tete des fonctions définies dans le fichier source <a class="el" href="victoire_8c.html" title="ce fichier source contient les définitions des fonctions booloéenne qui permettent de detecter une vi...">victoire.c</a> </p>
 <dl class="author"><dt><b>Auteur:</b></dt><dd>Hajir Mohammed Amine </dd></dl>
-<dl class="date"><dt><b>Date:</b></dt><dd>31 Décembre 2014</dd></dl>
-<p>la fonction d'affichage du menu du début permettra de faire saisir à chaque joueur son nom(ou pseudo) et sa couleur de préférence de ses pions qui seront stockés dans le tableau des joueurs. la fonction d'affichage du menu principal permet de faire saisir le nombre de joueurs de la partie. </p>
+<dl class="date"><dt><b>Date:</b></dt><dd>03 Janvier 2015 </dd></dl>
 </div><hr/><h2>Documentation des fonctions</h2>
-<a class="anchor" id="aeb1d5e609e1faaf5b69db3062358ae39"></a><!-- doxytag: member="menuDebut.c::menuDebut" ref="aeb1d5e609e1faaf5b69db3062358ae39" args="(int numJoueur, joueur V[12])" -->
+<a class="anchor" id="a81deccfbf18f016630a3840135482e08"></a><!-- doxytag: member="victoire.h::case_du_joueur" ref="a81deccfbf18f016630a3840135482e08" args="(pion T[N][M], int player, int ligne, int colonne)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="menuDebut_8h.html#aeb1d5e609e1faaf5b69db3062358ae39">menuDebut</a> </td>
+          <td class="memname"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> <a class="el" href="victoire_8h.html#a81deccfbf18f016630a3840135482e08">case_du_joueur</a> </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>numJoueur</em>, </td>
+          <td class="paramtype"><a class="el" href="structpion.html">pion</a>&#160;</td>
+          <td class="paramname"><em>T</em>[N][M], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structjoueur.html">joueur</a>&#160;</td>
-          <td class="paramname"><em>V</em>[12]&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colonne</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -130,34 +136,66 @@ Fonctions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>fonction qui affiche le menu pour un joueur afin de choisir la couleur des pions et un pseudo de jeu (ou son nom). </p>
-<p>elle permet de faire des controle de saisie si l'utilisateur choisis une couleur ou un pseudo déjà choisis par un autre joueur. des messages d'erreurs seront affichés dans de tels cas et dans le cas ou le joueur saisi plus que 10 caractères pour le nom. </p>
+<p>fonction qui indique si une case de la grille appartient à un joueur donné. </p>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">numJoueur</td><td>égale à 1 si on s'adresse au premier joueur, 2 si 2eme joueur ..... </td></tr>
-    <tr><td class="paramname">v</td><td>tableau de structure (joueur) ou l'on stocke les informations (couleur,nom). sur les joueurs . </td></tr>
+    <tr><td class="paramname">pion</td><td>la grille du jeu. </td></tr>
+    <tr><td class="paramname">ligne</td><td>indice de la ligne de la case de la matrice ou le joueur a placer son pion </td></tr>
+    <tr><td class="paramname">colonne</td><td>indice de la colonne de la case de la matrice ou le joueur a placer son pion </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>VRAI si la cette case appartient ou joueur, faux sinon </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa627f5c292c2805ce98360b225760f27"></a><!-- doxytag: member="menuDebut.c::menuPrincipal" ref="aa627f5c292c2805ce98360b225760f27" args="()" -->
+<a class="anchor" id="aaf05b4db19dfbcd4852026bd70f7068b"></a><!-- doxytag: member="victoire.h::horizontal_win" ref="aaf05b4db19dfbcd4852026bd70f7068b" args="(pion T[N][M], int player, int ligne, int colonne)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="menuDebut_8h.html#aa627f5c292c2805ce98360b225760f27">menuPrincipal</a> </td>
+          <td class="memname"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> <a class="el" href="victoire_8h.html#aaf05b4db19dfbcd4852026bd70f7068b">horizontal_win</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structpion.html">pion</a>&#160;</td>
+          <td class="paramname"><em>T</em>[N][M], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colonne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>fonction qui affiche le menu principal du jeu puissance4++. </p>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>le nombre de joueur de la partie choisie. </dd></dl>
+<p>fonction booleenne permettant de déceler un alignement horizontal de 4 pions du joueur en question </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pion</td><td>la grille du jeu. </td></tr>
+    <tr><td class="paramname">ligne</td><td>indice de la ligne de la case de la matrice ou le joueur a placer son pion </td></tr>
+    <tr><td class="paramname">colonne</td><td>indice de la colonne de la case de la matrice ou le joueur a placer son pion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>VRAI si une victoire horizontale est detectée, FAUX sinon </dd></dl>
 
 </div>
 </div>

@@ -68,7 +68,7 @@ booleen faireJouer(int player)
 		}
 	}
 	
-	if( /*(win_left_horizontal(grille,player,ligne,colonne-1) == VRAI) ||*/ (win_right_horizontal(grille,player,ligne,colonne-1) == VRAI) )
+	if( (horizontal_win(grille,player,ligne,colonne-1) == VRAI) )
 	{
 		return VRAI;
 	}
@@ -76,7 +76,7 @@ booleen faireJouer(int player)
 	{
 		return FAUX;
 	}
-	//return FAUX;
+	
 }
 	
 
