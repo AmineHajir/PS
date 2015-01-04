@@ -95,13 +95,15 @@ Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#a81deccfbf18f016630a3840135482e08">case_du_joueur</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui indique si une case de la grille appartient à un joueur donné.  <a href="#a81deccfbf18f016630a3840135482e08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#aaf05b4db19dfbcd4852026bd70f7068b">horizontal_win</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement horizontal de 4 pions du joueur en question  <a href="#aaf05b4db19dfbcd4852026bd70f7068b"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement horizontal de 4 pions(ou plus) du joueur en question  <a href="#aaf05b4db19dfbcd4852026bd70f7068b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#a9e934806aafdbe7a9b3d97e927592c57">vertical_win</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement vertical de 4 pions (ou plus) du joueur en question  <a href="#a9e934806aafdbe7a9b3d97e927592c57"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>ce fichier source contient les définitions des fonctions booloéenne qui permettent de detecter une victoire d'un joueur. </p>
 <dl class="author"><dt><b>Auteur:</b></dt><dd>Hajir Mohammed Amine </dd></dl>
 <dl class="date"><dt><b>Date:</b></dt><dd>3 Janvier 2015</dd></dl>
-<p>Il existe trois cas possible pour une vctoire : 1er cas : 4 pions(ou plus) alignés horizontalement | 2eme cas : 4 pions au min alignés verticalement | 3eme cas : 4 pions au minimum alignés en diagonale </p>
+<p>Il existe trois cas possible pour une vctoire : 1er cas : 4 pions(ou plus) alignés horizontalement | 2eme cas : 4 pions au min alignés verticalement | 3eme cas : 4 pions au minimum alignés en diagonale N.B. un joueur gagne s'il aligne au minimum 4 pions verticalement ou horizontalement ou en diagonale mais peut bien gagner en alignant les pions vertiacalement et horizontalement et en diagonale en meme temps </p>
 </div><hr/><h2>Documentation des fonctions</h2>
 <a class="anchor" id="a81deccfbf18f016630a3840135482e08"></a><!-- doxytag: member="victoire.c::case_du_joueur" ref="a81deccfbf18f016630a3840135482e08" args="(pion T[N][M], int player, int ligne, int colonne)" -->
 <div class="memitem">
@@ -190,7 +192,7 @@ Fonctions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>fonction booleenne permettant de déceler un alignement horizontal de 4 pions du joueur en question </p>
+<p>fonction booleenne permettant de déceler un alignement horizontal de 4 pions(ou plus) du joueur en question </p>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pion</td><td>la grille du jeu. </td></tr>
@@ -200,6 +202,56 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>VRAI si une victoire horizontale est detectée, FAUX sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e934806aafdbe7a9b3d97e927592c57"></a><!-- doxytag: member="victoire.c::vertical_win" ref="a9e934806aafdbe7a9b3d97e927592c57" args="(pion T[N][M], int player, int ligne, int colonne)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> <a class="el" href="victoire_8h.html#a9e934806aafdbe7a9b3d97e927592c57">vertical_win</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpion.html">pion</a>&#160;</td>
+          <td class="paramname"><em>T</em>[N][M], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colonne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>fonction booleenne permettant de déceler un alignement vertical de 4 pions (ou plus) du joueur en question </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pion</td><td>la grille du jeu. </td></tr>
+    <tr><td class="paramname">ligne</td><td>indice de la ligne de la case de la matrice ou le joueur a placer son pion </td></tr>
+    <tr><td class="paramname">colonne</td><td>indice de la colonne de la case de la matrice ou le joueur a placer son pion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>VRAI si une victoire verticale est detectée, FAUX sinon </dd></dl>
 
 </div>
 </div>
@@ -221,7 +273,7 @@ Fonctions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Janvier 4 2015 14:53:24 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Janvier 4 2015 16:54:32 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
