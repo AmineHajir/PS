@@ -38,7 +38,7 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[1
 		{
 			couleur(ROUGEGRAS);// on affiche les messages en rouge et en gras pour alerter le joueur
 			// le joueur ne peut pas jouer une pleine si la prmière case contient une pleine
-			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",nom,colonne);
+			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece creuse dans la colonne %i ",nom,colonne);
 			couleur(DEFAULT);// pour remettre la couleur par default du systeme
 			
 		}
@@ -46,7 +46,7 @@ booleen placerPleine(pion T[N][M], int V[M], int colonne, int player, char nom[1
 		{	
 			couleur(ROUGEGRAS);// on affiche les messages en rouge et en gras pour alerter le joueur
 			//le joueur ne peut plus jouer dans la colonne si la première case contient une bloquante
-			printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre \n\n",nom,colonne);
+			printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre ",nom,colonne);
 			couleur(DEFAULT);
 			
 		}
@@ -107,14 +107,14 @@ booleen placerCreuse(pion T[N][M], int V[M], int colonne,int player,char nom[12]
 		if( caseCreuse(T,indice,colonne-1) )
 		{
 			couleur(ROUGEGRAS);
-			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",nom,colonne);
+			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece pleine dans la colonne %i ",nom,colonne);
 			couleur(DEFAULT);
 			
 		}
 		else
 		{
 			couleur(ROUGEGRAS);
-			printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre \n\n",nom,colonne);
+			printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre ",nom,colonne);
 			couleur(DEFAULT);
 		}
 		return FAUX;
@@ -165,7 +165,7 @@ booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom
 		if( casePleine(T,indice,colonne-1) ) // soit cette dernière case contient une pleine dans quel cas on ne peut jouer qu'une creuse
 		{
 			couleur(ROUGEGRAS);
-			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece creuse dans la colonne %i \n\n",nom,colonne);
+			printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece creuse dans la colonne %i ",nom,colonne);
 			couleur(DEFAULT);
 		}
 		else
@@ -173,13 +173,13 @@ booleen placerBlocante(pion T[N][M], int V[M], int colonne, int player, char nom
 			if( caseCreuse(T,indice,colonne-1) ) // soit cette dernière case contient une creuse dans quel cas on ne peut jouer
 			{				     // qu'une pleine	
 				couleur(ROUGEGRAS);
-				printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece pleine dans la colonne %i \n\n",nom,colonne);
+				printf("\n ATTENTION : %s, vous ne pouvez jouer que la piece pleine dans la colonne %i ",nom,colonne);
 				couleur(DEFAULT);
 			}
 			else
 			{	// cas ou cette case une blocante ou deux pièce(creuse et pleine)
 				couleur(ROUGEGRAS);
-				printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre \n\n",nom,colonne);
+				printf("\n ATTENTION : %s, la colonne %i est pleine, choisissez en une autre ",nom,colonne);
 				couleur(DEFAULT);
 			}
 		}
