@@ -9,4 +9,5 @@
 booleen case_du_joueur(pion T[N][M], int player, int ligne, int colonne);
 booleen horizontal_win(pion T[N][M],int player, int ligne, int colonne);
 booleen vertical_win(pion T[N][M], int player, int ligne, int colonne);
-booleen right_diagonal_win(pion T[N][M], int player, int ligne, int colonne)	;
+booleen right_diagonal_win(pion T[N][M], int player, int ligne, int colonne);
+booleen left_diagonal_win(pion T[N][M], int player, int ligne, int colonne);
