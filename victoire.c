@@ -141,31 +141,44 @@ booleen vertical_win(pion T[N][M], int player, int ligne, int colonne)
 		return FAUX;
 	}
 }		
-	
-	
-booleen diagonal_win(pion T[N][M], int player, int ligne, int colonne)	
+
+/**
+ * \fn booleen right_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
+ * \brief fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale droite 
+ * \details on l'appelera diagonale droite car elle est inclineé vers la droite 
+ * \param pion la grille du jeu.
+ * \param ligne indice de la ligne de la case de la matrice ou le joueur a placer son pion
+ * \param colonne indice de la colonne de la case de la matrice ou le joueur a placer son pion
+ * \return VRAI si une victoire diagonale droite est detectée, FAUX sinon
+*/
+// presque le meme principe que les fonctions précedentes : pour acceder aux cases qui se situent dans la diagonale droite il faut :
+// 1er cas : decrémenter la ligne de 1 et incrémenter la colonne de 1 à chaque fois ( on monte dans la diagonale )
+// 2eme cas : incrémenter les lignes de 1 et decrémenter les colonnes de 1 à chaque fois ( on déscend dans la diagonale )
+booleen right_diagonal_win(pion T[N][M], int player, int ligne, int colonne)	
 {
-	int i=1;
-	int j=1;
-	int cpt_droite_haut=0;
-	int cpt_gauche_bas=0;
+	int i=1; // variable qui permet de parcourir les cases voisines qui se situent dans la diagonale et qui sont au dessus de la case jouée
+	int j=1; // variable qui permet de parcourir les cases voisines qui se situent dans la diagonale et qui sont en dessous de la case jouée
+	int cpt_droite_haut=0; // compte le nombre de cases voisines appartenant o joueur, se situant ds la diagonale et au dessus de la case jouée 
+	int cpt_gauche_bas=0; // compte le nombre de cases voisines appartenant o joueur, se situant ds la diagonale et en dessous de la case jouée
 	
-	
-	while( (ligne-i >= 0) && (colonne+i < M) )
+	// on monte ds la diagonale droite (on l'appel diagonale droite car elle est inclinée vers la droite) 
+	// pour monter ds la diagonale on décremente la ligne de 1 et on incrémente la colonne de 1
+	while( (ligne-i >= 0) && (colonne+i < M) ) // tant qu'on dépasse pas la taille de la matrice
 	{
-		if( case_du_joueur(T,player, ligne-i, colonne+i) )
+		if( case_du_joueur(T,player, ligne-i, colonne+i) ) // si la case se situant ds la daiagonale appartient o joueur
 		{
-			cpt_droite_haut++;
-			i++;
+			cpt_droite_haut++; // on incrémente le compteur
+			i++; // et on passe à la case suivante
 		}
-		else
+		else // sinon, on sort de la boucle en simulant un dépassement de la taille de la matrice
 		{
-			i=N;
+			i=N; // ou i=M
 		}
 	}
-	while( (ligne+j < N) && (colonne-j >= 0) )
+	//on descend ds la diagonale : ici on incrémente la ligne de 1 et on decrémente la colonne de 1
+ 	while( (ligne+j < N) && (colonne-j >= 0) ) 
 	{
-		if( case_du_joueur(T,player, ligne+j, colonne-j) )
+		if( case_du_joueur(T,player, ligne+j, colonne-j) ) // meme commentaire ...
 		{
 			cpt_gauche_bas++;
 			j++;
@@ -175,18 +188,25 @@ booleen diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 			j=N;
 		}
 	}
-	if( (cpt_droite_haut+cpt_gauche_bas) >= 3 ) // si le nombre de cases voisines verticales (du dessus et d'en d'en dessous) de la case ou le joueur 
-				       // a déposé son pion est >=3 alors le joueur a gagné.
+	if( (cpt_droite_haut+cpt_gauche_bas) >= 3 ) // si 4 cases appartiennent o joueur (3 dans la diagonal + celle ou il vient de deposer son pion)
 	{ 				    
 		return VRAI;
 	}
-	else // si inferieur à 3 alors il n'y a pas de victoire verticale
+	else // si inferieur à 3 alors il n'y a pas de victoire dans la diagonale droite
 	{
 		return FAUX;
 	}
 }
 			
-			
+/**
+ * \fn booleen left_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
+ * \brief fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale gauche
+ * \details on l'appelera diagonale droite car elle est inclineé vers la gauche
+ * \param pion la grille du jeu.
+ * \param ligne indice de la ligne de la case de la matrice ou le joueur a placer son pion
+ * \param colonne indice de la colonne de la case de la matrice ou le joueur a placer son pion
+ * \return VRAI si une victoire diagonale droite est detectée, FAUX sinon
+*/			
 		
 	
 	
