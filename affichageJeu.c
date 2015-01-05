@@ -173,75 +173,188 @@ void afficher_jeu(pion T[N][M])
 				}
 				if( T[i][j].bloc == 2 ) // de meme pour le joueur2
 				{
-					couleur( codage(joueurs[1].couleur) );
-					printf("   %c   ",BLOCANTE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 2 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[1].couleur) );
+						printf("   %c   ",BLOCANTE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[1].couleur) );
+						printf("   %c   ",BLOCANTE);
+						couleur(DEFAULT);
+					}
 				}
 				if( T[i][j].bloc == 3 ) // de meme pour le joueur3 (si partie à 3joueur)
 				{
-					couleur( codage(joueurs[2].couleur) );
-					printf("   %c   ",BLOCANTE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 3 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[2].couleur) );
+						printf("   %c   ",BLOCANTE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[2].couleur) );
+						printf("   %c   ",BLOCANTE);
+						couleur(DEFAULT);
+					}
 				}
 				if( T[i][j].bloc == 4 ) // de meme pour le joueur4 (si partie à 4 joueurs)
 				{
-					couleur( codage(joueurs[3].couleur) );
-					printf("   %c   ",BLOCANTE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 4 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[3].couleur) );
+						printf("   %c   ",BLOCANTE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[3].couleur) );
+						printf("   %c   ",BLOCANTE);
+						couleur(DEFAULT);
+					}
 				}
 			}
 			if( caseCreuse(T,i,j) ) // si la case contient uniquement une creuse (encore 4 cas possibles)
 			{
 				if( T[i][j].creux == 1 ) // et que cette creuse appartient au joueur1
 				{
-					couleur( codage(joueurs[0].couleur) ); // on affiche la pièce avec la couleur choisie ...
-					printf("   %c   ",CREUSE); 
-					couleur(DEFAULT);
+					if( gain[i][j] == 1 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[0].couleur) ); // on affiche la pièce avec la couleur choisie ...
+						printf("   %c   ",CREUSE); 
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[0].couleur) ); // on affiche la pièce avec la couleur choisie ...
+						printf("   %c   ",CREUSE); 
+						couleur(DEFAULT);
+					}
+						
 				}
 				if( T[i][j].creux == 2 ) // de meme pour joueur2 ...
 				{
-					couleur( codage(joueurs[1].couleur) );
-					printf("   %c   ",CREUSE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 2 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[1].couleur) );
+						printf("   %c   ",CREUSE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[1].couleur) );
+						printf("   %c   ",CREUSE);
+						couleur(DEFAULT);
+					}
+				
 				}
 				if( T[i][j].creux == 3 ) // de meme pour joueur3 ...
 				{
-					couleur( codage(joueurs[2].couleur) );
-					printf("   %c   ",CREUSE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 3 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[2].couleur) );
+						printf("   %c   ",CREUSE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[2].couleur) );
+						printf("   %c   ",CREUSE);
+						couleur(DEFAULT);
+					}
+						
 				}
 				if( T[i][j].creux == 4 ) // de meme pour joueur4 ...
 				{
-					couleur( codage(joueurs[3].couleur) );
-					printf("   %c   ",CREUSE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 4 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[3].couleur) );
+						printf("   %c   ",CREUSE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[3].couleur) );
+						printf("   %c   ",CREUSE);
+						couleur(DEFAULT);
+					}
 				}
 			}
 			if( casePleine(T,i,j) ) // meme commentaire que ci dessus (cette fois pr la pièce pleine)
 			{
 				if( T[i][j].plein == 1 )
 				{
-					couleur( codage(joueurs[0].couleur) );
-					printf("   %c   ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 1 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[0].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[0].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
 				}
 				if( T[i][j].plein == 2 )
 				{
-					couleur( codage(joueurs[1].couleur) );
-					printf("   %c   ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 2 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[1].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[1].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
 				}
 				if( T[i][j].plein == 3 )
 				{
-					couleur( codage(joueurs[2].couleur) );
-					printf("   %c   ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 3 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[2].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[2].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
 				}
 				if( T[i][j].plein == 4 )
 				{
-					couleur( codage(joueurs[3].couleur) );
-					printf("   %c   ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 4 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[3].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[3].couleur) );
+						printf("   %c   ",PLEINE);
+						couleur(DEFAULT);
+					}
 				}
 			}
 			// (nbreJoueur)² cas possibles (4 cas possibles pr 2joueurs, 9 cas pr 3joueurs, et 16 cas pr 4 joueurs)
@@ -249,136 +362,488 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 1) ) // si la creuse et la pleine appartiennent au joueur1
 				{
-					couleur( codage(joueurs[0].couleur) ); // on affiche les deux pions avec la couleur du joueur1
-					printf("  %c %c  ",CREUSE,PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 1 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[0].couleur) ); // on affiche les deux pions avec la couleur du joueur1
+						printf("  %c %c  ",CREUSE,PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[0].couleur) ); // on affiche les deux pions avec la couleur du joueur1
+						printf("  %c %c  ",CREUSE,PLEINE);
+						couleur(DEFAULT);
+					}
 				}
 				if( (T[i][j].creux == 2) && (T[i][j].plein == 2) ) // si elles appartiennent au joueur2
 				{
-					couleur( codage(joueurs[1].couleur) );
-					printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur2
-					couleur(DEFAULT);
+					if( gain[i][j] == 2 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[1].couleur) );
+						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur2
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[1].couleur) );
+						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur2
+						couleur(DEFAULT);
+					}
 				}
 				if( (T[i][j].creux == 3) && (T[i][j].plein == 3) ) // si elles appartiennent au joueur3
 				{
-					couleur( codage(joueurs[2].couleur) );
-					printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur3 choisie au début du jeu
-					couleur(DEFAULT);
+					if( gain[i][j] == 3 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[2].couleur) );
+						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur3 choisie au début du jeu
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[2].couleur) );
+						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur3 choisie au début du jeu
+						couleur(DEFAULT);
+					}
 				}
 				if( (T[i][j].creux == 4) && (T[i][j].plein == 4) ) // si elles appartiennent au joueur4
 				{
-					couleur( codage(joueurs[3].couleur) );
-					printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur4
-					couleur(DEFAULT);
+					if( gain[i][j] == 4 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[3].couleur) );
+						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur4
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[3].couleur) );
+						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur4
+						couleur(DEFAULT);
+					}
 				}
-				
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 2) ) // si la creuse appartient au joueur1 et la pleine au joueur2
 				{
-					couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[1].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 1 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[1].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 2 )
+						{
+							couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[1].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[1].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 2) && (T[i][j].plein == 1) ) // de meme (on inverse)
 				{
-					couleur( codage(joueurs[1].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[0].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 2 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[1].couleur) );
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[0].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 1 )
+						{
+							couleur( codage(joueurs[1].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[0].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[1].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[0].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
-				if( (T[i][j].creux == 1) && (T[i][j].plein == 3) ) // la creuse appartient au joueur 1
-				{						    // et la pleine au joueur3
-					couleur( codage(joueurs[0].couleur) );	    // chak pion s'affichera ac la couleur correspondante à chak joueur
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[2].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+				if( (T[i][j].creux == 1) && (T[i][j].plein == 3) ) // la creuse appartient au joueur 1 et la pleine au joueur3
+				{						   
+					if( gain[i][j] == 1 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[0].couleur) );	// chak pion s'affichera ac la couleur correspondante à chak joueur
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[2].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 3 )
+						{
+							couleur( codage(joueurs[0].couleur) );	// chak pion s'affichera ac la couleur correspondante à chak joueur
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[2].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[0].couleur) );	// chak pion s'affichera ac la couleur correspondante à chak joueur
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[2].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 3) && (T[i][j].plein == 1) ) // creuse apptien o joueur3 et pleine o joueur 1
 				{
-					couleur( codage(joueurs[2].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[0].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 3 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[2].couleur) );
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[0].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 1 )
+						{
+							couleur( codage(joueurs[2].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[0].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[2].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[0].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 2) && (T[i][j].plein == 3) ) // creuse du joueur2 et pleine du joueur3
 				{
-					couleur( codage(joueurs[1].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[2].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 2 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[1].couleur) );
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[2].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 3 )
+						{
+							couleur( codage(joueurs[1].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[2].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[1].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[2].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 3) && (T[i][j].plein == 2) ) // creuse du joueur3 et pleine du joueur2
 				{
-					couleur( codage(joueurs[2].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[1].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 3 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[2].couleur) );
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[1].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 2 )
+						{
+							couleur( codage(joueurs[2].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[1].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[2].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[1].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 4) ) // creuse du joueur1 et pleine du joueur4
 				{
-					couleur( codage(joueurs[0].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[3].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 1 )
+					{
+							couleur(GRAS);
+							couleur( codage(joueurs[0].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 4 )
+						{
+							couleur( codage(joueurs[0].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[0].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 4) && (T[i][j].plein == 1) ) // creuse du joueur4 et pleine du joueur1
 				{
-					couleur( codage(joueurs[3].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[0].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 4 )
+					{
+							couleur(GRAS);
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[0].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 1 )
+						{
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[0].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[0].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 2) && (T[i][j].plein == 4) ) // creuse du joueur2 et pleine du joueur4
 				{
-					couleur( codage(joueurs[1].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[3].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 2 )
+					{
+							couleur(GRAS);
+							couleur( codage(joueurs[1].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 4 )
+						{
+							couleur( codage(joueurs[1].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[1].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 4) && (T[i][j].plein == 2) ) // creuse du joueur4 et pleine du joueur2
 				{
-					couleur( codage(joueurs[3].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[1].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 4 )
+					{
+							couleur(GRAS);
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[1].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 2 )
+						{
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[1].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[1].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 3) && (T[i][j].plein == 4) ) // creuse du joueur3 et pleine du joueur4
 				{
-					couleur( codage(joueurs[2].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[3].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 3 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[2].couleur) );
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[3].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						if( gain[i][j] == 4 )
+						{
+							couleur( codage(joueurs[2].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[2].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[3].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				if( (T[i][j].creux == 4) && (T[i][j].plein == 3) ) // creuse du joueur4 et pleine du joueur 3
 				{
-					couleur( codage(joueurs[3].couleur) );
-					printf("  %c",CREUSE);
-					couleur(DEFAULT);
-					couleur( codage(joueurs[2].couleur) );
-					printf(" %c  ",PLEINE);
-					couleur(DEFAULT);
+					if( gain[i][j] == 4 )
+					{
+						couleur(GRAS);	
+						couleur( codage(joueurs[3].couleur) );
+						printf("  %c",CREUSE);
+						couleur(DEFAULT);
+						couleur( codage(joueurs[2].couleur) );
+						printf(" %c  ",PLEINE);
+						couleur(DEFAULT);
+							
+					}
+					else
+					{
+						if( gain[i][j] == 3 )
+						{
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur(GRAS);
+							couleur( codage(joueurs[2].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+						else
+						{
+							couleur( codage(joueurs[3].couleur) );
+							printf("  %c",CREUSE);
+							couleur(DEFAULT);
+							couleur( codage(joueurs[2].couleur) );
+							printf(" %c  ",PLEINE);
+							couleur(DEFAULT);
+						}
+					}
 				}
 				
 			}

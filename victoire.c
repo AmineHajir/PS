@@ -314,8 +314,22 @@ booleen left_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 booleen victoire(pion T[N][M], int player, int ligne, int colonne)
 {
 	// si l'une des victoires est detectée , on renvoi VRAI
-	if( horizontal_win(T,player,ligne,colonne) || vertical_win(T,player,ligne,colonne) || right_diagonal_win(T,player,ligne,colonne)
-	    || left_diagonal_win(T,player,ligne,colonne) )
+	if( (horizontal_win(T,player,ligne,colonne) && vertical_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne) )
+	   ||(vertical_win(T,player,ligne,colonne) && horizontal_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne))
+	   ||(vertical_win(T,player,ligne,colonne) && horizontal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   ||(vertical_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   ||(horizontal_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   ||(vertical_win(T,player,ligne,colonne) && horizontal_win(T,player,ligne,colonne))
+	   ||(vertical_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne))
+	   ||(vertical_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   ||(horizontal_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne))
+	   ||(horizontal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   ||(right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   ||(vertical_win(T,player,ligne,colonne))
+	   ||(horizontal_win(T,player,ligne,colonne))
+	   ||(right_diagonal_win(T,player,ligne,colonne))
+	   ||(left_diagonal_win(T,player,ligne,colonne)) )
+		
 	{
 		return VRAI; 
 	}
