@@ -157,10 +157,19 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( T[i][j].bloc == 1 ) // et que cette bloquante appartient au premier joueur
 				{
-					couleur( codage(joueurs[0].couleur) ); // on affiche la pièce blocante avec la couleur que le joueur1
-					printf("   %c   ",BLOCANTE);		// avait choisis au début du jeu stockée ds le tableau joueurs
-					couleur(DEFAULT);
-					
+					if( gain[i][j] == 1 )
+					{
+						couleur(GRAS);
+						couleur( codage(joueurs[0].couleur) );
+						printf("   %c   ",BLOCANTE);
+						couleur(DEFAULT);
+					}
+					else
+					{
+						couleur( codage(joueurs[0].couleur) ); // on affiche la pièce blocante avec la couleur que le joueur1
+						printf("   %c   ",BLOCANTE);		// avait choisis au début du jeu stockée ds le tableau joueurs
+						couleur(DEFAULT);
+					}
 				}
 				if( T[i][j].bloc == 2 ) // de meme pour le joueur2
 				{
