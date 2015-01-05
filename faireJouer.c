@@ -19,15 +19,15 @@
 
 /**
  * \fn void faireJouer(int player)
- * \brief procédure qui fait jouer une joueur en faisant appel au fonctions d'affichage des menu du jeu et les fonctions qui permettent
+ * \brief procédure qui fait jouer un joueur en faisant appel au fonctions d'affichage des menu du jeu et les fonctions qui permettent
  * \brief de ranger le pion choisis par le joueur dans la bon emplacement.
- * \param player le joueur qui doit jouer 1 ou 2 ....
+ * \param player le joueur qui a le tour (1,2,3 ou 4)
 */
 booleen faireJouer(int player)
 {
 	char piece; // variable ou l'on stocke la pièce choisie par le joueur ('b', 'c' ou 'p')
 	int colonne; // variable ou l'on stocke le numéro de la colonne ou le joueur a choisi de mettre son pion
-	int ligne;
+	int ligne; // variable ou l'on stocke le numéro de la ligne ou le joueur a choisi de mettre son pion
 	booleen jouer; // variable qui reçoit vrai si le joueur a bien placer son pion, faux sinon
 	
 	jouer=FAUX;
@@ -68,13 +68,13 @@ booleen faireJouer(int player)
 		}
 	}
 	
-	if( (horizontal_win(grille,player,ligne,colonne-1) == VRAI) || (vertical_win(grille,player,ligne,colonne-1) == VRAI) || (right_diagonal_win(grille,player,ligne,colonne-1) == VRAI) || (left_diagonal_win(grille,player,ligne,colonne-1) == VRAI))
+	if( victoire(grille,player,ligne,colonne-1) ) // s'il y a victoire du joueur qui a le tour
 	{
-		return VRAI;
+		return VRAI; // on retourne vrai pour sortir de la boucle dans le main et arreter le jeu
 	}
 	else
 	{
-		return FAUX;
+		return FAUX; // sinon on poursuit le jeu
 	}
 	
 }
