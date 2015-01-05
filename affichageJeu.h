@@ -66,6 +66,8 @@ typedef struct
 */
 pion grille[N][M];
 
+int gain[N][M]; // matrice de gain
+
 /**
  * \var hauteurColonne[M]
  * \brief structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu.

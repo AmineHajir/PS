@@ -15,6 +15,19 @@
  * 	    mais peut bien gagner en alignant les pions vertiacalement et horizontalement et en diagonale en meme temps
 */
 
+
+
+void initGain()
+{
+	int i,j;
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<M;j++)
+		{
+			gain[i][j]=0;
+		}
+	}
+}
 /**
  * \fn booleen case_du_joueur(pion T[N][M], int player, int ligne, int colonne)
  * \brief fonction qui indique si une case de la grille appartient à un joueur donné.
@@ -47,6 +60,7 @@ booleen horizontal_win(pion T[N][M], int player, int ligne, int colonne)
 {
 	int i=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent à droite de la case ou le pion a été placé
 	int j=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent à gauche de la case ou le pion a été placé
+	int k;
 	int cpt_droite=0; // compte le nombre de case voisines droites appartenant au joueur qui vient de placer son pion 
 	int cpt_gauche=0; // compte le nombre de case voisines gauches appartenant au joueur qui vient de placer son pion 
 	
@@ -79,6 +93,14 @@ booleen horizontal_win(pion T[N][M], int player, int ligne, int colonne)
 	}
 	if( (cpt_droite+cpt_gauche) >= 3 ) // si le nombre de voisine horizontale (gauche et droite) de la case ou le joueur a déposé son pion
 	{ 				    // est >=3 alors le joueur a gagné.
+		for(k=0;k<=cpt_droite;k++)
+		{
+			gain[ligne][colonne+k]=player;
+		}
+		for(k=1;k<=cpt_gauche;k++)
+		{
+			gain[ligne][colonne-k]=player;
+		}
 		return VRAI;
 	}
 	else // si inferieur à 3 alors il n'y a pas de victoire horizontale
@@ -100,6 +122,7 @@ booleen vertical_win(pion T[N][M], int player, int ligne, int colonne)
 {
 	int i=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent en dessous de la case ou le pion a été placé
 	int j=1; // variable qui va nous permettre de parcourir les cases voisines qui se trouvent au dessus de la case ou le pion a été placé
+	int k;
 	int cpt_bas=0; // compte le nombre de case voisines d'en dessous appartenant au joueur qui vient de placer son pion 
 	int cpt_haut=0; // compte le nombre de case voisines du dessus appartenant au joueur qui vient de placer son pion 
 	
@@ -132,8 +155,15 @@ booleen vertical_win(pion T[N][M], int player, int ligne, int colonne)
 	}
 	
 	if( (cpt_bas+cpt_haut) >= 3 ) // si le nombre de cases voisines verticales (du dessus et d'en d'en dessous) de la case ou le joueur 
-				       // a déposé son pion est >=3 alors le joueur a gagné.
-	{ 				    
+	{			       // a déposé son pion est >=3 alors le joueur a gagné. 				    
+		for(k=0;k<=cpt_haut;k++)
+		{
+			gain[ligne-k][colonne]=player;
+		}
+		for(k=1;k<=cpt_bas;k++)
+		{
+			gain[ligne+k][colonne]=player;
+		}
 		return VRAI;
 	}
 	else // si inferieur à 3 alors il n'y a pas de victoire verticale
@@ -158,6 +188,7 @@ booleen right_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 {
 	int i=1; // variable qui permet de parcourir les cases voisines qui se situent dans la diagonale et qui sont au dessus de la case jouée
 	int j=1; // variable qui permet de parcourir les cases voisines qui se situent dans la diagonale et qui sont en dessous de la case jouée
+	int k;
 	int cpt_droite_haut=0; // compte le nombre de cases voisines appartenant o joueur, se situant ds la diagonale et au dessus de la case jouée 
 	int cpt_gauche_bas=0; // compte le nombre de cases voisines appartenant o joueur, se situant ds la diagonale et en dessous de la case jouée
 	
@@ -189,7 +220,15 @@ booleen right_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 		}
 	}
 	if( (cpt_droite_haut+cpt_gauche_bas) >= 3 ) // si 4 cases appartiennent o joueur (3 dans la diagonal + celle ou il vient de deposer son pion)
-	{ 				    
+	{ 
+		for(k=0;k<=cpt_droite_haut;k++)
+		{
+			gain[ligne-k][colonne+k]=player;
+		}
+		for(k=1;k<=cpt_gauche_bas;k++)
+		{
+			gain[ligne+k][colonne-k]=player;
+		}
 		return VRAI;
 	}
 	else // si inferieur à 3 alors il n'y a pas de victoire dans la diagonale droite
@@ -215,6 +254,7 @@ booleen left_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 {
 	int i=1; // variable qui permet de parcourir les cases voisines qui se situent dans la diagonale et qui sont au dessus de la case jouée
 	int j=1; // variable qui permet de parcourir les cases voisines qui se situent dans la diagonale et qui sont en dessous de la case jouée
+	int k;
 	int cpt_gauche_haut=0; // compte le nombre de cases voisines appartenant o joueur, se situant sur la diagonale et au dessus de la case jouée 
 	int cpt_droite_bas=0; // compte le nombre de cases voisines appartenant o joueur, se situant sur la diagonale et en dessous de la case jouée
 	
@@ -246,7 +286,15 @@ booleen left_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 		}
 	}
 	if( (cpt_gauche_haut+cpt_droite_bas) >= 3 ) // si 4 cases appartiennent o joueur (3 dans la diagonal + celle ou il vient de deposer son pion)
-	{ 				    
+	{ 
+		for(k=0;k<=cpt_gauche_haut;k++)
+		{
+			gain[ligne-k][colonne-k]=player;
+		}
+		for(k=1;k<=cpt_droite_bas;k++)
+		{
+			gain[ligne+k][colonne+k]=player;
+		}
 		return VRAI;
 	}
 	else // si inferieur à 3 alors il n'y a pas de victoire dans la diagonale gauche
