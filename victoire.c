@@ -254,9 +254,18 @@ booleen left_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 		return FAUX;
 	}
 }	
-	
+
+/**
+ * \fn booleen victoire(pion T[N][M], int player, int ligne, int colonne)
+ * \brief fonction booleenne permettant de déceler une victoire (qlquelle soit : diagonale, horizontale ou verticale)
+ * \param pion la grille du jeu.
+ * \param ligne indice de la ligne de la case de la matrice ou le joueur a placer son pion
+ * \param colonne indice de la colonne de la case de la matrice ou le joueur a placer son pion
+ * \return VRAI si une victoire est detectée, FAUX sinon
+*/
 booleen victoire(pion T[N][M], int player, int ligne, int colonne)
 {
+	// si l'une des victoires est detectée , on renvoi VRAI
 	if( horizontal_win(T,player,ligne,colonne) || vertical_win(T,player,ligne,colonne) || right_diagonal_win(T,player,ligne,colonne)
 	    || left_diagonal_win(T,player,ligne,colonne) )
 	{
