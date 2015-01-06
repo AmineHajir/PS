@@ -92,12 +92,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab50d4205201b8507b51beeef5fead796"></a><!-- doxytag: member="victoire.c::initGain" ref="ab50d4205201b8507b51beeef5fead796" args="()" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>initGain</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#a81deccfbf18f016630a3840135482e08">case_du_joueur</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction qui indique si une case de la grille appartient à un joueur donné.  <a href="#a81deccfbf18f016630a3840135482e08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#aaf05b4db19dfbcd4852026bd70f7068b">horizontal_win</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement horizontal de 4 pions(ou plus) du joueur en question  <a href="#aaf05b4db19dfbcd4852026bd70f7068b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#a9e934806aafdbe7a9b3d97e927592c57">vertical_win</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement vertical de 4 pions (ou plus) du joueur en question  <a href="#a9e934806aafdbe7a9b3d97e927592c57"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#a1f854658ec5b010f0ba4dc40e9e52e13">right_diagonal_win</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale droite  <a href="#a1f854658ec5b010f0ba4dc40e9e52e13"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#a874188aa55a6abffeadd7e1e5ee7562a">left_diagonal_win</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale gauche  <a href="#a874188aa55a6abffeadd7e1e5ee7562a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="victoire_8c.html#a757aa26bf10170238c4e4af63bce8a0d">victoire</a> (<a class="el" href="structpion.html">pion</a> T[N][M], int player, int ligne, int colonne)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">fonction booleenne permettant de déceler une ou plusieurs victoires  <a href="#a757aa26bf10170238c4e4af63bce8a0d"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>ce fichier source contient les définitions des fonctions booloéenne qui permettent de detecter une victoire d'un joueur. </p>
@@ -205,6 +213,108 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a874188aa55a6abffeadd7e1e5ee7562a"></a><!-- doxytag: member="victoire.c::left_diagonal_win" ref="a874188aa55a6abffeadd7e1e5ee7562a" args="(pion T[N][M], int player, int ligne, int colonne)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> <a class="el" href="victoire_8h.html#a874188aa55a6abffeadd7e1e5ee7562a">left_diagonal_win</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpion.html">pion</a>&#160;</td>
+          <td class="paramname"><em>T</em>[N][M], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colonne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale gauche </p>
+<p>on l'appelera diagonale gauche car elle est inclineé vers la gauche </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pion</td><td>la grille du jeu. </td></tr>
+    <tr><td class="paramname">ligne</td><td>indice de la ligne de la case de la matrice ou le joueur a placer son pion </td></tr>
+    <tr><td class="paramname">colonne</td><td>indice de la colonne de la case de la matrice ou le joueur a placer son pion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>VRAI si une victoire diagonale droite est detectée, FAUX sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1f854658ec5b010f0ba4dc40e9e52e13"></a><!-- doxytag: member="victoire.c::right_diagonal_win" ref="a1f854658ec5b010f0ba4dc40e9e52e13" args="(pion T[N][M], int player, int ligne, int colonne)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> <a class="el" href="victoire_8h.html#a1f854658ec5b010f0ba4dc40e9e52e13">right_diagonal_win</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpion.html">pion</a>&#160;</td>
+          <td class="paramname"><em>T</em>[N][M], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colonne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale droite </p>
+<p>on l'appelera diagonale droite car elle est inclineé vers la droite </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pion</td><td>la grille du jeu. </td></tr>
+    <tr><td class="paramname">ligne</td><td>indice de la ligne de la case de la matrice ou le joueur a placer son pion </td></tr>
+    <tr><td class="paramname">colonne</td><td>indice de la colonne de la case de la matrice ou le joueur a placer son pion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>VRAI si une victoire diagonale droite est detectée, FAUX sinon </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a9e934806aafdbe7a9b3d97e927592c57"></a><!-- doxytag: member="victoire.c::vertical_win" ref="a9e934806aafdbe7a9b3d97e927592c57" args="(pion T[N][M], int player, int ligne, int colonne)" -->
 <div class="memitem">
 <div class="memproto">
@@ -255,6 +365,57 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a757aa26bf10170238c4e4af63bce8a0d"></a><!-- doxytag: member="victoire.c::victoire" ref="a757aa26bf10170238c4e4af63bce8a0d" args="(pion T[N][M], int player, int ligne, int colonne)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="contenuCase_8h.html#a741a7664ae46ffb773db384a85a497e7">booleen</a> <a class="el" href="victoire_8h.html#a757aa26bf10170238c4e4af63bce8a0d">victoire</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structpion.html">pion</a>&#160;</td>
+          <td class="paramname"><em>T</em>[N][M], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>colonne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>fonction booleenne permettant de déceler une ou plusieurs victoires </p>
+<p>on traite toutes les combinanisons de victoire possibles ( grace a la formule du binome, on déduit qu'il y a 15 combinaisons possibles ) </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pion</td><td>la grille du jeu. </td></tr>
+    <tr><td class="paramname">ligne</td><td>indice de la ligne de la case de la matrice ou le joueur a placer son pion </td></tr>
+    <tr><td class="paramname">colonne</td><td>indice de la colonne de la case de la matrice ou le joueur a placer son pion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>VRAI si une ou "plusieurs" victoire(s) est (sont) detectée, FAUX sinon </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -273,7 +434,7 @@ Fonctions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Janvier 4 2015 16:54:32 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi Janvier 6 2015 18:16:01 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

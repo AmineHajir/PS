@@ -14,7 +14,13 @@ ce fichier contient les en-\/tete des fonctions définies dans le fichier source
 \hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{victoire_8h_aaf05b4db19dfbcd4852026bd70f7068b}{horizontal\-\_\-win} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int player, int ligne, int colonne)
 \begin{DoxyCompactList}\small\item\em fonction booleenne permettant de déceler un alignement horizontal de 4 pions(ou plus) du joueur en question \end{DoxyCompactList}\item 
 \hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{victoire_8h_a9e934806aafdbe7a9b3d97e927592c57}{vertical\-\_\-win} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int player, int ligne, int colonne)
-\begin{DoxyCompactList}\small\item\em fonction booleenne permettant de déceler un alignement vertical de 4 pions (ou plus) du joueur en question \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em fonction booleenne permettant de déceler un alignement vertical de 4 pions (ou plus) du joueur en question \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{victoire_8h_a1f854658ec5b010f0ba4dc40e9e52e13}{right\-\_\-diagonal\-\_\-win} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int player, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale droite \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{victoire_8h_a874188aa55a6abffeadd7e1e5ee7562a}{left\-\_\-diagonal\-\_\-win} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int player, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale gauche \end{DoxyCompactList}\item 
+\hyperlink{contenuCase_8h_a741a7664ae46ffb773db384a85a497e7}{booleen} \hyperlink{victoire_8h_a757aa26bf10170238c4e4af63bce8a0d}{victoire} (\hyperlink{structpion}{pion} \-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, int player, int ligne, int colonne)
+\begin{DoxyCompactList}\small\item\em fonction booleenne permettant de déceler une ou plusieurs victoires \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{\-Description détaillée}
@@ -79,6 +85,58 @@ fonction booleenne permettant de déceler un alignement horizontal de 4 pions(ou
 \begin{DoxyReturn}{\-Renvoie}
 \-V\-R\-A\-I si une victoire horizontale est detectée, \-F\-A\-U\-X sinon 
 \end{DoxyReturn}
+\hypertarget{victoire_8h_a874188aa55a6abffeadd7e1e5ee7562a}{\index{victoire.\-h@{victoire.\-h}!left\-\_\-diagonal\-\_\-win@{left\-\_\-diagonal\-\_\-win}}
+\index{left\-\_\-diagonal\-\_\-win@{left\-\_\-diagonal\-\_\-win}!victoire.h@{victoire.\-h}}
+\subsubsection[{left\-\_\-diagonal\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf left\-\_\-diagonal\-\_\-win} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{player, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{victoire_8h_a874188aa55a6abffeadd7e1e5ee7562a}
+
+
+fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale gauche 
+
+on l'appelera diagonale gauche car elle est inclineé vers la gauche 
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si une victoire diagonale droite est detectée, \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
+\hypertarget{victoire_8h_a1f854658ec5b010f0ba4dc40e9e52e13}{\index{victoire.\-h@{victoire.\-h}!right\-\_\-diagonal\-\_\-win@{right\-\_\-diagonal\-\_\-win}}
+\index{right\-\_\-diagonal\-\_\-win@{right\-\_\-diagonal\-\_\-win}!victoire.h@{victoire.\-h}}
+\subsubsection[{right\-\_\-diagonal\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf right\-\_\-diagonal\-\_\-win} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{player, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{victoire_8h_a1f854658ec5b010f0ba4dc40e9e52e13}
+
+
+fonction booleenne permettant de déceler un alignement de 4 pions (ou plus) du joueur en question suivant la diagonale droite 
+
+on l'appelera diagonale droite car elle est inclineé vers la droite 
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si une victoire diagonale droite est detectée, \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
 \hypertarget{victoire_8h_a9e934806aafdbe7a9b3d97e927592c57}{\index{victoire.\-h@{victoire.\-h}!vertical\-\_\-win@{vertical\-\_\-win}}
 \index{vertical\-\_\-win@{vertical\-\_\-win}!victoire.h@{victoire.\-h}}
 \subsubsection[{vertical\-\_\-win}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf vertical\-\_\-win} (
@@ -104,4 +162,30 @@ fonction booleenne permettant de déceler un alignement vertical de 4 pions (ou 
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
 \-V\-R\-A\-I si une victoire verticale est detectée, \-F\-A\-U\-X sinon 
+\end{DoxyReturn}
+\hypertarget{victoire_8h_a757aa26bf10170238c4e4af63bce8a0d}{\index{victoire.\-h@{victoire.\-h}!victoire@{victoire}}
+\index{victoire@{victoire}!victoire.h@{victoire.\-h}}
+\subsubsection[{victoire}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booleen} {\bf victoire} (
+\begin{DoxyParamCaption}
+\item[{{\bf pion}}]{\-T\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}, }
+\item[{int}]{player, }
+\item[{int}]{ligne, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}}\label{victoire_8h_a757aa26bf10170238c4e4af63bce8a0d}
+
+
+fonction booleenne permettant de déceler une ou plusieurs victoires 
+
+on traite toutes les combinanisons de victoire possibles ( grace a la formule du binome, on déduit qu'il y a 15 combinaisons possibles ) 
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & la grille du jeu. \\
+\hline
+{\em ligne} & indice de la ligne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+{\em colonne} & indice de la colonne de la case de la matrice ou le joueur a placer son pion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-V\-R\-A\-I si une ou \char`\"{}plusieurs\char`\"{} victoire(s) est (sont) detectée, \-F\-A\-U\-X sinon 
 \end{DoxyReturn}

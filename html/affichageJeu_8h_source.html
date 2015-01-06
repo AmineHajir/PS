@@ -101,14 +101,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00058"></a>00058 
 <a name="l00067"></a><a class="code" href="affichageJeu_8h.html#a370837543f3d655636552bb90721f6d5">00067</a> <a class="code" href="structpion.html" title="Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au pui...">pion</a> <a class="code" href="affichageJeu_8h.html#a370837543f3d655636552bb90721f6d5" title="structure de données utilisé pour le jeu puissance4++">grille</a>[N][M];
 <a name="l00068"></a>00068 
-<a name="l00078"></a><a class="code" href="affichageJeu_8h.html#a0efe9464b700b0632e4eccb97a89daf4">00078</a> <span class="keywordtype">int</span> <a class="code" href="affichageJeu_8h.html#a0efe9464b700b0632e4eccb97a89daf4" title="structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de...">hauteurColonne</a>[M];
+<a name="l00078"></a><a class="code" href="affichageJeu_8h.html#a6936566a8a51d065125b43b3a1d8bb4e">00078</a> <span class="keywordtype">int</span> <a class="code" href="affichageJeu_8h.html#a6936566a8a51d065125b43b3a1d8bb4e" title="structure de données utilisé pour le jeu puissance4++">gain</a>[N][M]; <span class="comment">// matrice de gain</span>
 <a name="l00079"></a>00079 
-<a name="l00080"></a>00080 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#ab55700bc09c4eb458a1519dde69e9334" title="affiche le titre du jeu (ASCII art).">afficher_titre_jeu</a>();
-<a name="l00081"></a>00081 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#a35ba056f1c83f2a308bcd95d439a4f99" title="procédure qui initialise les cases de la grille à vide (des espaces).">initialiser_jeu</a>(<a class="code" href="structpion.html" title="Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au pui...">pion</a> T[N][M]);
-<a name="l00082"></a>00082 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#aa3e1a084f9890d50919f437addc07508" title="procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille.">initialiser_hauteurColonne</a>(<span class="keywordtype">int</span> V[M]);
-<a name="l00083"></a>00083 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#a0be28cbf2700e0f9b1ff109b42b4d91c" title="procédure qui affiche la grille du jeu.">afficher_jeu</a>(<a class="code" href="structpion.html" title="Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au pui...">pion</a> T[N][M]);
-<a name="l00084"></a>00084 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#a17b4307927c52ece77ab09a1c0acafc7" title="procédure qui affiche les numéros des colonnes de la grille du jeu.">afficher_numColonne_jeu</a>(<span class="keywordtype">int</span> nbre_colonne);
-<a name="l00085"></a>00085 
+<a name="l00089"></a><a class="code" href="affichageJeu_8h.html#a0efe9464b700b0632e4eccb97a89daf4">00089</a> <span class="keywordtype">int</span> <a class="code" href="affichageJeu_8h.html#a0efe9464b700b0632e4eccb97a89daf4" title="structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de...">hauteurColonne</a>[M];
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#ab55700bc09c4eb458a1519dde69e9334" title="affiche le titre du jeu (ASCII art).">afficher_titre_jeu</a>();
+<a name="l00092"></a>00092 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#a35ba056f1c83f2a308bcd95d439a4f99" title="procédure qui initialise les cases de la grille à vide (des espaces).">initialiser_jeu</a>(<a class="code" href="structpion.html" title="Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au pui...">pion</a> T[N][M]);
+<a name="l00093"></a>00093 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#aa3e1a084f9890d50919f437addc07508" title="procédure qui initialise le vecteur qui stocke les hauteurs des colonnes de la grille.">initialiser_hauteurColonne</a>(<span class="keywordtype">int</span> V[M]);
+<a name="l00094"></a>00094 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#a0be28cbf2700e0f9b1ff109b42b4d91c" title="procédure qui affiche la grille du jeu.">afficher_jeu</a>(<a class="code" href="structpion.html" title="Définition de la structure pion contenant les différents types de pièces nécessaire pour jouer au pui...">pion</a> T[N][M]);
+<a name="l00095"></a>00095 <span class="keywordtype">void</span> <a class="code" href="affichageJeu_8c.html#a17b4307927c52ece77ab09a1c0acafc7" title="procédure qui affiche les numéros des colonnes de la grille du jeu.">afficher_numColonne_jeu</a>(<span class="keywordtype">int</span> nbre_colonne);
+<a name="l00096"></a>00096 
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -127,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Janvier 4 2015 16:54:32 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi Janvier 6 2015 18:16:01 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

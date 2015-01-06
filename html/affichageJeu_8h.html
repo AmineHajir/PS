@@ -126,6 +126,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affi
 Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structpion.html">pion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichageJeu_8h.html#a370837543f3d655636552bb90721f6d5">grille</a> [N][M]</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure de données utilisé pour le jeu puissance4++  <a href="#a370837543f3d655636552bb90721f6d5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichageJeu_8h.html#a6936566a8a51d065125b43b3a1d8bb4e">gain</a> [N][M]</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure de données utilisé pour le jeu puissance4++  <a href="#a6936566a8a51d065125b43b3a1d8bb4e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="affichageJeu_8h.html#a0efe9464b700b0632e4eccb97a89daf4">hauteurColonne</a> [M]</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu.  <a href="#a0efe9464b700b0632e4eccb97a89daf4"></a><br/></td></tr>
 </table>
@@ -285,6 +287,22 @@ Variables</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Documentation des variables</h2>
+<a class="anchor" id="a6936566a8a51d065125b43b3a1d8bb4e"></a><!-- doxytag: member="affichageJeu.h::gain" ref="a6936566a8a51d065125b43b3a1d8bb4e" args="[N][M]" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="affichageJeu_8h.html#a6936566a8a51d065125b43b3a1d8bb4e">gain</a>[N][M]</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>structure de données utilisé pour le jeu puissance4++ </p>
+<p>en cas de victoire, on va stocker dans cette matrice le numéro du joueur(1,2,3ou4) gagnant dans les memes cases de la grille du jeu ou les pions on été alignés. exemple : si le joueur 1 aligne 4 pions horizontalement dans la ligne 3 et dans les 2,3,4,5 de la grille du jeu alors on stockera 1 dans les cases correspondantes de la matrice gain. Ceci nous permettra de mettre en gras tous les pions gagnant que ce soit horizontalement, verticalement ou en diagonale. </p>
+
+</div>
+</div>
 <a class="anchor" id="a370837543f3d655636552bb90721f6d5"></a><!-- doxytag: member="affichageJeu.h::grille" ref="a370837543f3d655636552bb90721f6d5" args="[N][M]" -->
 <div class="memitem">
 <div class="memproto">
@@ -297,7 +315,7 @@ Variables</h2></td></tr>
 <div class="memdoc">
 
 <p>structure de données utilisé pour le jeu puissance4++ </p>
-<p>matrice de type pion et de taille N*M (6*7=42 cases dans le cas de deux joueurs). chaque case de la matrice peut contenir deux pièces(pions) au maximum. une case peut contenir une pièce "bloquante" ou "pleine" ou "creuse" ou deus pièces "creuse/pleine" ou peut etre vide(espace). on distingue donc 5 cas possibles pour une case de la matrice. </p>
+<p>matrice de type pion et de taille N*M (6*7=42) chaque case de la matrice peut contenir deux pièces(pions) au maximum. une case peut contenir une pièce "bloquante" ou "pleine" ou "creuse" ou deus pièces "creuse/pleine" ou peut etre vide(espace). on distingue donc 5 cas possibles pour une case de la matrice. </p>
 
 </div>
 </div>
@@ -335,7 +353,7 @@ Variables</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Janvier 4 2015 16:54:32 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi Janvier 6 2015 18:16:01 pour PUISSANCE 4++ par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

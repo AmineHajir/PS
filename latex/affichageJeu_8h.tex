@@ -48,6 +48,8 @@ void \hyperlink{affichageJeu_8h_a17b4307927c52ece77ab09a1c0acafc7}{afficher\-\_\
 \item 
 \hyperlink{structpion}{pion} \hyperlink{affichageJeu_8h_a370837543f3d655636552bb90721f6d5}{grille} \mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}
 \begin{DoxyCompactList}\small\item\em structure de données utilisé pour le jeu puissance4++ \end{DoxyCompactList}\item 
+int \hyperlink{affichageJeu_8h_a6936566a8a51d065125b43b3a1d8bb4e}{gain} \mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}
+\begin{DoxyCompactList}\small\item\em structure de données utilisé pour le jeu puissance4++ \end{DoxyCompactList}\item 
 int \hyperlink{affichageJeu_8h_a0efe9464b700b0632e4eccb97a89daf4}{hauteur\-Colonne} \mbox{[}\-M\mbox{]}
 \begin{DoxyCompactList}\small\item\em structure de données utilisé pour mémoriser la hauteur (ou profondeur ou niveau) de chaque colonne de la grille du jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -153,14 +155,21 @@ procédure qui initialise les cases de la grille à vide (des espaces).
 
 
 \subsection{\-Documentation des variables}
-\hypertarget{affichageJeu_8h_a370837543f3d655636552bb90721f6d5}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!grille@{grille}}
+\hypertarget{affichageJeu_8h_a6936566a8a51d065125b43b3a1d8bb4e}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!gain@{gain}}
+\index{gain@{gain}!affichageJeu.h@{affichage\-Jeu.\-h}}
+\subsubsection[{gain}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf gain}\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}}}\label{affichageJeu_8h_a6936566a8a51d065125b43b3a1d8bb4e}
+
+
+structure de données utilisé pour le jeu puissance4++ 
+
+en cas de victoire, on va stocker dans cette matrice le numéro du joueur(1,2,3ou4) gagnant dans les memes cases de la grille du jeu ou les pions on été alignés. exemple \-: si le joueur 1 aligne 4 pions horizontalement dans la ligne 3 et dans les 2,3,4,5 de la grille du jeu alors on stockera 1 dans les cases correspondantes de la matrice gain. \-Ceci nous permettra de mettre en gras tous les pions gagnant que ce soit horizontalement, verticalement ou en diagonale. \hypertarget{affichageJeu_8h_a370837543f3d655636552bb90721f6d5}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!grille@{grille}}
 \index{grille@{grille}!affichageJeu.h@{affichage\-Jeu.\-h}}
 \subsubsection[{grille}]{\setlength{\rightskip}{0pt plus 5cm}{\bf pion} {\bf grille}\mbox{[}\-N\mbox{]}\mbox{[}\-M\mbox{]}}}\label{affichageJeu_8h_a370837543f3d655636552bb90721f6d5}
 
 
 structure de données utilisé pour le jeu puissance4++ 
 
-matrice de type pion et de taille \-N$\ast$\-M (6$\ast$7=42 cases dans le cas de deux joueurs). chaque case de la matrice peut contenir deux pièces(pions) au maximum. une case peut contenir une pièce \char`\"{}bloquante\char`\"{} ou \char`\"{}pleine\char`\"{} ou \char`\"{}creuse\char`\"{} ou deus pièces \char`\"{}creuse/pleine\char`\"{} ou peut etre vide(espace). on distingue donc 5 cas possibles pour une case de la matrice. \hypertarget{affichageJeu_8h_a0efe9464b700b0632e4eccb97a89daf4}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!hauteur\-Colonne@{hauteur\-Colonne}}
+matrice de type pion et de taille \-N$\ast$\-M (6$\ast$7=42) chaque case de la matrice peut contenir deux pièces(pions) au maximum. une case peut contenir une pièce \char`\"{}bloquante\char`\"{} ou \char`\"{}pleine\char`\"{} ou \char`\"{}creuse\char`\"{} ou deus pièces \char`\"{}creuse/pleine\char`\"{} ou peut etre vide(espace). on distingue donc 5 cas possibles pour une case de la matrice. \hypertarget{affichageJeu_8h_a0efe9464b700b0632e4eccb97a89daf4}{\index{affichage\-Jeu.\-h@{affichage\-Jeu.\-h}!hauteur\-Colonne@{hauteur\-Colonne}}
 \index{hauteur\-Colonne@{hauteur\-Colonne}!affichageJeu.h@{affichage\-Jeu.\-h}}
 \subsubsection[{hauteur\-Colonne}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hauteur\-Colonne}\mbox{[}\-M\mbox{]}}}\label{affichageJeu_8h_a0efe9464b700b0632e4eccb97a89daf4}
 
