@@ -305,30 +305,42 @@ booleen left_diagonal_win(pion T[N][M], int player, int ligne, int colonne)
 
 /**
  * \fn booleen victoire(pion T[N][M], int player, int ligne, int colonne)
- * \brief fonction booleenne permettant de déceler une victoire (qlquelle soit : diagonale, horizontale ou verticale)
+ * \brief fonction booleenne permettant de déceler une ou plusieurs victoires 
+ * \brief on traite toutes les combinanisons de victoire possibles ( grace a la formule du binome, on déduit qu'il y a 15 combinaisons possibles )
  * \param pion la grille du jeu.
  * \param ligne indice de la ligne de la case de la matrice ou le joueur a placer son pion
  * \param colonne indice de la colonne de la case de la matrice ou le joueur a placer son pion
- * \return VRAI si une victoire est detectée, FAUX sinon
+ * \return VRAI si une ou "plusieurs" victoire(s) est (sont) detectée, FAUX sinon
 */
 booleen victoire(pion T[N][M], int player, int ligne, int colonne)
 {
-	// si l'une des victoires est detectée , on renvoi VRAI
+	// si l'une des combinaison est detectée , on renvoi VRAI
+	// victoire verticale(v)/horizontale(h)/diagonale_droite(rd)/diagonale_gauche(ld) : v-h-rd-ld
 	if( (horizontal_win(T,player,ligne,colonne) && vertical_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne) )
-	   ||(vertical_win(T,player,ligne,colonne) && horizontal_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne))
+	   //v-h-rd
+           ||(vertical_win(T,player,ligne,colonne) && horizontal_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne))
+	   //v-h-ld
 	   ||(vertical_win(T,player,ligne,colonne) && horizontal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   //v-rd-ld
 	   ||(vertical_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   //h-rd-ld
 	   ||(horizontal_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   //v-h
 	   ||(vertical_win(T,player,ligne,colonne) && horizontal_win(T,player,ligne,colonne))
+	   //v-rd
 	   ||(vertical_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne))
+	   //v-ld
 	   ||(vertical_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   //h-rd
 	   ||(horizontal_win(T,player,ligne,colonne) && right_diagonal_win(T,player,ligne,colonne))
+	   //h-ld
 	   ||(horizontal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
+	   //rd-ld
 	   ||(right_diagonal_win(T,player,ligne,colonne) && left_diagonal_win(T,player,ligne,colonne))
-	   ||(vertical_win(T,player,ligne,colonne))
-	   ||(horizontal_win(T,player,ligne,colonne))
-	   ||(right_diagonal_win(T,player,ligne,colonne))
-	   ||(left_diagonal_win(T,player,ligne,colonne)) )
+	   ||(vertical_win(T,player,ligne,colonne)) // v
+	   ||(horizontal_win(T,player,ligne,colonne)) // h
+	   ||(right_diagonal_win(T,player,ligne,colonne)) // rd
+	   ||(left_diagonal_win(T,player,ligne,colonne)) ) // ld
 		
 	{
 		return VRAI; 

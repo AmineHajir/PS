@@ -59,13 +59,22 @@ typedef struct
 /**
  * \var pion grille[N][M]
  * \brief structure de données utilisé pour le jeu puissance4++
- * \details matrice de type pion et de taille N*M (6*7=42 cases dans le cas de deux joueurs). 
+ * \details matrice de type pion et de taille N*M (6*7=42) 
  *          chaque case de la matrice peut contenir deux pièces(pions) au maximum. 
  *          une case peut contenir une pièce "bloquante" ou "pleine" ou "creuse" ou deus pièces "creuse/pleine" ou peut etre vide(espace). 
  * 	    on distingue donc 5 cas possibles pour une case de la matrice.	
 */
 pion grille[N][M];
 
+/**
+ * \var int gain[N][M]
+ * \brief structure de données utilisé pour le jeu puissance4++
+ * \details en cas de victoire, on va stocker dans cette matrice le numéro du joueur(1,2,3ou4) gagnant dans les memes cases
+ * 	    de la grille du jeu ou les pions on été alignés. exemple :
+ * 	    si le joueur 1 aligne 4 pions horizontalement dans la ligne 3 et dans les 2,3,4,5 de la grille du jeu alors
+ *          on stockera 1 dans les cases correspondantes de la matrice gain.
+ * 	    Ceci nous permettra de mettre en gras tous les pions gagnant que ce soit horizontalement, verticalement ou en diagonale.
+*/
 int gain[N][M]; // matrice de gain
 
 /**

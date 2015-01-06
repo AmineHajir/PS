@@ -157,14 +157,15 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( T[i][j].bloc == 1 ) // et que cette bloquante appartient au premier joueur
 				{
-					if( gain[i][j] == 1 )
-					{
+					if( gain[i][j] == 1 ) // si on plus c'est un pion gagnant, on l'affiche en gras
+					{		      // pour le distinguer des autres pions du meme joueur
+						//couleur(BLINK);
 						couleur(GRAS);
 						couleur( codage(joueurs[0].couleur) );
 						printf("   %c   ",BLOCANTE);
 						couleur(DEFAULT);
 					}
-					else
+					else 
 					{
 						couleur( codage(joueurs[0].couleur) ); // on affiche la pièce blocante avec la couleur que le joueur1
 						printf("   %c   ",BLOCANTE);		// avait choisis au début du jeu stockée ds le tableau joueurs
@@ -224,10 +225,10 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( T[i][j].creux == 1 ) // et que cette creuse appartient au joueur1
 				{
-					if( gain[i][j] == 1 )
+					if( gain[i][j] == 1 ) // si en plus c'est un pion gagnant ...
 					{
 						couleur(GRAS);
-						couleur( codage(joueurs[0].couleur) ); // on affiche la pièce avec la couleur choisie ...
+						couleur( codage(joueurs[0].couleur) ); // on affiche la pièce avec la couleur choisie et en gras...
 						printf("   %c   ",CREUSE); 
 						couleur(DEFAULT);
 					}
@@ -362,10 +363,10 @@ void afficher_jeu(pion T[N][M])
 			{
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 1) ) // si la creuse et la pleine appartiennent au joueur1
 				{
-					if( gain[i][j] == 1 )
+					if( gain[i][j] == 1 ) // si on plus ce joueur aligne au minimum 4 pions dont cette case fait partie
 					{
 						couleur(GRAS);
-						couleur( codage(joueurs[0].couleur) ); // on affiche les deux pions avec la couleur du joueur1
+						couleur( codage(joueurs[0].couleur) ); // on affiche les deux pions avec la couleur du joueur1 en gras
 						printf("  %c %c  ",CREUSE,PLEINE);
 						couleur(DEFAULT);
 					}
@@ -382,7 +383,7 @@ void afficher_jeu(pion T[N][M])
 					{
 						couleur(GRAS);
 						couleur( codage(joueurs[1].couleur) );
-						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur2
+						printf("  %c %c  ",CREUSE,PLEINE); 
 						couleur(DEFAULT);
 					}
 					else
@@ -414,7 +415,7 @@ void afficher_jeu(pion T[N][M])
 					{
 						couleur(GRAS);
 						couleur( codage(joueurs[3].couleur) );
-						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur4
+						printf("  %c %c  ",CREUSE,PLEINE); 
 						couleur(DEFAULT);
 					}
 					else
@@ -426,17 +427,17 @@ void afficher_jeu(pion T[N][M])
 				}
 				if( (T[i][j].creux == 1) && (T[i][j].plein == 2) ) // si la creuse appartient au joueur1 et la pleine au joueur2
 				{
-					if( gain[i][j] == 1 )
+					if( gain[i][j] == 1 ) // si en plus le joueur 1 gagne
 					{
-						couleur(GRAS);
+						couleur(GRAS);// on affiche la creuse en gras
 						couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
-						couleur( codage(joueurs[1].couleur) );
+						couleur( codage(joueurs[1].couleur) );// el la pleine avec la couleur du joueur2 sans gras
 						printf(" %c  ",PLEINE);
 						couleur(DEFAULT);
 					}
-					else
+					else // si joueur 2 gagnant
 					{
 						if( gain[i][j] == 2 )
 						{
@@ -448,7 +449,7 @@ void afficher_jeu(pion T[N][M])
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
 						}
-						else
+						else // si aucun joueur gagnant
 						{
 							couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
 							printf("  %c",CREUSE);
