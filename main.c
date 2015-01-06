@@ -40,9 +40,27 @@ int main()
 		}
 	
 	}while( (grillePleine(grille,hauteurColonne) == FAUX) && (winner == FAUX) ); // on continue de jouer tant que la grille n'est pas remplie
-			
 	
+	
+	printf("\n\n");
 	afficher_jeu(grille);
+	
+	couleur(ROUGEGRAS);
+	if( (grillePleine(grille,hauteurColonne) == FAUX) && (winner == VRAI) )
+	{
+		printf("\n\n                                 Bravo %s, vous avez remportez la partie ",joueurs[player-1].nom);  
+	}
+	if( (grillePleine(grille,hauteurColonne) == VRAI) && (winner == VRAI) )
+	{
+		printf("\n\n 				      Bravo %s, vous avez remportez la partie ",joueurs[player-1].nom);
+	}
+	if( (grillePleine(grille,hauteurColonne) == VRAI) && (winner == FAUX) )
+	{
+		printf("\n\n 				         La grille est pleine !!! partie nulle ");
+	}
+		
+		
+	couleur(DEFAULT);
 	
 	printf("\n\n");
 	return 0;
