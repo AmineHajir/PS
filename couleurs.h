@@ -45,6 +45,7 @@
 #define GRAS   "1" // active la haute intensité des caractères.
 #define INVERT "7" // inverse la sélection de couleurs.(facultatif)
 #define STRESS "4" // souligne le texte.(facultatif)
+#define BLINKGRAS "5;1"
 
 // efface l'ecran (clrscr = clearScrean) ~ system("clear")
 #define clrscr() printf("\033[H\033[2J") 

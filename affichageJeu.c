@@ -159,8 +159,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 1 ) // si on plus c'est un pion gagnant, on l'affiche en gras
 					{		      // pour le distinguer des autres pions du meme joueur
-						//couleur(BLINK);
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[0].couleur) );
 						printf("   %c   ",BLOCANTE);
 						couleur(DEFAULT);
@@ -176,7 +175,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 2 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[1].couleur) );
 						printf("   %c   ",BLOCANTE);
 						couleur(DEFAULT);
@@ -192,7 +191,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 3 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[2].couleur) );
 						printf("   %c   ",BLOCANTE);
 						couleur(DEFAULT);
@@ -208,7 +207,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 4 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[3].couleur) );
 						printf("   %c   ",BLOCANTE);
 						couleur(DEFAULT);
@@ -227,7 +226,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 1 ) // si en plus c'est un pion gagnant ...
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[0].couleur) ); // on affiche la pièce avec la couleur choisie et en gras...
 						printf("   %c   ",CREUSE); 
 						couleur(DEFAULT);
@@ -244,7 +243,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 2 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[1].couleur) );
 						printf("   %c   ",CREUSE);
 						couleur(DEFAULT);
@@ -261,7 +260,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 3 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[2].couleur) );
 						printf("   %c   ",CREUSE);
 						couleur(DEFAULT);
@@ -278,7 +277,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 4 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[3].couleur) );
 						printf("   %c   ",CREUSE);
 						couleur(DEFAULT);
@@ -297,7 +296,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 1 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[0].couleur) );
 						printf("   %c   ",PLEINE);
 						couleur(DEFAULT);
@@ -313,7 +312,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 2 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[1].couleur) );
 						printf("   %c   ",PLEINE);
 						couleur(DEFAULT);
@@ -329,7 +328,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 3 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[2].couleur) );
 						printf("   %c   ",PLEINE);
 						couleur(DEFAULT);
@@ -345,7 +344,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 4 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[3].couleur) );
 						printf("   %c   ",PLEINE);
 						couleur(DEFAULT);
@@ -365,7 +364,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 1 ) // si on plus ce joueur aligne au minimum 4 pions dont cette case fait partie
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[0].couleur) ); // on affiche les deux pions avec la couleur du joueur1 en gras
 						printf("  %c %c  ",CREUSE,PLEINE);
 						couleur(DEFAULT);
@@ -381,7 +380,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 2 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[1].couleur) );
 						printf("  %c %c  ",CREUSE,PLEINE); 
 						couleur(DEFAULT);
@@ -397,7 +396,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 3 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[2].couleur) );
 						printf("  %c %c  ",CREUSE,PLEINE); // on affiche la couleur du joueur3 choisie au début du jeu
 						couleur(DEFAULT);
@@ -413,7 +412,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 4 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[3].couleur) );
 						printf("  %c %c  ",CREUSE,PLEINE); 
 						couleur(DEFAULT);
@@ -429,7 +428,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 1 ) // si en plus le joueur 1 gagne
 					{
-						couleur(GRAS);// on affiche la creuse en gras
+						couleur(BLINKGRAS);// on affiche la creuse en gras
 						couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -444,7 +443,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[0].couleur) ); // on afficher chaque pion avec la couleur correspondante a chak joueur
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[1].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -464,7 +463,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 2 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[1].couleur) );
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -479,7 +478,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[1].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[0].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -499,7 +498,7 @@ void afficher_jeu(pion T[N][M])
 				{						   
 					if( gain[i][j] == 1 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[0].couleur) );	// chak pion s'affichera ac la couleur correspondante à chak joueur
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -514,7 +513,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[0].couleur) );	// chak pion s'affichera ac la couleur correspondante à chak joueur
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[2].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -534,7 +533,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 3 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[2].couleur) );
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -549,7 +548,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[2].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[0].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -569,7 +568,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 2 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[1].couleur) );
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -584,7 +583,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[1].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[2].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -604,7 +603,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 3 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[2].couleur) );
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -619,7 +618,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[2].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[1].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -639,7 +638,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 1 )
 					{
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[0].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
@@ -654,7 +653,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[0].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[3].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -674,7 +673,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 4 )
 					{
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[3].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
@@ -689,7 +688,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[3].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[0].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -709,7 +708,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 2 )
 					{
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[1].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
@@ -724,7 +723,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[1].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[3].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -744,7 +743,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 4 )
 					{
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[3].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
@@ -759,7 +758,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[3].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[1].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -779,7 +778,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 3 )
 					{
-						couleur(GRAS);
+						couleur(BLINKGRAS);
 						couleur( codage(joueurs[2].couleur) );
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -794,7 +793,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[2].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[3].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);
@@ -814,7 +813,7 @@ void afficher_jeu(pion T[N][M])
 				{
 					if( gain[i][j] == 4 )
 					{
-						couleur(GRAS);	
+						couleur(BLINKGRAS);	
 						couleur( codage(joueurs[3].couleur) );
 						printf("  %c",CREUSE);
 						couleur(DEFAULT);
@@ -830,7 +829,7 @@ void afficher_jeu(pion T[N][M])
 							couleur( codage(joueurs[3].couleur) );
 							printf("  %c",CREUSE);
 							couleur(DEFAULT);
-							couleur(GRAS);
+							couleur(BLINKGRAS);
 							couleur( codage(joueurs[2].couleur) );
 							printf(" %c  ",PLEINE);
 							couleur(DEFAULT);

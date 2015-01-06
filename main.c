@@ -56,7 +56,7 @@ int main()
 	}
 	if( (grillePleine(grille,hauteurColonne) == VRAI) && (winner == FAUX) )
 	{
-		printf("\n\n 				         La grille est pleine !!! partie nulle ");
+		printf("\n\n 				     La grille est pleine !!! partie nulle ");
 	}
 		
 		

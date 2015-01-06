@@ -8,3 +8,4 @@
 
 char menuChoixPion();
 int menuChoixColonne();
+void pauseJeu(int nbJoueur);
