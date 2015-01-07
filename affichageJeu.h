@@ -84,7 +84,7 @@ int gain[N][M]; // matrice de gain
  * 	    ce tableau permet de stocker dans chacune de ses cases l'indice de la première case vide de la colonne correspondante 
  * 	    dans le cas ou la colonne est pleine, la valeur de la case correspondante à cette colonne dans le tableau est égale à 0. 
  * 	    au début du jeu toutes les cases du tableau sont initialisées à N-1(5) car l'indice de la premiere case vide de chaque colonne 
- *    	    est égale à l'indice de la dernière ligne de la grille.  
+ *    	    est égale à l'indice de la dernière ligne de la grille. (dernière ligne de la matrice)
 */
 int hauteurColonne[M];
 
