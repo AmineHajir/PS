@@ -1,4 +1,3 @@
-PUISSANCE4
+PS
 ==========
 
-PROJET L2 SPI : JEU PUISSANCE4++ 
